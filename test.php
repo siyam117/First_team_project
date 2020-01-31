@@ -81,9 +81,9 @@
   function processUserDetails()
   {
     $testMsgs = true; //true = On, false = off.
-    $servername = "localhost";
+    $servername = "dbhost.cs.man.ac.uk";
     $username = "c73984rz";
-    $password = "renhua19991004";
+    $password = "renhua1004";
     $database = "2019_comp10120_z8";
     
     require_once('config.inc.php');
