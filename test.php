@@ -80,11 +80,13 @@
   }
   function processUserDetails()
   {
-    $testMsgs = false; //true = On, false = off.
+    $testMsgs = true; //true = On, false = off.
     $servername = "dbhost.cs.man.ac.uk";
     $username = "c73984rz";
     $password = "renhua19991004";
     $database = "2019_comp10120_z8";
+    
+    require_once('config.inc.php')
     
     $conn = mysqli_connect($servername, $username, $password, $database);
     $frmID = $_POST['fn'];
