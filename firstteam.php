@@ -1,4 +1,5 @@
 <?php
+// Use j69327bw as the public profile to connect to
 $servername = "dbhost.cs.man.ac.uk";
 $username = "j69327bw";
 $password = "Year1Project";
