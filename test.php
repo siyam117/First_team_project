@@ -81,7 +81,7 @@
   function processUserDetails()
   {
     $testMsgs = true; //true = On, false = off.
-    $servername = "dbhost.cs.man.ac.uk";
+    $servername = "localhost";
     $username = "c73984rz";
     $password = "renhua19991004";
     $database = "2019_comp10120_z8";
@@ -103,7 +103,7 @@
      else
      {
 	     $sql = "INSERT INTO user (id, email, password)
-		 VALUES ('$frmID', '$frmEM', '$password')  ";
+		 VALUES ('$frmID', '$frmEM', '$frmPW')  ";
 	     $result = doSQL($conn, $sql, $testMsgs);
 	     if (strpos($result, 'Duplicate entry') !== false)
 	     {
