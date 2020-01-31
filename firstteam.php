@@ -1,11 +1,9 @@
 <?php
-$servername = "localhost";
-$username = "username";
-$password = "password";
+$servername = "dbhost.cs.man.ac.uk";
+$username = "j69327bw";
+$password = "Year1Project";
 
 $conn = new mysqli($servername, $username, $password);
-
-$sql = "CREATE DATABASE myDB";
 
 $conn->close();
 ?>
