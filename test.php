@@ -88,7 +88,7 @@
     
     require_once('config.inc.php')
     
-    $conn = mysqli_connect($servername, $username, $password, $database);
+    $mysqli = new mysqli($servername, $username, $password, $database);
     $frmID = $_POST['fn'];
     $frmEM = $_POST['email'];
     $frmPW = $_POST['pw'];
