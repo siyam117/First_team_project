@@ -86,7 +86,7 @@
     $password = "renhua19991004";
     $database = "2019_comp10120_z8";
     
-    require_once('config.inc.php')
+    require_once('config.inc.php');
     
     $mysqli = new mysqli($servername, $username, $password, $database);
     $frmID = $_POST['fn'];
