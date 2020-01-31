@@ -10,10 +10,8 @@
 
       $sql = "SELECT user_id FROM users WHERE email = '$myusername' and password = '$mypassword'";
       $result = mysqli_query($db,$sql);
-      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
       $active = $row['active'];
 
-      $count = mysqli_num_rows($result);
 
       // If result matched $myusername and $mypassword, table row must be 1 row
 
@@ -63,7 +61,7 @@
                   <input type = "submit" value = " Submit "/><br />
                </form>
 
-               <div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div>
+               <div style = "font-size:11px; color:#cc0000; margin-top:10px"></div>
 
             </div>
 
