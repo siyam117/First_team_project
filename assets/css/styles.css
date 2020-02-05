@@ -1,0 +1,69 @@
+@font-face {
+    font-family: "font1";
+    src: url("../fonts/font1.woff2") format("woff2"),
+         url("../fonts/font1.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+  background: #2C005D;
+}
+
+#homepage-center {
+  width: 750px;
+  height: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#homepage-title {
+  position: relative;
+  height: 50%;
+  display: block;
+  margin: auto;
+}
+
+#homepage-form {
+  height: 50%;
+  display: block;
+  margin: auto;
+  padding-top: 50px;
+}
+
+.input-field {
+  display: block;
+  margin: 20px auto;
+  padding: 0 10px;
+  outline: none;
+  width: 250px;
+  height: 30px;
+  font-size: 20px;
+  border: 0 solid white;
+  border-radius: 3px;
+  transition: box-shadow 0.3s;
+}
+
+.input-field:focus {
+  box-shadow: 0px 0px 1px 3px #1FF5FF;
+}
+
+.submit-button {
+  display: block;
+  margin: 40px auto;
+  outline: none;
+  width: 150px;
+  height: 40px;
+  font-size: 20px;
+  border: 0 solid white;
+  border-radius: 50px;
+  transition: box-shadow 0.3s, background-color 0.3s;
+}
+
+.submit-button:hover {
+  box-shadow: 0px 0px 1px 3px #1FF5FF;
+  background-color: #1FF5FF;
+  cursor: pointer;
+}
