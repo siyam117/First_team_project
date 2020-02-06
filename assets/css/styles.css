@@ -17,6 +17,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: background-color 0.3s;
 }
 
 #homepage-title {
@@ -34,6 +35,7 @@ body {
 }
 
 .input-field {
+  opacity: 0.8;
   display: block;
   margin: 20px auto;
   padding: 0 10px;
@@ -43,22 +45,23 @@ body {
   font-size: 20px;
   border: 0 solid white;
   border-radius: 3px;
-  transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s, opacity 0.3s;
 }
 
 .input-field:focus {
   box-shadow: 0px 0px 1px 3px #1FF5FF;
+  opacity: 1;
 }
 
 .submit-button {
   display: block;
-  margin: 40px auto;
+  margin: 30px auto;
   outline: none;
-  width: 150px;
+  width: 270px;
   height: 40px;
   font-size: 20px;
   border: 0 solid white;
-  border-radius: 50px;
+  border-radius: 3px;
   transition: box-shadow 0.3s, background-color 0.3s;
 }
 
