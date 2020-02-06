@@ -48,26 +48,26 @@
     transform: translate(calc(var(--s1x)), calc(var(--s1y)));
   }
 
-  95.9% {
+  15.9% {
     transform: translate(calc(var(--s1x)), calc(var(--s1y)));
   }
   /* (4%, -4%) */
-  96% {
+  16% {
     transform: translate(calc(var(--s1x) + 4%), calc(var(--s1y) - 4%));
   }
 
-  97.9% {
+  17.9% {
     transform: translate(calc(var(--s1x) + 4%), calc(var(--s1y) - 4%));
   }
   /* (-3%, 3%) */
-  98% {
+  18% {
     transform: translate(calc(var(--s1x) - 3%), calc(var(--s1y) + 3%));
   }
 
-  99.9% {
+  19.9% {
     transform: translate(calc(var(--s1x) - 3%), calc(var(--s1y) + 3%));
   }
-  100% {
+  20% {
     transform: translate(calc(var(--s1x)), calc(var(--s1y)));
   }
 }
@@ -77,23 +77,23 @@
     transform: translate(calc(var(--s2x)), calc(var(--s2y)));
   }
 
-  95.9% {
+  15.9% {
     transform: translate(calc(var(--s2x)), calc(var(--s2y)));
   }
   /* (-6%, 6%) */
-  96% {
+  16% {
     transform: translate(calc(var(--s2x) - 6%), calc(var(--s2y)));
   }
 
-  97.9% {
+  17.9% {
     transform: translate(calc(var(--s2x) - 6%), calc(var(--s2y)));
   }
   /* (0%, 0%) */
-  98% {
+  18% {
     transform: translate(calc(var(--s2x)), calc(var(--s2y)));
   }
 
-  100% {
+  20% {
     transform: translate(calc(var(--s2x)), calc(var(--s2y)));
   }
 }
