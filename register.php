@@ -19,7 +19,7 @@ $errors ='';
 
         if(!empty($username)){
         	$username = strtolower(filter_var($username, FILTER_SANITIZE_STRING));
-             
+
         }else {
         	$errors.= '<li>Please introduce a username</li>'.'<br>';
         }
@@ -31,7 +31,7 @@ $errors ='';
         }
 
         if(empty($bday)){
-    
+
             $errors.= '<li>Please introduce a birthday</li>'.'<br>';
         }
 
@@ -50,9 +50,9 @@ $errors ='';
         }
 
 	try{
-	$connection=new PDO('mysql:host=;dbname=', '','');
-	$statement=$connection->prepare('SELECT * FROM user WHERE username = :Username');	
-	
+	$connection=new PDO(mysql:host='dbhost.cs.man.ac.uk';dbname='2019_comp10120_z8', 'j69327bw','Year1Project');
+	$statement=$connection->prepare('SELECT * FROM users WHERE username = :Username');
+
 	$statement->execute(
 		array(':Username'=> $username));
 
@@ -60,23 +60,22 @@ $errors ='';
 	if($results==true){
 		$errors.= '<li>Username already exists</li>'.'<br>';
 	}
-	
+
 	}catch(PDOException $e){
 	echo "Error: ".$e->getMessage();
 
-}	
+}
 
 	if(empty($errors)){
-		$statement = $connection->prepare("INSERT INTO user (ID,Username,Password,Email,Birthday) VALUES(null, '$username', '$pass', '$email', '$bday')");
+		$statement = $connection->prepare("INSERT INTO users (userID,Username,Password,Email,Birthday) VALUES(null, '$username', '$pass', '$email', '$bday')");
 		$statement->execute(
 		array(':Username'=> $username, ':Password'=> $pass, ':Email'=> $email, ':Birthday'=> $bday));
 		header('Location: login.php');
 		}
-		
-	
+
+
 
 }
 
 require 'register.view.php';
 ?>
-
