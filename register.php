@@ -1,81 +1,44 @@
 <?php
-session_start();
-if(isset($_SESSION['username'])){
-		header('Location: index.php');
-}
 
-$errors ='';
+  include_once("config.php");
+  include_once("functions.php");
 
-    if(isset($_POST['submit'])){
-        $username = $_POST['username'];
-        $pass = $_POST['password'];
-		$pass2 = $_POST['password2'];
-		$email = $_POST['email'];
-		$bday = $_POST['bday'];
+  if (!func::checkLoginState($dbh))
+  {
+    if (isset($_POST["username"]) && isset($_POST["email"]) && isset($_POST["password"]))
+    {
+      $username = $_POST["username"];
+      $email = $_POST["email"];
+      $password = $_POST["password"];
 
-		if ($pass != $pass2){
-			$errors.= '<li>Passwords do not match</li>'.'<br>';
-		}
+      func::addNewUser($dbh, $username, $email, $password);
 
-        if(!empty($username)){
-        	$username = strtolower(filter_var($username, FILTER_SANITIZE_STRING));
+      header("location:login.php");
+    }
+  }
+  else
+  {
+    header("location:index.php");
+  }
 
-        }else {
-        	$errors.= '<li>Please introduce a username</li>'.'<br>';
-        }
-
-        if(!empty($email)){
-        	$email = filter_var($email, FILTER_SANITIZE_EMAIL);
-        }else {
-        	$errors.= '<li>Please introduce an email</li>'.'<br>';
-        }
-
-        if(empty($bday)){
-
-            $errors.= '<li>Please introduce a birthday</li>'.'<br>';
-        }
-
-        if (!empty($pass)){
-            $pass= filter_var($pass, FILTER_SANITIZE_STRING);
-            $pass= hash('sha512',$pass);
-        } else {
-            $errors.= '<li>Please introduce a password</li>'.'<br>';
-        }
-
-		if (!empty($pass2)){
-            $pass2= filter_var($pass2, FILTER_SANITIZE_STRING);
-            $pass2= hash('sha512',$pass2);
-        } else {
-            $errors.= '<li>Please confirm your password</li>'.'<br>';
-        }
-
-	try{
-	$connection=new PDO(mysql:host='dbhost.cs.man.ac.uk';dbname='2019_comp10120_z8', 'j69327bw','Year1Project');
-	$statement=$connection->prepare('SELECT * FROM users WHERE username = :Username');
-
-	$statement->execute(
-		array(':Username'=> $username));
-
-	$results=$statement->fetch();
-	if($results==true){
-		$errors.= '<li>Username already exists</li>'.'<br>';
-	}
-
-	}catch(PDOException $e){
-	echo "Error: ".$e->getMessage();
-
-}
-
-	if(empty($errors)){
-		$statement = $connection->prepare("INSERT INTO users (userID,Username,Password,Email,Birthday) VALUES(null, '$username', '$pass', '$email', '$bday')");
-		$statement->execute(
-		array(':Username'=> $username, ':Password'=> $pass, ':Email'=> $email, ':Birthday'=> $bday));
-		header('Location: login.php');
-		}
-
-
-
-}
-
-require 'register.view.php';
 ?>
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Register</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/title_animation.css">
+  </head>
+  <body>
+    <form id="homepage-form" action="register.php" method="post">
+      <input class="input-field" type="text" autocomplete="off" placeholder="Username" name="username">
+      <input class="input-field" type="text" autocomplete="off" placeholder="Email" name="email">
+      <input class="input-field" type="password" autocomplete="off" placeholder="Password" name="password">
+      <input class="input-field" type="password" autocomplete="off" placeholder="Re-type Password" name="password">
+      <button class="submit-button" type="submit" name="button">Register</button>
+    </form>
+  </body>
+</html>

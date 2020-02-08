@@ -1,72 +1,58 @@
 <?php
-session_start();
-if(isset($_SESSION['username'])){
-		header('Location: index.php');
-}
- $errors ='';
-    if(isset($_POST['submit'])){
-        $username = $_POST['username'];
-        $pass = $_POST['password'];
-        $pass = hash('sha512', $pass);
-		$sent = $_POST['submit'];
 
-        if(!empty($username)){
-            $username = strtolower(filter_var($username, FILTER_SANITIZE_STRING));
+  include_once("config.php");
+  include_once("functions.php");
 
-        }else {
-            $errors.= '<li>Please, introduce a username</li>'.'<br>';
-        }
-        if (!empty($pass)){
-            $pass= filter_var(strtolower($pass), FILTER_SANITIZE_STRING);
-            hash('sha512',$pass);
-        } else {
-            $errors.= '<li>Please introduce a password</li>'.'<br>';
-        }
+  if (!func::checkLoginState($dbh))
+  {
+    if (isset($_POST["username"]) && isset($_POST["password"]))
+    {
+      $username = $_POST["username"];
+      $password = $_POST["password"];
 
+      if (func::checkPassword($dbh, $username, $password))
+      {
+        $stmt = $dbh->prepare("SELECT * FROM users WHERE username='$username';");
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
+        $user_id = $row["user_id"];
+        func::startNewSession($dbh, $username, $user_id);
+        header("location:index.php");
+      }
+    }
+  }
+  else
+  {
+    header("location:index.php");
+  }
 
-	try{
-	$connection=new PDO(mysql:host='dbhost.cs.man.ac.uk';dbname='2019_comp10120_z8', 'j69327bw','Year1Project');
-
-	$statement=$connection->prepare('SELECT * FROM users WHERE username = :Username');
-	
-	$statement->execute(
-		array(':Username'=> $username));
-
-
-		$results=$statement->fetch();
-		if($results==false){
-			$errors.= '<li>Username is incorrect</li>';
-		}
-
-	$connection2=new PDO('mysql:host=;dbname=', '','');
-	$statement2=$connection2->prepare('SELECT Password FROM users WHERE username = :Username');
-
-	$statement2->execute(
-		array(':Username'=> $username));
-
-
-		$passcheck=$statement2->fetch(PDO::FETCH_ASSOC);
-
-		if($passcheck['Password']!=$pass){
-		$errors.= '<li>Password is incorrect</li>'.'<br>';
-		}
-
-
-		if(empty($errors)){
-			$_SESSION['username'] = $username;
-			header('Location: index.php');
-		}
-
-
-	}catch(PDOException $e){
-	echo "Error: ".$e->getMessage();
-
-}
-
-
-
-
-}
-	require 'login.view.php';
 ?>
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/title_animation.css">
+    <script src="https://kit.fontawesome.com/e82695925e.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/js/lib/jquery-3.4.1.min.js"></script>
+  </head>
+  <body>
+    <div id="homepage-center" class="centered">
+      <div id="homepage-title">
+        <div class="title" id="title-main">INKKER.IO</div>
+        <div class="title" id="title-shadow-one">INKKER.IO</div>
+        <div class="title" id="title-shadow-two">INKKER.IO</div>
+      </div>
+      <form id="homepage-form" action="login.php" method="post">
+        <input class="input-field" type="text" autocomplete="off" placeholder="Username" name="username">
+        <input class="input-field" type="password" autocomplete="off" placeholder="Password" name="password">
+        <button class="submit-button" type="submit" name="button">Login <i class="fas fa-sign-in-alt"></i></button>
+      </form>
+      <button class="submit-button" onclick="window.location.href = 'register.php';" name="button">Register</button>
+    </div>
+  </body>
+</html>
