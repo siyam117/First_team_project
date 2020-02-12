@@ -50,7 +50,7 @@ $errors ='';
         }
 
 	try{
-	$connection=new PDO(mysql:host='dbhost.cs.man.ac.uk';dbname='2019_comp10120_z8', 'j69327bw','Year1Project');
+	$connection=new PDO('mysql:host=localhost;dbname=test', 'root','');
 	$statement=$connection->prepare('SELECT * FROM users WHERE username = :Username');
 
 	$statement->execute(
