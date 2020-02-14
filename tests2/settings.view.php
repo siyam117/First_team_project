@@ -5,9 +5,8 @@
         <title></title>
 	</head>
     <body> 
-        <h>You're in feed</h><br>
+        <h>You're in settings</h><br>
         <a href="logout.php">Log out</a><br>
-        <a href="settings.php">Create new story</a><br>
        
 </form> 
 </body>
