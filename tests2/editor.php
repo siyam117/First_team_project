@@ -6,6 +6,6 @@ if(isset($_SESSION['username'])){
 	header('Location: index.php');
 }
 
-$bookTitle = $_GET['title'];
-echo "title is ".$bookTitle;
+$bookID = $_GET['id'];
+echo 'Book id is '.$bookID;
 ?>
