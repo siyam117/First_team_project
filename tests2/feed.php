@@ -6,7 +6,7 @@ if(isset($_SESSION['username'])){
 	header('Location: index.php');
 }
 
-$conn=mysqli_connect('localhost', 'root','','test');
+$conn=mysqli_connect('localhost', 'desznajc','h5va{X<dL*','desznajc_test');
 if(!$conn)
 {
 die("Connection failed: " . mysqli_connect_error());

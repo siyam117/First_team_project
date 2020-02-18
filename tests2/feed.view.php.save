@@ -4,6 +4,7 @@
 	<style>
 	h {
                 font-size: 50px;
+		display: in;
         }
 	</style>
 	<link rel="stylesheet" href="../assets/css/styles.css">

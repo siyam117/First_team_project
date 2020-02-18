@@ -42,6 +42,7 @@ $errors ='';
             $errors.= '<li>Please introduce a password</li>'.'<br>';
         }
 
+
 		if (!empty($pass2)){
             $pass2= filter_var($pass2, FILTER_SANITIZE_STRING);
             $pass2= hash('sha512',$pass2);
@@ -50,7 +51,7 @@ $errors ='';
         }
 
 	try{
-	$connection=new PDO('mysql:host=localhost;dbname=test', 'root','');
+	$connection=new PDO('mysql:host=localhost;dbname=desznajc_test', 'desznajc','h5va{X<dL*');
 	$statement=$connection->prepare('SELECT * FROM users WHERE username = :Username');
 
 	$statement->execute(
@@ -67,7 +68,7 @@ $errors ='';
 }
 
 	if(empty($errors)){
-		$statement = $connection->prepare("INSERT INTO users (userID,Username,Password,Email,Birthday) VALUES(null, '$username', '$pass', '$email', '$bday')");
+		$statement = $connection->prepare("INSERT INTO users (Username,Password,Email,Birthday) VALUES('$username', '$pass', '$email', '$bday')");
 		$statement->execute(
 		array(':Username'=> $username, ':Password'=> $pass, ':Email'=> $email, ':Birthday'=> $bday));
 		header('Location: login.php');

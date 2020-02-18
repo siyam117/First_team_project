@@ -26,7 +26,7 @@ if(isset($_SESSION['username'])){
 
 
 	try{
-	$connection=new PDO('mysql:host=localhost;dbname=test', 'root','');
+	$connection=new PDO('mysql:host=localhost;dbname=desznajc_test', 'desznajc','h5va{X<dL*');
 
 	$statement=$connection->prepare('SELECT * FROM users WHERE username = :Username');
 
@@ -39,7 +39,7 @@ if(isset($_SESSION['username'])){
 			$errors.= '<li>Username is incorrect</li>';
 		}
 
-	$connection2=new PDO('mysql:host=localhost;dbname=test', 'root','');
+	$connection2=new PDO('mysql:host=localhost;dbname=desznajc_test', 'desznajc','h5va{X<dL*');
 	$statement2=$connection2->prepare('SELECT Password FROM users WHERE username = :Username');
 
 	$statement2->execute(
