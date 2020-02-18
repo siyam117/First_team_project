@@ -1,29 +1,39 @@
 <?php
 session_start();
 if(isset($_SESSION['username'])){
-	require 'feed.view.php';
 }else{
 	header('Location: index.php');
 }
+//connection
+require 'connection.php';
 
-$conn=mysqli_connect('localhost', 'desznajc','h5va{X<dL*','desznajc_test');
-if(!$conn)
+if(!$connection)
 {
-die("Connection failed: " . mysqli_connect_error());
+	die("Connection failed: " . mysqli_connect_error());
 }
-$statement='SELECT * FROM stories';
 
-$result = mysqli_query($conn,$statement);
-
-echo '<br>';
+//selecting all stories
 $currentTitle = '';
 $currentID = '';
-while($row = mysqli_fetch_array($result))
-	{
-		$currentTitle = $row['title']; 
-		$currentID = $row['storyID'];
-	    echo "<br>"."<a href='editor.php?id=$currentID'>$currentTitle</a>";
-	}
+
+$statement = $connection->query("SELECT * FROM stories");
+
+//looping through each story, printing out an URL to editor
+//story id is passed through URL
+echo "<br><br><br><br><br><br><br><br><br><br>";
+?>
+ <button class="submit-button" onclick="window.location.href = 'settings.php';">Create new story</button><br>
+<?php
+while ($row = $statement->fetch())
+{
+	$currentTitle = $row['title']; 
+	$currentID = $row['storyID'];
+	
+	echo "<div class='story-box'><p>";
+	echo "<a href='editor.php?id=$currentID'>$currentTitle</a>";
+	echo "</p></div>";
+}
 
 
+require 'feed.view.php';
 ?>

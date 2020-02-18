@@ -26,7 +26,7 @@ if(isset($_SESSION['username'])){
 
 
 	try{
-	$connection=new PDO('mysql:host=localhost;dbname=desznajc_test', 'desznajc','h5va{X<dL*');
+	require 'connection.php';
 
 	$statement=$connection->prepare('SELECT * FROM users WHERE username = :Username');
 
@@ -34,29 +34,28 @@ if(isset($_SESSION['username'])){
 		array(':Username'=> $username));
 
 
-		$results=$statement->fetch();
-		if($results==false){
-			$errors.= '<li>Username is incorrect</li>';
-		}
+	$results=$statement->fetch();
+	if($results==false){
+		$errors.= '<li>Username is incorrect</li>';
+	}
 
-	$connection2=new PDO('mysql:host=localhost;dbname=desznajc_test', 'desznajc','h5va{X<dL*');
-	$statement2=$connection2->prepare('SELECT Password FROM users WHERE username = :Username');
+	$statement=$connection->prepare('SELECT Password FROM users WHERE username = :Username');
 
-	$statement2->execute(
+	$statement->execute(
 		array(':Username'=> $username));
 
 
-		$passcheck=$statement2->fetch(PDO::FETCH_ASSOC);
+	$passcheck=$statement->fetch(PDO::FETCH_ASSOC);
 
-		if($passcheck['Password']!=$pass){
+	if($passcheck['Password']!=$pass){
 		$errors.= '<li>Password is incorrect</li>'.'<br>';
-		}
+	}
 
 
-		if(empty($errors)){
-			$_SESSION['username'] = $username;
-			header('Location: index.php');
-		}
+	if(empty($errors)){
+		$_SESSION['username'] = $username;
+		header('Location: index.php');
+	}
 
 
 	}catch(PDOException $e){

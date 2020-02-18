@@ -51,7 +51,7 @@ $errors ='';
         }
 
 	try{
-	$connection=new PDO('mysql:host=localhost;dbname=desznajc_test', 'desznajc','h5va{X<dL*');
+	require 'connection.php';
 	$statement=$connection->prepare('SELECT * FROM users WHERE username = :Username');
 
 	$statement->execute(

@@ -14,7 +14,7 @@ if(isset($_POST['submit2'])){
     else{
     	try{
     	//INSERTING TITLE
-    	$connection=new PDO('mysql:host=localhost;dbname=desznajc_test', 'desznajc','h5va{X<dL*');
+    	require 'connection.php';
 		$statement = $connection->prepare("INSERT INTO stories (storyID, title) VALUES(null, '$title')");
 		$statement->execute(
 			array(':title'=> $title));
