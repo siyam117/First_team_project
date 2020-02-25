@@ -1,0 +1,40 @@
+#feed-box {
+  background-color: #FFFFFF;
+  border-radius: 15px;
+  width: 75%;
+  margin: 0 auto;
+  padding: 20px 70px;
+}
+
+.feed-button {
+  background-color: #E4BBFE;
+  position: relative;
+  text-decoration: none;
+  color: #000000;
+  font-family: sans-serif;
+  display: block;
+  border-radius: 10px;
+  height: 80px;
+  margin: 20px 0;
+  transition: box-shadow 0.2s;
+}
+
+.feed-button:hover {
+  box-shadow: 0px 0px 0px 5px #E4BBFE;
+}
+
+#feed-button-addstory {
+  background-color: #50FC5A;
+}
+
+#feed-button-addstory:hover {
+  box-shadow: 0px 0px 0px 5px #50FC5A;
+}
+
+.feed-button-text {
+  display: inline;
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translate(0, -50%);
+}

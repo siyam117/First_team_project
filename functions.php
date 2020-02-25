@@ -46,9 +46,9 @@
 
     public static function createCookie($user_id, $token, $serial)
     {
-      setCookie("user_id", $user_id, time() + (60), "/");
-      setCookie("token", $token, time() + (60), "/");
-      setCookie("serial", $serial, time() + (60), "/");
+      setCookie("user_id", $user_id, time() + (360), "/");
+      setCookie("token", $token, time() + (360), "/");
+      setCookie("serial", $serial, time() + (360), "/");
     }
 
     public static function createSession($user_id, $token, $serial)
@@ -122,12 +122,19 @@
       }
     }
 
-    public static function sqlSELECT($conn, $query)
+    public static function sqlSELECT($conn, $query, $fetch_all = false)
     {
       $stmt = $conn->prepare($query);
       $stmt->execute();
 
-      return $stmt->fetch(PDO::FETCH_ASSOC);
+      if ($fetch_all)
+      {
+        return $stmt->fetchAll();
+      }
+      else
+      {
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+      }
     }
 
     public static function passwordHash($password, $salt)
