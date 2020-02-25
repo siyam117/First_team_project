@@ -1,5 +1,5 @@
 #story-display-box {
-  background-color: #FFFFFF;
+  background-color: #1b2937;
   font-size: 17px;
   font-family: sans-serif;
   border-radius: 15px;
@@ -15,6 +15,7 @@
 }
 
 #story-title {
+  color: #FFFFFF;
   position: absolute;
   font-size: 50px;
   top: 50%;
@@ -23,11 +24,11 @@
 }
 
 hr {
-  border: 1px solid black;
+  border: 1px solid #FFFFFF;
 }
 
 #story-display-box-body {
-
+  color: #FFFFFF;
 }
 
 .story-section {
