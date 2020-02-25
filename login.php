@@ -1,23 +1,23 @@
 <?php
 
-  include_once("config.php");
+  include_once("connection.php");
   include_once("functions.php");
 
-  if (!func::checkLoginState($dbh))
+  if (!func::checkLoginState($conn))
   {
     if (isset($_POST["username"]) && isset($_POST["password"]))
     {
-      $username = $_POST["username"];
-      $password = $_POST["password"];
+      $username = filter_var($_POST["username"], FILTER_SANITIZE_STRING);
+      $password = filter_var($_POST["password"], FILTER_SANITIZE_STRING);
 
-      if (func::checkPassword($dbh, $username, $password))
+      $loginSuccess = func::checkPassword($conn, $username, $password);
+
+      if ($loginSuccess)
       {
-        $stmt = $dbh->prepare("SELECT * FROM users WHERE username='$username';");
-        $stmt->execute();
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $row = func::sqlSELECT($conn, "SELECT * FROM users WHERE username='$username';");
 
         $user_id = $row["user_id"];
-        func::startNewSession($dbh, $username, $user_id);
+        func::startNewSession($conn, $user_id);
         header("location:index.php");
       }
     }
@@ -41,18 +41,31 @@
     <script type="text/javascript" src="assets/js/lib/jquery-3.4.1.min.js"></script>
   </head>
   <body>
-    <div id="homepage-center" class="centered">
+    <div id="homepage-center">
       <div id="homepage-title">
         <div class="title" id="title-main">INKKER.IO</div>
         <div class="title" id="title-shadow-one">INKKER.IO</div>
         <div class="title" id="title-shadow-two">INKKER.IO</div>
       </div>
-      <form id="homepage-form" action="login.php" method="post">
-        <input class="input-field" type="text" autocomplete="off" placeholder="Username" name="username">
-        <input class="input-field" type="password" autocomplete="off" placeholder="Password" name="password">
-        <button class="submit-button" type="submit" name="button">Login <i class="fas fa-sign-in-alt"></i></button>
+      <form id="homepage-loginbox" action="login.php" method="post">
+        <div id="login-error">
+          <?php
+            if (isset($loginSuccess))
+            {
+              if (!$loginSuccess)
+              {
+                echo "<div>Incorrect username/password!</div>";
+              }
+            }
+          ?>
+        </div>
+        <input class="input-field" id="username-field" type="text" autocomplete="off" placeholder="Username" name="username">
+        <input class="input-field" id="password-field" type="password" autocomplete="off" placeholder="Password" name="password">
+        <button class="submit-button" id="login-button" type="submit" name="button" disabled>Login <i class="fas fa-sign-in-alt"></i></button>
       </form>
       <button class="submit-button" onclick="window.location.href = 'register.php';" name="button">Register</button>
     </div>
+
+    <script type="text/javascript" src="assets/js/login.js"></script>
   </body>
 </html>

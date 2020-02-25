@@ -8,12 +8,12 @@ if(isset($_SESSION['username'])){
         $username = $_POST['username'];
         $pass = $_POST['password'];
         $pass = hash('sha512', $pass);
-		$sent = $_POST['submit'];
+				$sent = $_POST['submit'];
 
         if(!empty($username)){
             $username = strtolower(filter_var($username, FILTER_SANITIZE_STRING));
 
-        }else {
+        } else {
             $errors.= '<li>Please, introduce a username</li>'.'<br>';
         }
         if (!empty($pass)){
@@ -43,7 +43,6 @@ if(isset($_SESSION['username'])){
 
 	$statement->execute(
 		array(':Username'=> $username));
-
 
 	$passcheck=$statement->fetch(PDO::FETCH_ASSOC);
 

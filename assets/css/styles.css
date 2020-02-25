@@ -12,7 +12,7 @@ body {
 
 #homepage-center {
   width: 750px;
-  height: 500px;
+  height: 600px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -27,11 +27,33 @@ body {
   margin: auto;
 }
 
-#homepage-form {
-  height: 34%;
+#homepage-loginbox {
+  background-color: white;
+  border-radius: 20px;
+  height: 40%;
   display: block;
   margin: auto;
-  padding-top: 50px;
+  padding-top: 1px;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+#login-error {
+  color: red;
+  margin: 20px auto;
+  outline: none;
+  width: 250px;
+  height: 10px;
+  font-size: 17px;
+}
+
+#register-error {
+  color: red;
+  margin: 20px auto;
+  outline: none;
+  width: 250px;
+  height: 10px;
+  font-size: 17px;
 }
 
 .input-field {
@@ -44,6 +66,7 @@ body {
   height: 30px;
   font-size: 20px;
   border: 0 solid white;
+  border-bottom: 1px solid grey;
   border-radius: 3px;
   transition: box-shadow 0.3s, opacity 0.3s;
 }
@@ -65,7 +88,7 @@ body {
   transition: box-shadow 0.3s, background-color 0.3s;
 }
 
-.submit-button:hover {
+.submit-button:hover:enabled {
   box-shadow: 0px 0px 1px 3px #1FF5FF;
   background-color: #1FF5FF;
   cursor: pointer;

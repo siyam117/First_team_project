@@ -7,8 +7,8 @@ if(isset($_SESSION['username'])){
 $errors ='';
 
     if(isset($_POST['submit'])){
-        $username = $_POST['username'];
-        $pass = $_POST['password'];
+    $username = $_POST['username'];
+    $pass = $_POST['password'];
 		$pass2 = $_POST['password2'];
 		$email = $_POST['email'];
 		$bday = $_POST['bday'];

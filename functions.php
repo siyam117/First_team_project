@@ -2,7 +2,7 @@
 
   class func
   {
-    public static function checkLoginState($dbh)
+    public static function checkLoginState($conn)
     {
       if (!isset($_SESSION["user_id"]) || !isset($_COOKIE["PHPSESSID"]))
       {
@@ -14,12 +14,7 @@
         $token = $_COOKIE["token"];
         $serial = $_COOKIE["serial"];
 
-        $query = "SELECT * FROM sessions WHERE session_user_id=$user_id AND session_token='$token' AND session_serial='$serial';";
-
-        $stmt = $dbh->prepare($query);
-        $stmt->execute();
-
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $row = func::sqlSELECT($conn, "SELECT * FROM sessions WHERE session_user_id=$user_id AND session_token='$token' AND session_serial='$serial';");
 
         if (!empty($row))
         {
@@ -34,42 +29,40 @@
       }
     }
 
-    public static function startNewSession($dbh, $username, $user_id)
+    public static function startNewSession($conn, $user_id)
     {
 
-      $dbh->exec("DELETE FROM sessions WHERE session_user_id=$user_id;");
+      $conn->exec("DELETE FROM sessions WHERE session_user_id=$user_id;");
 
       $token = func::generateString32bit();
       $serial = func::generateString32bit();
 
-      func::createCookie($username, $user_id, $token, $serial);
-      func::createSession($username, $user_id, $token, $serial);
+      func::createCookie($user_id, $token, $serial);
+      func::createSession($user_id, $token, $serial);
 
       $timestamp = time();
-      $dbh->exec("INSERT INTO sessions (session_token, session_serial, session_timestamp, session_user_id) VALUES ('$token', '$serial', $timestamp, $user_id);");
+      $conn->exec("INSERT INTO sessions (session_token, session_serial, session_timestamp, session_user_id) VALUES ('$token', '$serial', $timestamp, $user_id);");
     }
 
-    public static function createCookie($username, $user_id, $token, $serial)
+    public static function createCookie($user_id, $token, $serial)
     {
-      setCookie("username", $username, time() + (60), "/");
       setCookie("user_id", $user_id, time() + (60), "/");
       setCookie("token", $token, time() + (60), "/");
       setCookie("serial", $serial, time() + (60), "/");
     }
 
-    public static function createSession($username, $user_id, $token, $serial)
+    public static function createSession($user_id, $token, $serial)
     {
       if (!isset($_SESSION["user_id"]) || !isset($_COOKIE["PHPSESSID"]))
       {
         session_start();
       }
-      $_SESSION["username"] = $username;
       $_SESSION["user_id"] = $user_id;
       $_SESSION["token"] = $token;
       $_SESSION["serial"] = $serial;
     }
 
-    public static function addNewUser($dbh, $username, $email, $password)
+    public static function addNewUser($conn, $username, $email, $password)
     {
       $salt = func::generateString32bit();
       $password = func::passwordHash($password, $salt);
@@ -79,13 +72,13 @@
       echo $password;
       echo $created_timestamp;
 
-      $dbh->exec("INSERT INTO users (username, email, password, password_salt, created_timestamp)
+      $conn->exec("INSERT INTO users (username, email, password, password_salt, created_timestamp)
       VALUES ('$username', '$email', '$password', '$salt', $created_timestamp);");
     }
 
-    public static function checkPassword($dbh, $username, $password)
+    public static function checkPassword($conn, $username, $password)
     {
-      $stmt = $dbh->prepare("SELECT * FROM users WHERE username='$username';");
+      $stmt = $conn->prepare("SELECT * FROM users WHERE username='$username';");
       $stmt->execute();
       $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -98,6 +91,43 @@
           return true;
         }
       }
+      return false;
+    }
+
+    public static function checkUniqueUsername($conn, $username)
+    {
+      $row = func::sqlSELECT($conn, "SELECT * FROM users WHERE username='$username';");
+
+      if (empty($row))
+      {
+        return true;
+      }
+      else
+      {
+        return false;
+      }
+    }
+
+    public static function checkUniqueEmail($conn, $email)
+    {
+      $row = func::sqlSELECT($conn, "SELECT * FROM users WHERE email='$email';");
+
+      if (empty($row))
+      {
+        return true;
+      }
+      else
+      {
+        return false;
+      }
+    }
+
+    public static function sqlSELECT($conn, $query)
+    {
+      $stmt = $conn->prepare($query);
+      $stmt->execute();
+
+      return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
     public static function passwordHash($password, $salt)
@@ -112,10 +142,10 @@
 
     public static function generateString32bit()
     {
-      $characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!.";
+      $characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.";
       $string = "";
       for ($x = 1; $x <= 32; $x++) {
-        $randomInt = rand(0, 63);
+        $randomInt = rand(0, strlen($characters) - 1);
         $string .= $characters[$randomInt];
       }
       return $string;
