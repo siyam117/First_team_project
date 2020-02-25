@@ -68,10 +68,6 @@
       $password = func::passwordHash($password, $salt);
       $created_timestamp = time();
 
-      echo $salt;
-      echo $password;
-      echo $created_timestamp;
-
       $conn->exec("INSERT INTO users (username, email, password, password_salt, created_timestamp)
       VALUES ('$username', '$email', '$password', '$salt', $created_timestamp);");
     }

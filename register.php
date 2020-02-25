@@ -19,7 +19,7 @@
 
       if ($allFieldsFilled && $passwordsMatch && $usernameUnique && $emailUnique)
       {
-        func::addNewUser($conn, $username, $email, $password);
+        func::addNewUser($conn, $username, $email, $passwordOne);
         header("location:login.php");
       }
     }
