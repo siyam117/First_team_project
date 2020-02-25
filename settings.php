@@ -7,9 +7,11 @@
 	{
 		$user_id = $_COOKIE["user_id"];
 
-		if(isset($_POST["title"]))
+		if(isset($_POST["title"]) && isset($_POST["num_sec"]) && isset($_POST["sec_length"]))
 		{
 			$title = $_POST["title"];
+			$section_amount = $_POST["num_sec"];
+			$section_length = $_POST["sec_length"];
 
 			if (empty($title))
 			{
@@ -17,10 +19,9 @@
 			}
 			else
 			{
-				$section_amount = 3;
 
 				//INSERTING STORY
-				$statement = $conn->prepare("INSERT INTO stories (creator_user_id, title, section_amount) VALUES ($user_id, '$title', $section_amount);");
+				$statement = $conn->prepare("INSERT INTO stories (creator_user_id, title, section_amount, section_length) VALUES ($user_id, '$title', $section_amount, $section_length);");
 				$statement->execute();
 
 				//RETRIEVING STORY ID
@@ -53,6 +54,10 @@
         <form action="settings.php" method="POST">
         <p>Title:</p>
         <input type="text" name="title"> <br>
+				<p>Number of Sections:</p>
+        <input type="text" name="num_sec"> <br>
+        <p>Section Length:</p>
+        <input type="text" name="sec_length"> <br>
         <button type="submit" name="submit2">Create story</button>
         <br>
         <br>
