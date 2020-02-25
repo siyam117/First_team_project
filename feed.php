@@ -19,13 +19,7 @@
 
 <!DOCTYPE html>
 <html>
-    <head>
-	<style>
-	h {
-                font-size: 50px;
-		display: in;
-        }
-	</style>
+  <head>
 	<link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="assets/css/feed.css">
   <link rel="stylesheet" href="assets/css/title_animation2.css">

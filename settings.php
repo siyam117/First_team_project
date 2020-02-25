@@ -5,16 +5,22 @@
 
 	if(func::checkLoginState($conn))
 	{
-		if(isset($_POST["title"])){
-				$title = $_POST["title"];
-				if (empty($title))
-				{
-					echo "Please insert a title";
-				}
-				else
-				{
-				//INSERTING TITLE
-				$statement = $conn->prepare("INSERT INTO stories (title) VALUES ('$title');");
+		$user_id = $_COOKIE["user_id"];
+
+		if(isset($_POST["title"]))
+		{
+			$title = $_POST["title"];
+
+			if (empty($title))
+			{
+				echo "Please insert a title";
+			}
+			else
+			{
+				$section_amount = 3;
+
+				//INSERTING STORY
+				$statement = $conn->prepare("INSERT INTO stories (creator_user_id, title, section_amount) VALUES ($user_id, '$title', $section_amount);");
 				$statement->execute();
 
 				//RETRIEVING STORY ID
@@ -23,8 +29,8 @@
 				$storyID = $row["story_id"];
 
 				header("Location: editor.php?id=$storyID");
+			}
 		}
-	 }
   }
 	else
 	{
