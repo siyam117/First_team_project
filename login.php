@@ -36,11 +36,13 @@
   <head>
     <title>Login</title>
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/title_animation.css">
+    <link rel="stylesheet" href="assets/css/login.css">
+    <link id="animation-stylesheet" rel="stylesheet" href="assets/css/title_animation.css">
     <script src="https://kit.fontawesome.com/e82695925e.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="assets/js/lib/jquery-3.4.1.min.js"></script>
   </head>
   <body>
+    <button id="title-toggle-button" type="button">TOGGLE TITLE</button>
     <div id="homepage-center">
       <div id="homepage-title">
         <div class="title" id="title-main">INKKER.IO</div>
@@ -67,5 +69,6 @@
     </div>
 
     <script type="text/javascript" src="assets/js/login.js"></script>
+    <script type="text/javascript" src="assets/js/title_animation_toggle.js"></script>
   </body>
 </html>

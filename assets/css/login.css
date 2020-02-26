@@ -1,0 +1,27 @@
+#title-toggle-button {
+  color: #FFFFFF;
+  font-family: font1;
+  font-size: 35px;
+  background-color: #2F3D4B;
+  border: 0 solid black;
+  border-radius: 10px;
+  width: 200px;
+  height: 75px;
+  outline: none;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+#title-toggle-button:hover {
+  background-color: #4D515F;
+  transform: translate(-50%, -10%);
+}
+
+#title-toggle-button:active {
+  transition: transform 0.05s;
+  background-color: #2F3D4B;
+  transform: translate(-50%, 0%);
+}
