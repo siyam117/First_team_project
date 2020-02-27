@@ -1,14 +1,15 @@
 :root {
-  --s1x: -49%;
-  --s1y: -30%;
-  --s2x: -51%;
-  --s2y: -30%;
+  --s1x: -51%;
+  --s1y: -29%;
+  --s2x: -49%;
+  --s2y: -31%;
 }
 
 .title {
   font-family: "font1";
   font-size: 175px;
   color: #FFFFFF;
+  mix-blend-mode: screen;
 
   position: absolute;
   top: 50%;
@@ -17,10 +18,14 @@
 }
 
 #title-main {
+  z-index: -2;
+  color: lightgreen;
+  user-select: none;
 }
 
 #title-shadow-one {
-  color: #00FFFF;
+  color: blue;
+  text-shadow: 0px 0px 7px blue;
   user-select: none;
   transform: translate(var(--s1x), var(--s1y));
   animation: glitch-shadow-one 5s infinite;
@@ -28,11 +33,11 @@
 }
 
 #title-shadow-two {
-  color: #FF00FF;
-  user-select: none;
+  color: red;
+  text-shadow: 0px 0px 7px red;
   transform: translate(var(--s2x), var(--s2y));
   animation: glitch-shadow-two 5s infinite;
-  z-index: -2;
+  z-index: 0;
 }
 
 
