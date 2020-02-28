@@ -93,7 +93,7 @@ button {
   outline: none;
   width: 250px;
   height: 10px;
-  font-size: 17px;
+  font-size: 15px;
 }
 
 #register-error {
@@ -102,7 +102,7 @@ button {
   outline: none;
   width: 250px;
   height: 10px;
-  font-size: 17px;
+  font-size: 15px;
 }
 
 .input-field {
