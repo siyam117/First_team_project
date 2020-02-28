@@ -24,12 +24,20 @@
 			$writer_user_id = $_COOKIE["user_id"];
 			$section_order = $_POST["sectionOrder"];
 			$section_text = $_POST["sectionText"];
-			$word_count = count(explode(" ", $section_text));
 
-			if ($word_count <= $section_length)
+			$section_text = func::cleanEditorInput($section_text);
+
+			if ($section_text != null)
 			{
-				$stmt = $conn->prepare("INSERT INTO sections (story_id, writer_user_id, section_order, section_text) VALUES ($story_id, $writer_user_id, $section_order, '$section_text');");
-				$stmt->execute();
+
+				$word_count = count(explode(" ", $section_text));
+
+				if ($word_count > 0 && $word_count <= $section_length)
+				{
+					$stmt = $conn->prepare("INSERT INTO sections (story_id, writer_user_id, section_order, section_text) VALUES ($story_id, $writer_user_id, $section_order, '$section_text');");
+					$stmt->execute();
+				}
+
 			}
 		}
 

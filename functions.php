@@ -118,6 +118,20 @@
       }
     }
 
+    public static function cleanEditorInput($text)
+    {
+      $text = trim($text);
+      $text = strip_tags($text);
+
+      if (!preg_match("/^([\x20-\x7E]|\n|\r)+$/", $text)) {
+        return null;
+      }
+
+      $text = str_replace("'", "\'", $text);
+
+      return $text;
+    }
+
     public static function sqlSELECT($conn, $query, $fetch_all = false)
     {
       $stmt = $conn->prepare($query);
