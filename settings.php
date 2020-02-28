@@ -23,6 +23,8 @@
 				else if (empty($section_length)) {echo "Please insert a section length";}
 				else
 				{
+					$title = func::cleanEditorInput($title);
+
 					//INSERTING STORY
 					$statement = $conn->prepare("INSERT INTO stories (creator_user_id, title, section_amount, section_length) VALUES ($user_id, '$title', $section_amount, $section_length);");
 					$statement->execute();
