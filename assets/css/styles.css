@@ -39,6 +39,7 @@ button {
 
 #header {
   background-color: #1b2937;
+  position: relative;
   direction: rtl;
   height: 100px;
   margin-bottom: 50px;

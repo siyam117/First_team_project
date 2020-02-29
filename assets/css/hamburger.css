@@ -1,0 +1,80 @@
+.dropdown {
+  position: relative;
+  padding-top: 30px;
+  height: 500px;
+  width: 300px;
+}
+
+.dropdown .body {
+  background-color: #1b2937;
+  border-radius: 10px;
+  position: absolute;
+  height: 0%;
+  width: 100%;
+  transition: height 1s;
+  z-index: 5;
+}
+
+.pushed .body {
+  height: 100%;
+}
+
+.hamburger {
+  display: inline-block;
+  position: relative;
+  height: 40px;
+  width: 100px;
+  cursor: pointer;
+}
+
+.hamburger .bar {
+  position: absolute;
+  border: 2px solid white;
+  background-color: white;
+  border-radius: 20px;
+  width: 60%;
+  left: 50%;
+  transition: opacity 0.5s, transform 0.5s, top 0.5s, left 0.5s, box-shadow 0.5s;
+}
+
+.hamburger .bar:nth-child(1) {
+  top: 0%;
+  transform: translate(-50%, 0%);
+}
+
+.hamburger .bar:nth-child(2) {
+  top: 50%;
+  transform-origin: 50% 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hamburger .bar:nth-child(3) {
+  top: 100%;
+  transform-origin: 50% 50%;
+  transform: translate(-50%, -100%);
+}
+
+.pushed .hamburger .bar:nth-child(1) {
+  opacity: 0;
+  transform: translate(-50%, -200%);
+}
+
+.pushed .hamburger .bar:nth-child(2) {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.pushed .hamburger .bar:nth-child(3) {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.pushed:hover .bar:nth-child(2) {
+  box-shadow: 0 0 10px 3px red;
+}
+
+.pushed:hover .bar:nth-child(3) {
+  box-shadow: 0 0 10px 3px blue;
+}

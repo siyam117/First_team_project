@@ -18,7 +18,7 @@
 }
 
 #title-main {
-  z-index: -2;
+  z-index: 1;
   color: lightgreen;
   user-select: none;
 }
@@ -29,7 +29,7 @@
   user-select: none;
   transform: translate(var(--s1x), var(--s1y));
   animation: glitch-shadow-one 5s infinite;
-  z-index: -1;
+  z-index: 2;
 }
 
 #title-shadow-two {
@@ -37,7 +37,19 @@
   text-shadow: 0px 0px 7px red;
   transform: translate(var(--s2x), var(--s2y));
   animation: glitch-shadow-two 5s infinite;
-  z-index: 0;
+  z-index: 3;
+}
+
+.header-title {
+  display: inline-block;
+  position: absolute;
+  top: 35%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+}
+
+.header-title .title {
+  font-size: 75px;
 }
 
 
