@@ -48,6 +48,7 @@
         </div>
       </div>
       <div id="feed-box">
+        <a class="feed-button" id="feed-button-addstory" href="private.php"><div class="feed-button-text">Create private game</div></a>
         <a class="feed-button" id="feed-button-addstory" href="settings.php"><div class="feed-button-text">Create new story</div></a>
         <?php
           foreach ($row as $storydata)
