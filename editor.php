@@ -62,7 +62,7 @@
 		<script type="text/javascript" src="assets/js/lib/jquery-3.4.1.min.js"></script>
 		<title>Editor</title>
 	</head>
-	<body>
+		<body oncopy="return false" oncut="return false" onpaste="return false">
 		<div id="story-display-box">
 			<div id="story-display-box-header">
 				<a href="feed.php">Go Back</a><br>
