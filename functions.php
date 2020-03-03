@@ -167,6 +167,32 @@
       }
       return $string;
     }
+
+    public static function generateUniqueLobbyID($conn)
+    {
+      $unique = false;
+      $fail_count = 0;
+
+      while (!$unique) {
+        $characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        $lobby_id = "";
+        for ($x = 1; $x <= 5; $x++) {
+          $randomInt = rand(0, strlen($characters) - 1);
+          $lobby_id .= $characters[$randomInt];
+        }
+
+        $row = func::sqlSELECT($conn, "SELECT * FROM private_stories WHERE lobby_id='$lobby_id';");
+        if (empty($row))
+        {
+          $unique = true;
+          $fail_count++;
+        }
+
+        if ($fail_count >= 10) {return null;}
+      }
+
+      return $lobby_id;
+    }
   }
 
 ?>
