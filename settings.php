@@ -7,14 +7,13 @@
 	{
 		$user_id = $_COOKIE["user_id"];
 
-		if(isset($_POST["title"]) && isset($_POST["section_amount"]) && isset($_POST["section_length"]) && isset($_POST["story_image"]))
+		if(isset($_POST["title"]) && isset($_POST["section_amount"]) && isset($_POST["section_length"] && isset($_POST["story_image"]))
 		{
 			$title = $_POST["title"];
 			$section_amount = $_POST["section_amount"];
 			$section_length = $_POST["section_length"];
 			$story_image = $_POST["story_image"];
 
-			$story_image =  addslashes(file_get_contents($_FILES["story_image"]["tmp_name"]));
 			$amount_acceptable = $section_amount <= 20;
 			$length_acceptable = $section_length <= 1000;
 
