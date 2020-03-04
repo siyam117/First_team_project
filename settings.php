@@ -12,7 +12,6 @@
 			$title = $_POST["title"];
 			$section_amount = $_POST["section_amount"];
 			$section_length = $_POST["section_length"];
-			$story_image = $_POST["story_image"];
 
 			$amount_acceptable = $section_amount <= 20;
 			$length_acceptable = $section_length <= 1000;
@@ -27,7 +26,7 @@
 					$title = func::cleanEditorInput($title);
 
 					//INSERTING STORY
-					$statement = $conn->prepare("INSERT INTO stories (creator_user_id, title, section_amount, section_length, story_image) VALUES ($user_id, '$title', $section_amount, $section_length, $story_image);");
+					$statement = $conn->prepare("INSERT INTO stories (creator_user_id, title, section_amount, section_length) VALUES ($user_id, '$title', $section_amount, $section_length);");
 					$statement->execute();
 
 					//RETRIEVING STORY ID
@@ -65,7 +64,6 @@
         <input type="text" name="section_amount"> <br>
         <p>Section Length (1000 Max):</p>
         <input type="text" name="section_length"> <br>
-				<input type="file" name="story_image"> <br>
         <button type="submit">Create story</button>
         <br>
         <br>
