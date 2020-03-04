@@ -60,7 +60,7 @@
           }
         ?>
       </div>
-      
+      <script type="text/javascript" src="assets/js/theme_change.js"></script>
       <script type="text/javascript" src="assets/js/main.js"></script>
   </body>
 </html>
