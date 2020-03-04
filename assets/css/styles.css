@@ -27,8 +27,23 @@
     font-style: normal;
 }
 
+:root {
+  --bg-color: #141c25;
+  --header-color: #1b2937;
+  --primary-color: #1b2937;
+  --secondary-color: #2F3D4B;
+}
+
+[data-theme="light"] {
+    --primary-color: #FFFFFF;
+    --secondary-color: #FFFFFF;
+    --bg-color: #FFFFFF;
+    --header-color: #818cab;
+}
+
+
 body {
-  background: #141c25;
+  background: var(--bg-color);
   font-family: drogowskaz;
   margin: 0px;
 }
@@ -38,7 +53,7 @@ button {
 }
 
 #header {
-  background-color: #1b2937;
+  background-color: var(--header-color);
   position: relative;
   direction: rtl;
   height: 100px;
@@ -78,7 +93,7 @@ button {
 }
 
 #homepage-loginbox {
-  background-color: #1b2937;
+  background-color: var(--primary-color);
   border-radius: 20px;
   height: 40%;
   display: block;

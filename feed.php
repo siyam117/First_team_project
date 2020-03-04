@@ -38,7 +38,7 @@
             <span class="bar"></span>
           </div>
           <div class="body">
-
+            <input type="checkbox" id="title-toggle-button" />
           </div>
         </div>
         <div class="header-title">
@@ -60,7 +60,7 @@
           }
         ?>
       </div>
-
+      
       <script type="text/javascript" src="assets/js/main.js"></script>
   </body>
 </html>
