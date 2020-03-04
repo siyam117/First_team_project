@@ -35,10 +35,10 @@
 }
 
 [data-theme="light"] {
-    --primary-color: #FFFFFF;
-    --secondary-color: #FFFFFF;
+    --primary-color: #B1B3B3;
+    --secondary-color: #000000;
     --bg-color: #FFFFFF;
-    --header-color: #818cab;
+    --header-color: #000000;
 }
 
 
