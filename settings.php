@@ -7,7 +7,7 @@
 	{
 		$user_id = $_COOKIE["user_id"];
 
-		if(isset($_POST["title"]) && isset($_POST["section_amount"]) && isset($_POST["section_length"]) && isset($_POST["story_image"]))
+		if(isset($_POST["title"]) && isset($_POST["section_amount"]) && isset($_POST["section_length"]))
 		{
 			$title = $_POST["title"];
 			$section_amount = $_POST["section_amount"];
