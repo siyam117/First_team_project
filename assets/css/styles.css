@@ -103,6 +103,18 @@ button {
   margin-right: 25%;
 }
 
+#homepage-registerbox {
+  background-color: var(--primary-color);
+  border-radius: 20px;
+  height: 50%;
+  display: block;
+  margin: auto;
+  padding-top: 1px;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+
 #login-error {
   color: red;
   margin: 20px auto;
