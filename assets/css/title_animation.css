@@ -42,7 +42,7 @@
 
 .caption {
   font-family: "font1";
-  font-size: 175px;
+  font-size: 50px;
   color: #FFFFFF;
   mix-blend-mode: screen;
 
@@ -58,7 +58,7 @@
   user-select: none;
 }
 
-/* #caption-shadow-one {
+#caption-shadow-one {
   color: blue;
   text-shadow: 0px 0px 7px blue;
   user-select: none;
@@ -73,7 +73,7 @@
   transform: translate(var(--s2x), var(--s2y));
   animation: glitch-shadow-two 5s infinite;
   z-index: 3;
-} */
+} 
 
 .header-title {
   display: inline-block;
