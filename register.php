@@ -51,8 +51,8 @@
         <div class="title" id="title-shadow-two">INKKER.IO</div>
 
         <div class="caption" id="caption-main">A NEW WAY OF WRITING</div>
-        <!-- <div class="caption" id="caption-shadow-one">A NEW WAY OF WRITING</div>
-        <div class="caption" id="caption-shadow-two">A NEW WAY OF WRITING</div> -->
+        <div class="caption" id="caption-shadow-one">A NEW WAY OF WRITING</div>
+        <div class="caption" id="caption-shadow-two">A NEW WAY OF WRITING</div>
       </div>
     <form id="homepage-registerbox" action="register.php" method="post">
       <input class="input-field" id="username-field" type="text" autocomplete="off" placeholder="Username" name="username">
