@@ -83,10 +83,10 @@
 
         <h>Create a new story</h><br>
 
-        <form action="settings.php" id="homepage-loginbox" method="POST">
+        <form action="settings.php" method="POST">
         <input class="input-field" id="username-field" type="text" autocomplete="off" placeholder="Title" name="title">
 				<input class="input-field_story" id="username-field" type="text" autocomplete="off" placeholder="Number of Sections (20 Max)" name="section_amount">
-				<input class="input-field_Story" id="username-field" type="text" autocomplete="off" placeholder="Section Length (1000 Max)" name="section_length">
+				<input class="input-field_story" id="username-field" type="text" autocomplete="off" placeholder="Section Length (1000 Max)" name="section_length">
 				<button class="submit-button" id="login-button" type="submit" name="button" disabled>Create Story <i class="fas fa-sign-in-alt"></i></button>
 
         <br>
