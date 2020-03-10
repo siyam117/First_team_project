@@ -38,3 +38,38 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.create {
+  font-family: "font1";
+  font-size: 50px;
+  color: #FFFFFF;
+  mix-blend-mode: screen;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+}
+
+#create-main {
+  z-index: 1;
+  color: white;
+  user-select: none;
+}
+
+#create-shadow-one {
+  color: blue;
+  text-shadow: 0px 0px 7px blue;
+  user-select: none;
+  transform: translate(var(--s1x), var(--s1y));
+  animation: glitch-shadow-one 5s infinite;
+  z-index: 2;
+}
+
+#create-shadow-two {
+  color: red;
+  text-shadow: 0px 0px 7px red;
+  transform: translate(var(--s2x), var(--s2y));
+  animation: glitch-shadow-two 5s infinite;
+  z-index: 3;
+}

@@ -53,9 +53,12 @@
     <head>
 			<link rel="stylesheet" href="assets/css/styles.css">
 			<link rel="stylesheet" href="assets/css/hamburger.css">
+			<link rel="stylesheet" href="assets/css/settings.css"
 			<link id="animation-stylesheet" rel="stylesheet" href="assets/css/title_animation.css">
         <meta charset="UTF-8">
         <title></title>
+			<script src="https://kit.fontawesome.com/e82695925e.js" crossorigin="anonymous"></script>
+		  <script type="text/javascript" src="assets/js/lib/jquery-3.4.1.min.js"></script>
 	</head>
     <body>
 			<div id="header">
@@ -78,10 +81,12 @@
           <div class="title" id="title-main">INKKER.IO</div>
           <div class="title" id="title-shadow-one">INKKER.IO</div>
           <div class="title" id="title-shadow-two">INKKER.IO</div>
+
+					<div class="create" id="create-main">Create a New Story</div>
+	        <div class="create" id="create-shadow-one">Create a New Story<</div>
+	        <div class="create" id="create-shadow-two">Create a New Story<</div>
         </div>
       </div>
-
-        <h>Create a new story</h><br>
 
         <form action="settings.php" id="homepage-loginbox" method="POST">
         <input class="input-field" id="username-field" type="text" autocomplete="off" placeholder="Title" name="title">
