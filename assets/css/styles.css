@@ -103,6 +103,20 @@ button {
   margin-right: 25%;
 }
 
+#settingspage-box {
+  background-color: var(--primary-color);
+  position: relative;
+  top: 50%;
+  border-radius: 20px;
+  height: 250px;
+  width: 350px;
+  display: block;
+  margin: auto;
+  padding-top: 1px;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
 #homepage-registerbox {
   background-color: var(--primary-color);
   border-radius: 20px;
@@ -160,7 +174,7 @@ button {
   outline: none;
   width: 250px;
   height: 30px;
-  font-size: 10px;
+  font-size: 16px;
   border: 0 solid white;
   border-bottom: 1px solid grey;
   border-radius: 3px;

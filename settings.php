@@ -81,9 +81,9 @@
 
 
         </div>
-				<div class="create" id="create-main">Create a New Story</div>
-				<div class="create" id="create-shadow-one">Create a New Story</div>
-				<div class="create" id="create-shadow-two">Create a New Story</div>
+				<div class="create" id="create-main">CREATE A NEW STORY</div>
+				<div class="create" id="create-shadow-one">CREATE A NEW STORY</div>
+				<div class="create" id="create-shadow-two">CREATE A NEW STORY</div>
       </div>
 
 
@@ -92,7 +92,7 @@
 
         <h>Create a new story</h><br> -->
 
-				<form action="settings.php" method="POST" id="homepage-loginbox">
+				<form action="settings.php" method="POST" id="settingspage-box">
 				<input class="input-field" id="username-field" type="text" autocomplete="off" placeholder="Title" name="title">
 
 				<input class="input-field_story" id="username-field" type="text" autocomplete="off" placeholder="Number of Sections (20 Max)" name="section_amount">
