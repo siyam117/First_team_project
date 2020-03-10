@@ -59,10 +59,7 @@
 	</head>
     <body>
 			<div id="header">
-      <?php
-      $user_id = $_COOKIE["user_id"];
-      echo "<a href='profile.php?id=$user_id'>My profile</a><br>";
-      ?>
+      
 
         <div class="dropdown">
           <div class="hamburger">
