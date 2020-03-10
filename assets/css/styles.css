@@ -108,7 +108,7 @@ button {
   position: absolute;
   transform: translate(-50%,-50%);
   top: 50%;
-  left: 50%;
+  left: 25%;
   border-radius: 20px;
   height: 250px;
   width: 350px;
@@ -167,22 +167,7 @@ button {
   opacity: 1; /* Fully shown on mouse-over */
 }
 
-/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none; /* Override default look */
-  appearance: none;
-  width: 25px; /* Set a specific slider handle width */
-  height: 25px; /* Slider handle height */
-  background: #4CAF50; /* Green background */
-  cursor: pointer; /* Cursor on hover */
-}
 
-.slider::-moz-range-thumb {
-  width: 25px; /* Set a specific slider handle width */
-  height: 25px; /* Slider handle height */
-  background: #4CAF50; /* Green background */
-  cursor: pointer; /* Cursor on hover */
-}
 .input-field {
   font-family: inherit;
   opacity: 0.8;
