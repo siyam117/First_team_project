@@ -79,10 +79,11 @@
           <div class="title" id="title-shadow-one">INKKER.IO</div>
           <div class="title" id="title-shadow-two">INKKER.IO</div>
 
-					<div class="create" id="create-main">Create a New Story</div>
-	        <div class="create" id="create-shadow-one">Create a New Story<</div>
-	        <div class="create" id="create-shadow-two">Create a New Story<</div>
+
         </div>
+				<div class="create" id="create-main">Create a New Story</div>
+				<div class="create" id="create-shadow-one">Create a New Story</div>
+				<div class="create" id="create-shadow-two">Create a New Story</div>
       </div>
 
 
