@@ -12,7 +12,7 @@
   mix-blend-mode: screen;
 
   position: absolute;
-  top: 50%;
+  top: 42%;
   left: 50%;
   transform: translate(-50%, -30%);
 }
@@ -42,12 +42,12 @@
 
 .caption {
   font-family: "font1";
-  font-size: 50px;
+  font-size: 34px;
   color: #FFFFFF;
   mix-blend-mode: screen;
 
   position: absolute;
-  top: 50%;
+  top: 86%;
   left: 50%;
   transform: translate(-50%, -30%);
 }
@@ -73,7 +73,7 @@
   transform: translate(var(--s2x), var(--s2y));
   animation: glitch-shadow-two 5s infinite;
   z-index: 3;
-} 
+}
 
 .header-title {
   display: inline-block;
