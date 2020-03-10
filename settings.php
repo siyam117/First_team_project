@@ -51,6 +51,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+			<link rel="stylesheet" href="assets/css/styles.css">
         <meta charset="UTF-8">
         <title></title>
 	</head>
@@ -65,7 +66,6 @@
         <p>Section Length (1000 Max):</p>
         <input type="text" name="section_length"> <br>
         <button type="submit">Create story</button>
-				<p>Hi</p>
         <br>
         <br>
 
