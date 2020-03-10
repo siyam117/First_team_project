@@ -27,8 +27,23 @@
     font-style: normal;
 }
 
+:root {
+  --bg-color: #141c25;
+  --header-color: #1b2937;
+  --primary-color: #1b2937;
+  --secondary-color: #2F3D4B;
+}
+
+[data-theme="light"] {
+    --primary-color: #B1B3B3;
+    --secondary-color: #000000;
+    --bg-color: #FFFFFF;
+    --header-color: #000000;
+}
+
+
 body {
-  background: #141c25;
+  background: var(--bg-color);
   font-family: drogowskaz;
   margin: 0px;
 }
@@ -38,7 +53,7 @@ button {
 }
 
 #header {
-  background-color: #1b2937;
+  background-color: var(--header-color);
   position: relative;
   direction: rtl;
   height: 100px;
@@ -78,7 +93,7 @@ button {
 }
 
 #homepage-loginbox {
-  background-color: #1b2937;
+  background-color: var(--primary-color);
   border-radius: 20px;
   height: 40%;
   display: block;
@@ -87,6 +102,18 @@ button {
   margin-left: 25%;
   margin-right: 25%;
 }
+
+#homepage-registerbox {
+  background-color: var(--primary-color);
+  border-radius: 20px;
+  height: 50%;
+  display: block;
+  margin: auto;
+  padding-top: 1px;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
 
 #login-error {
   color: red;

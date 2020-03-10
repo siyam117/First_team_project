@@ -67,9 +67,10 @@
       $salt = func::generateString32bit();
       $password = func::passwordHash($password, $salt);
       $created_timestamp = time();
+      $pp = 'assets/images/default.jpg';
 
-      $conn->exec("INSERT INTO users (username, email, password, password_salt, created_timestamp)
-      VALUES ('$username', '$email', '$password', '$salt', $created_timestamp);");
+      $conn->exec("INSERT INTO users (username, email, password, password_salt, created_timestamp, picture)
+      VALUES ('$username', '$email', '$password', '$salt', '$created_timestamp', '$pp');");
     }
 
     public static function checkPassword($conn, $username, $password)

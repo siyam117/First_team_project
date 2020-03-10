@@ -1,5 +1,5 @@
 #feed-box {
-  background-color: #1b2937;
+  background-color: var(--primary-color);
   border-radius: 15px;
   width: 75%;
   margin: 0 auto;
