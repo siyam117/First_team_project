@@ -65,6 +65,7 @@
         <p>Section Length (1000 Max):</p>
         <input type="text" name="section_length"> <br>
         <button type="submit">Create story</button>
+				<p>Hi</p>
         <br>
         <br>
 
