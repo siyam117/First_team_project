@@ -94,9 +94,9 @@
 
 				<form action="settings.php" method="POST" id="settingspage-box">
 				<input class="input-field" id="username-field" type="text" autocomplete="off" placeholder="Title" name="title">
-				<h2>Number Of Sections</h2>
+				<label class ="settings_text">Number Of Sections</label>
 				<input class="slider" id="username-field" type="range" autocomplete="off" min="5" max = "20" value="10" placeholder="Number of Sections " name="section_amount">
-				<h2>Section Length</h2>
+				<label class = "settings_text">Section Length</label>
 				<input class="slider" id="username-field" type="range" autocomplete="off" min="5" max = "20" value="10" placeholder="Section Length (1000 Max)" name="section_length">
 				<button class="submit-button" id="login-button" type="submit" name="button">Create Story <i class="fas fa-sign-in-alt"></i></button>
 
