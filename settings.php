@@ -96,7 +96,7 @@
 
 				<input class="input-field_story" id="username-field" type="text" autocomplete="off" placeholder="Number of Sections (20 Max)" name="section_amount">
 				<input class="input-field_story" id="username-field" type="text" autocomplete="off" placeholder="Section Length (1000 Max)" name="section_length">
-				<button class="submit-button" id="login-button" type="submit" name="button" disabled>Create Story <i class="fas fa-sign-in-alt"></i></button>
+				<button class="submit-button" id="login-button" type="submit" name="button">Create Story <i class="fas fa-sign-in-alt"></i></button>
 
 				<br>
 				<br>
