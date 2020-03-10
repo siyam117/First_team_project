@@ -56,6 +56,29 @@
         <title></title>
 	</head>
     <body>
+			<div id="header">
+      <?php
+      $user_id = $_COOKIE["user_id"];
+      echo "<a href='profile.php?id=$user_id'>My profile</a><br>";
+      ?>
+
+        <div class="dropdown">
+          <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+          <div class="body">
+            <input type="checkbox" id="title-toggle-button" />
+          </div>
+        </div>
+        <div class="header-title">
+          <div class="title" id="title-main">INKKER.IO</div>
+          <div class="title" id="title-shadow-one">INKKER.IO</div>
+          <div class="title" id="title-shadow-two">INKKER.IO</div>
+        </div>
+      </div>
+			
         <h>Create a new story</h><br>
 
         <form action="settings.php" method="POST">
