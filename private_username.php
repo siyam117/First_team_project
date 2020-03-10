@@ -23,7 +23,7 @@
     {
       func::startNewSessionPRIVATE($conn, $private_user_id);
 
-      sleep(1);
+      usleep(100000);
 
       header("Location: private_lobby.php?id=$lobby_id");
     }

@@ -126,7 +126,9 @@
       }
       else
       {
-        $conn->exec("INSERT INTO private_users (user_id, username, lobby_id, created_timestamp) VALUES ($private_user_id, '$username', '$lobby_id', $created_timestamp);");
+        echo "hey";
+        $res = $conn->exec("INSERT INTO private_users (user_id, username, lobby_id, created_timestamp) VALUES ($private_user_id, '$username', '$lobby_id', $created_timestamp);");
+        echo $res;
         return $private_user_id;
       }
     }
