@@ -94,19 +94,21 @@
 }
 
 #create-shadow-one {
+  animation-direction: reverse;
   color: blue;
   text-shadow: 0px 0px 7px blue;
   user-select: none;
   transform: translate(var(--s1x), var(--s1y));
-  animation: glitch-shadow-one1 5s infinite;
+  animation: glitch-shadow-one 5s infinite;
   z-index: 2;
 }
 
 #create-shadow-two {
+  animation-direction: reverse;
   color: red;
   text-shadow: 0px 0px 7px red;
   transform: translate(var(--s2x), var(--s2y));
-  animation: glitch-shadow-two1 5s infinite;
+  animation: glitch-shadow-two 5s infinite;
   z-index: 3;
 }
 
@@ -178,61 +180,6 @@
   }
   /* (0%, 0%) */
   18% {
-    transform: translate(calc(var(--s2x)), calc(var(--s2y)));
-  }
-
-  20% {
-    transform: translate(calc(var(--s2x)), calc(var(--s2y)));
-  }
-}
-
-@keyframes glitch-shadow-one1 {
-  0% {
-    transform: translate(calc(var(--s1x)), calc(var(--s1y)));
-  }
-
-  8% {
-    transform: translate(calc(var(--s1x)), calc(var(--s1y)));
-  }
-  /* (4%, -4%) */
-  11% {
-    transform: translate(calc(var(--s1x) + 4%), calc(var(--s1y) - 4%));
-  }
-
-  17.9% {
-    transform: translate(calc(var(--s1x) + 4%), calc(var(--s1y) - 4%));
-  }
-  /* (-3%, 3%) */
-  19% {
-    transform: translate(calc(var(--s1x) - 3%), calc(var(--s1y) + 3%));
-  }
-
-  20% {
-    transform: translate(calc(var(--s1x) - 3%), calc(var(--s1y) + 3%));
-  }
-  22% {
-    transform: translate(calc(var(--s1x)), calc(var(--s1y)));
-  }
-}
-
-@keyframes glitch-shadow-two1 {
-  0% {
-    transform: translate(calc(var(--s2x)), calc(var(--s2y)));
-  }
-
-  8% {
-    transform: translate(calc(var(--s2x)), calc(var(--s2y)));
-  }
-  /* (-6%, 6%) */
-  11% {
-    transform: translate(calc(var(--s2x) - 6%), calc(var(--s2y)));
-  }
-
-  17.9% {
-    transform: translate(calc(var(--s2x) - 6%), calc(var(--s2y)));
-  }
-  /* (0%, 0%) */
-  19% {
     transform: translate(calc(var(--s2x)), calc(var(--s2y)));
   }
 
