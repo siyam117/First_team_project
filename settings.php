@@ -52,6 +52,8 @@
 <html>
     <head>
 			<link rel="stylesheet" href="assets/css/styles.css">
+			<link rel="stylesheet" href="assets/css/hamburger.css">
+			<link id="animation-stylesheet" rel="stylesheet" href="assets/css/title_animation.css">
         <meta charset="UTF-8">
         <title></title>
 	</head>
@@ -78,7 +80,7 @@
           <div class="title" id="title-shadow-two">INKKER.IO</div>
         </div>
       </div>
-			
+
         <h>Create a new story</h><br>
 
         <form action="settings.php" method="POST">
