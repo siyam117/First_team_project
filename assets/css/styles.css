@@ -105,8 +105,10 @@ button {
 
 #settingspage-box {
   background-color: var(--primary-color);
-  position: relative;
+  position: absolute;
+  transform: translate(-50%,-50%);
   top: 50%;
+  left: 50%;
   border-radius: 20px;
   height: 250px;
   width: 350px;
@@ -149,6 +151,38 @@ button {
   font-size: 15px;
 }
 
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 25px; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #4CAF50; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #4CAF50; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
 .input-field {
   font-family: inherit;
   opacity: 0.8;
@@ -174,7 +208,7 @@ button {
   outline: none;
   width: 250px;
   height: 30px;
-  font-size: 16px;
+  font-size: 15px;
   border: 0 solid white;
   border-bottom: 1px solid grey;
   border-radius: 3px;
@@ -182,6 +216,11 @@ button {
 }
 
 .input-field:focus {
+  box-shadow: 0px 0px 1px 3px #1FF5FF;
+  opacity: 1;
+}
+
+.input-field_story:focus {
   box-shadow: 0px 0px 1px 3px #1FF5FF;
   opacity: 1;
 }
