@@ -56,6 +56,8 @@
 			<link id="animation-stylesheet" rel="stylesheet" href="assets/css/title_animation.css">
         <meta charset="UTF-8">
         <title></title>
+			<script src="https://kit.fontawesome.com/e82695925e.js" crossorigin="anonymous"></script>
+		  <script type="text/javascript" src="assets/js/lib/jquery-3.4.1.min.js"></script>
 	</head>
     <body>
 			<div id="header">
@@ -76,13 +78,22 @@
           <div class="title" id="title-main">INKKER.IO</div>
           <div class="title" id="title-shadow-one">INKKER.IO</div>
           <div class="title" id="title-shadow-two">INKKER.IO</div>
+
+					<div class="create" id="create-main">Create a New Story</div>
+	        <div class="create" id="create-shadow-one">Create a New Story<</div>
+	        <div class="create" id="create-shadow-two">Create a New Story<</div>
         </div>
       </div>
 
-        <h>Create a new story</h><br>
+
+        <!-- <form action="settings.php" id="homepage-loginbox" method="POST">
+        <input class="input-field" id="username-field" type="text" autocomplete="off" placeholder="Title" name="title">
+
+        <h>Create a new story</h><br> -->
 
 				<form action="settings.php" method="POST" id="homepage-loginbox">
 				<input class="input-field" id="username-field" type="text" autocomplete="off" placeholder="Title" name="title">
+
 				<input class="input-field_story" id="username-field" type="text" autocomplete="off" placeholder="Number of Sections (20 Max)" name="section_amount">
 				<input class="input-field_story" id="username-field" type="text" autocomplete="off" placeholder="Section Length (1000 Max)" name="section_length">
 				<button class="submit-button" id="login-button" type="submit" name="button" disabled>Create Story <i class="fas fa-sign-in-alt"></i></button>
