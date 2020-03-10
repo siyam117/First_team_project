@@ -29,6 +29,35 @@
       }
     }
 
+    public static function checkPrivateSession($conn, $lobby_id)
+    {
+      if (isset($_COOKIE["Puser_id"]) && isset($_COOKIE["Ptoken"]))
+      {
+        $user_id = $_COOKIE["Puser_id"];
+        $token = $_COOKIE["Ptoken"];
+
+        $row = func::sqlSELECT($conn, "SELECT * FROM private_sessions WHERE session_user_id=$user_id AND session_token='$token';");
+
+        if (empty($row))
+        {
+          return false;
+        }
+        if (!($row["session_user_id"] == $_COOKIE["Puser_id"] && $row["session_token"] == $_COOKIE["Ptoken"]))
+        {
+          return false;
+        }
+
+        $row = func::sqlSELECT($conn, "SELECT * FROM private_users WHERE user_id=$user_id AND lobby_id='$lobby_id';");
+
+        if (empty($row))
+        {
+          return false;
+        }
+
+        return true;
+      }
+    }
+
     public static function startNewSession($conn, $user_id)
     {
 
@@ -44,11 +73,24 @@
       $conn->exec("INSERT INTO sessions (session_token, session_serial, session_timestamp, session_user_id) VALUES ('$token', '$serial', $timestamp, $user_id);");
     }
 
+    public static function startNewSessionPRIVATE($conn, $private_user_id)
+    {
+      $conn->exec("DELETE FROM private_sessions WHERE session_user_id=$private_user_id;");
+
+      $token = func::generateString32bit();
+
+      setCookie("Puser_id", $private_user_id, time() + (3600), "/");
+      setCookie("Ptoken", $token, time() + (3600), "/");
+
+      $timestamp = time();
+      $conn->exec("INSERT INTO private_sessions (session_token, session_timestamp, session_user_id) VALUES ('$token', $timestamp, $private_user_id);");
+    }
+
     public static function createCookie($user_id, $token, $serial)
     {
-      setCookie("user_id", $user_id, time() + (360), "/");
-      setCookie("token", $token, time() + (360), "/");
-      setCookie("serial", $serial, time() + (360), "/");
+      setCookie("user_id", $user_id, time() + (3600), "/");
+      setCookie("token", $token, time() + (3600), "/");
+      setCookie("serial", $serial, time() + (3600), "/");
     }
 
     public static function createSession($user_id, $token, $serial)
@@ -67,10 +109,26 @@
       $salt = func::generateString32bit();
       $password = func::passwordHash($password, $salt);
       $created_timestamp = time();
-      $pp = 'assets/images/default.jpg';
+      $pp = "assets/images/default.jpg";
 
       $conn->exec("INSERT INTO users (username, email, password, password_salt, created_timestamp, picture)
       VALUES ('$username', '$email', '$password', '$salt', '$created_timestamp', '$pp');");
+    }
+
+    public static function addNewUserPRIVATE($conn, $username, $lobby_id)
+    {
+      $private_user_id = func::generateUniquePrivateUserID($conn);
+      $created_timestamp = time();
+
+      if ($private_user_id == null)
+      {
+        return null;
+      }
+      else
+      {
+        $conn->exec("INSERT INTO private_users (user_id, username, lobby_id, created_timestamp) VALUES ($private_user_id, '$username', '$lobby_id', $created_timestamp);");
+        return $private_user_id;
+      }
     }
 
     public static function checkPassword($conn, $username, $password)
@@ -193,6 +251,32 @@
       }
 
       return $lobby_id;
+    }
+
+    public static function generateUniquePrivateUserID($conn)
+    {
+      $unique = false;
+      $fail_count = 0;
+
+      while (!$unique) {
+        $characters = "0123456789";
+        $private_user_id = "";
+        for ($x = 1; $x <= 10; $x++) {
+          $randomInt = rand(0, strlen($characters) - 1);
+          $private_user_id .= $characters[$randomInt];
+        }
+
+        $row = func::sqlSELECT($conn, "SELECT * FROM private_users WHERE user_id='$private_user_id';");
+        if (empty($row))
+        {
+          $unique = true;
+          $fail_count++;
+        }
+
+        if ($fail_count >= 20) {return null;}
+      }
+
+      return $private_user_id;
     }
   }
 

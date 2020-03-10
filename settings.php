@@ -52,6 +52,8 @@
 <html>
     <head>
 			<link rel="stylesheet" href="assets/css/styles.css">
+			<link rel="stylesheet" href="assets/css/hamburger.css">
+			<link id="animation-stylesheet" rel="stylesheet" href="assets/css/title_animation.css">
         <meta charset="UTF-8">
         <title></title>
 	</head>
@@ -78,19 +80,17 @@
           <div class="title" id="title-shadow-two">INKKER.IO</div>
         </div>
       </div>
-			
+
         <h>Create a new story</h><br>
 
-        <form action="settings.php" method="POST">
-        <p>Title:</p>
-        <input type="text" name="title"> <br>
-				<p>Number of Sections (20 Max):</p>
-        <input type="text" name="section_amount"> <br>
-        <p>Section Length (1000 Max):</p>
-        <input type="text" name="section_length"> <br>
-        <button type="submit">Create story</button>
-        <br>
-        <br>
+				<form action="settings.php" method="POST">
+				<input class="input-field" id="username-field" type="text" autocomplete="off" placeholder="Title" name="title">
+				<input class="input-field_story" id="username-field" type="text" autocomplete="off" placeholder="Number of Sections (20 Max)" name="section_amount">
+				<input class="input-field_story" id="username-field" type="text" autocomplete="off" placeholder="Section Length (1000 Max)" name="section_length">
+				<button class="submit-button" id="login-button" type="submit" name="button" disabled>Create Story <i class="fas fa-sign-in-alt"></i></button>
+
+				<br>
+				<br>
 
         <a href="feed.php">Cancel</a><br>
         <a href="logout.php">Log out</a><br>
