@@ -51,20 +51,44 @@
 <!DOCTYPE html>
 <html>
     <head>
+			<link rel="stylesheet" href="assets/css/styles.css">
+			<link rel="stylesheet" href="assets/css/hamburger.css">
+			<link id="animation-stylesheet" rel="stylesheet" href="assets/css/title_animation.css">
         <meta charset="UTF-8">
         <title></title>
 	</head>
     <body>
+			<div id="header">
+      <?php
+      $user_id = $_COOKIE["user_id"];
+      echo "<a href='profile.php?id=$user_id'>My profile</a><br>";
+      ?>
+
+        <div class="dropdown">
+          <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+          <div class="body">
+            <input type="checkbox" id="title-toggle-button" />
+          </div>
+        </div>
+        <div class="header-title">
+          <div class="title" id="title-main">INKKER.IO</div>
+          <div class="title" id="title-shadow-one">INKKER.IO</div>
+          <div class="title" id="title-shadow-two">INKKER.IO</div>
+        </div>
+      </div>
+
         <h>Create a new story</h><br>
 
-        <form action="settings.php" method="POST">
-        <p>Title:</p>
-        <input type="text" name="title"> <br>
-				<p>Number of Sections (20 Max):</p>
-        <input type="text" name="section_amount"> <br>
-        <p>Section Length (1000 Max):</p>
-        <input type="text" name="section_length"> <br>
-        <button type="submit">Create story</button>
+        <form action="settings.php" id="homepage-loginbox" method="POST">
+        <input class="input-field" id="username-field" type="text" autocomplete="off" placeholder="Title" name="title">
+				<input class="input-field_story" id="username-field" type="text" autocomplete="off" placeholder="Number of Sections (20 Max)" name="section_amount">
+				<input class="input-field_Story" id="username-field" type="text" autocomplete="off" placeholder="Section Length (1000 Max)" name="section_length">
+				<button class="submit-button" id="login-button" type="submit" name="button" disabled>Create Story <i class="fas fa-sign-in-alt"></i></button>
+
         <br>
         <br>
 

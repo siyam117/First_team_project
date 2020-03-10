@@ -149,6 +149,22 @@ button {
   transition: box-shadow 0.3s, opacity 0.3s;
 }
 
+.input-field_story {
+  font-family: inherit;
+  opacity: 0.8;
+  display: block;
+  margin: 20px auto;
+  padding: 0 10px;
+  outline: none;
+  width: 250px;
+  height: 30px;
+  font-size: 10px;
+  border: 0 solid white;
+  border-bottom: 1px solid grey;
+  border-radius: 3px;
+  transition: box-shadow 0.3s, opacity 0.3s;
+}
+
 .input-field:focus {
   box-shadow: 0px 0px 1px 3px #1FF5FF;
   opacity: 1;
