@@ -31,7 +31,7 @@
 }
 
 .section-line {
-  border: 1px solid #2F3D4B;
+  border: 1px solid var(--secondary-color);
   margin: 0 10px;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .story-section:hover {
-  background-color: #2F3D4B;
+  background-color: var(--secondary-color);
 }
 
 .story-section-input-button {
@@ -89,7 +89,7 @@
 
 .story-section-input-clickhere {
   font-size: 50px;
-  color: #1b2937;
+  color: var(--primary-color);
   user-select: none;
   position: absolute;
   top: 50%;

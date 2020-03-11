@@ -1,0 +1,13 @@
+[data-theme="light"] {
+  --bg-color: #FFFFFF;
+  --header-color: #000000;
+  --primary-color: #B1B3B3;
+  --secondary-color: #000000;
+}
+
+:root {
+  --bg-color: #141c25;
+  --header-color: #1b2937;
+  --primary-color: #1b2937;
+  --secondary-color: #2F3D4B;
+}

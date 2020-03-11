@@ -1,42 +1,53 @@
 :root {
   --s1x: -51%;
-  --s1y: -29%;
+  --s1y: -49%;
   --s2x: -49%;
-  --s2y: -31%;
+  --s2y: -51%;
 }
 
-.title {
+.glitch-container {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.glitch-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   font-family: "font1";
   font-size: 175px;
-  color: #FFFFFF;
+
   mix-blend-mode: screen;
-
-  position: absolute;
-  top: 42%;
-  left: 50%;
-  transform: translate(-50%, -30%);
 }
 
-#title-main {
-  z-index: 1;
+#glitch-main {
   color: lightgreen;
+
   user-select: none;
+  animation: animation-main 5s infinite;
+  z-index: 1;
 }
 
-#title-shadow-one {
+#glitch-shadow-one {
   color: blue;
   text-shadow: 0px 0px 7px blue;
   user-select: none;
   transform: translate(var(--s1x), var(--s1y));
-  animation: glitch-shadow-one 5s infinite;
+  animation: animation-shadow-one 5s infinite;
   z-index: 2;
 }
 
-#title-shadow-two {
+#glitch-shadow-two {
   color: red;
   text-shadow: 0px 0px 7px red;
   transform: translate(var(--s2x), var(--s2y));
-  animation: glitch-shadow-two 5s infinite;
+  animation: animation-shadow-two 5s infinite;
   z-index: 3;
 }
 
@@ -127,13 +138,13 @@
 
 
 
-@keyframes title-main-hold {
+@keyframes animation-main {
   0% {
-    transform: translate(-50%, -100%);
+    transform: translate(-50%, -50%);
   }
 }
 
-@keyframes glitch-shadow-one {
+@keyframes animation-shadow-one {
   0% {
     transform: translate(calc(var(--s1x)), calc(var(--s1y)));
   }
@@ -162,7 +173,7 @@
   }
 }
 
-@keyframes glitch-shadow-two {
+@keyframes animation-shadow-two {
   0% {
     transform: translate(calc(var(--s2x)), calc(var(--s2y)));
   }

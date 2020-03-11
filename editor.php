@@ -57,8 +57,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" href="assets/css/styles.css">
-	  <link rel="stylesheet" href="assets/css/editor.css">
+		<link rel="stylesheet" href="assets/css/master.css">
 		<script type="text/javascript" src="assets/js/lib/jquery-3.4.1.min.js"></script>
 		<title>Editor</title>
 	</head>

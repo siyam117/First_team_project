@@ -1,0 +1,128 @@
+@import "./fonts.css";
+@import "./colour_schemes.css";
+
+@import "./title_animation.css";
+@import "./hamburger.css";
+@import "./style_search.css";
+
+@import "./login.css";
+@import "./register.css";
+@import "./feed.css";
+@import "./settings.css";
+@import "./editor.css";
+
+
+
+
+
+body {
+  background: var(--bg-color);
+  font-family: drogowskaz;
+  margin: 0px;
+}
+
+button {
+  outline: none;
+}
+
+#header {
+  background-color: var(--header-color);
+  position: relative;
+  direction: rtl;
+  height: 100px;
+  margin-bottom: 50px;
+}
+
+#settingspage-box {
+  background-color: var(--primary-color);
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 25%;
+  border-radius: 20px;
+  height: 250px;
+  width: 350px;
+  display: block;
+  margin: auto;
+  padding-top: 1px;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+#homepage-registerbox {
+  background-color: var(--primary-color);
+  border-radius: 20px;
+  position: relative;
+  top: 60px;
+  height: 50%;
+  display: block;
+  margin: auto;
+  padding-top: 1px;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+
+
+
+
+.input-field {
+  font-family: inherit;
+  opacity: 0.8;
+  display: block;
+  margin: 20px auto;
+  padding: 0 10px;
+  outline: none;
+  width: 250px;
+  height: 30px;
+  font-size: 20px;
+  border: 0 solid white;
+  border-bottom: 1px solid grey;
+  border-radius: 3px;
+  transition: box-shadow 0.3s, opacity 0.3s;
+}
+
+.input-field_story {
+  font-family: inherit;
+  opacity: 0.8;
+  display: block;
+  margin: 20px auto;
+  padding: 0 10px;
+  outline: none;
+  width: 250px;
+  height: 30px;
+  font-size: 15px;
+  border: 0 solid white;
+  border-bottom: 1px solid grey;
+  border-radius: 3px;
+  transition: box-shadow 0.3s, opacity 0.3s;
+}
+
+.input-field:focus {
+  box-shadow: 0px 0px 1px 3px #1FF5FF;
+  opacity: 1;
+}
+
+.input-field_story:focus {
+  box-shadow: 0px 0px 1px 3px #1FF5FF;
+  opacity: 1;
+}
+
+.submit-button {
+  font-family: inherit;
+  display: block;
+  margin: 30px auto;
+  outline: none;
+  width: 270px;
+  height: 40px;
+  font-size: 20px;
+  border: 0 solid white;
+  border-radius: 3px;
+  transition: box-shadow 0.3s, background-color 0.3s;
+}
+
+.submit-button:hover:enabled {
+  box-shadow: 0px 0px 1px 3px #1FF5FF;
+  background-color: #1FF5FF;
+  cursor: pointer;
+}

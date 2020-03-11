@@ -1,0 +1,8 @@
+#register-error {
+  color: red;
+  margin: 20px auto;
+  outline: none;
+  width: 250px;
+  height: 10px;
+  font-size: 15px;
+}

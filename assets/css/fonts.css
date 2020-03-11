@@ -1,0 +1,28 @@
+@font-face {
+    font-family: "font1";
+    src: url("../fonts/font1.woff2") format("woff2"),
+         url("../fonts/font1.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "simplifica";
+    src: url("../fonts/simplifica.woff2") format("woff2"),
+         url("../fonts/simplifica.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "raleway";
+    src: url("../fonts/raleway-black.woff2") format("woff2"),
+         url("../fonts/raleway-black.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "drogowskaz";
+    src: url("../fonts/drogowskaz.woff2") format("woff2"),
+         url("../fonts/drogowskaz.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}

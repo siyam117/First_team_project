@@ -6,7 +6,7 @@
 }
 
 .dropdown .body {
-  background-color: #1b2937;
+  background-color: var(--primary-color);
   border-radius: 10px;
   position: absolute;
   height: 0%;
