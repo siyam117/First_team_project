@@ -43,7 +43,6 @@
   </head>
   <body>
     <button type="button" name="button" onclick="window.location.href='private_editor.php'">Start Game</button>
-    <button class="button" type="button">REFRESH</button>
     <?php
 
     echo "Your username is " . $self_username;
