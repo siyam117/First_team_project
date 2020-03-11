@@ -16,9 +16,9 @@
 
 
 body {
+  margin: 0px;
   background: var(--bg-color);
   font-family: drogowskaz;
-  margin: 0px;
 }
 
 button {
@@ -38,16 +38,19 @@ button {
 }
 
 #header #header-title {
+  position: absolute;
   top: 50%;
-  left: 5%;
+  left: 0%;
+  transform: translate(0%, -50%);
   height: 100%;
-  width: 100px;
-  font-size: 50px;
+  width: 350px;
+  margin-left: 0px;
+  font-size: 80px;
 }
 
-#header #dropdown {
+#header .dropdown {
   position: relative;
-  height: 500px;
+  height: 300px;
   width: 300px;
   padding-top: 30px;
 }

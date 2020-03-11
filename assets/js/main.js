@@ -1,3 +1,3 @@
-$(".dropdown").click(function() {
-  $(".dropdown").toggleClass("pushed");
+$("#header .dropdown .hamburger").click(function() {
+  $("#header .dropdown").toggleClass("pushed");
 });

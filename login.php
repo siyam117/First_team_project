@@ -51,6 +51,14 @@
         </div>
       </div>
 
+      <div id="login-caption">
+        <div class="glitch-container">
+          <div class="glitch-text" id="glitch-main">A NEW WAY OF WRITING</div>
+          <div class="glitch-text" id="glitch-shadow-one">A NEW WAY OF WRITING</div>
+          <div class="glitch-text" id="glitch-shadow-two">A NEW WAY OF WRITING</div>
+        </div>
+      </div>
+
       <form id="homepage-loginbox" action="login.php" method="post">
         <div id="login-error">
           <?php

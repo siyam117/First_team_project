@@ -87,7 +87,7 @@ if (isset($_POST["Go!"])){
       <div id="header">
 
         <!-- DROPDOWN START -->
-        <div id="dropdown">
+        <div class="dropdown">
 
           <div class="hamburger">
             <span class="bar"></span>
@@ -96,12 +96,20 @@ if (isset($_POST["Go!"])){
           </div>
 
           <div class="body">
-            <?php
-            $user_id = $_COOKIE["user_id"];
-            echo "<a href='profile.php?id=$user_id'>My profile</a><br>";
-            ?>
+            <div class="inner-body">
 
-            <input type="checkbox" id="title-toggle-button" />
+              <div class="section">
+                <?php
+                $user_id = $_COOKIE["user_id"];
+                echo "<a href='profile.php?id=$user_id'>My profile</a><br>";
+                ?>
+              </div>
+
+              <div class="section">
+                <input type="checkbox" id="title-toggle-button" />
+              </div>
+
+            </div>
           </div>
 
         </div>

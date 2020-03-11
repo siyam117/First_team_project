@@ -1,7 +1,13 @@
 #login-title {
-  height: 200px;
+  height: 175px;
   width: 100%;
   font-size: 175px;
+}
+
+#login-caption {
+  height: 50px;
+  width: 100%;
+  font-size: 40px;
 }
 
 #homepage-center {

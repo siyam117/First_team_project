@@ -1,3 +1,15 @@
+#register-title {
+  height: 175px;
+  width: 100%;
+  font-size: 175px;
+}
+
+#register-caption {
+  height: 50px;
+  width: 100%;
+  font-size: 40px;
+}
+
 #register-error {
   color: red;
   margin: 20px auto;
