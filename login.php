@@ -43,7 +43,7 @@
   <body>
     <div id="homepage-center">
 
-      <div id="homepage-title">
+      <div id="login-title">
         <div class="glitch-container">
           <div class="glitch-text" id="glitch-main">INKKER.IO</div>
           <div class="glitch-text" id="glitch-shadow-one">INKKER.IO</div>

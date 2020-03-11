@@ -7,7 +7,6 @@
 
 .glitch-container {
   position: relative;
-
   width: 100%;
   height: 100%;
   margin: 0;
@@ -19,37 +18,54 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   font-family: "font1";
-  font-size: 175px;
-
   mix-blend-mode: screen;
 }
 
 #glitch-main {
   color: lightgreen;
-
   user-select: none;
   animation: animation-main 5s infinite;
   z-index: 1;
 }
 
 #glitch-shadow-one {
+  transform: translate(var(--s1x), var(--s1y));
   color: blue;
   text-shadow: 0px 0px 7px blue;
   user-select: none;
-  transform: translate(var(--s1x), var(--s1y));
   animation: animation-shadow-one 5s infinite;
   z-index: 2;
 }
 
 #glitch-shadow-two {
+  transform: translate(var(--s2x), var(--s2y));
   color: red;
   text-shadow: 0px 0px 7px red;
-  transform: translate(var(--s2x), var(--s2y));
   animation: animation-shadow-two 5s infinite;
   z-index: 3;
 }
+
+
+
+
+.header-title {
+  display: inline-block;
+  position: absolute;
+  top: 35%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+}
+
+.header-title .title {
+  font-size: 75px;
+}
+
+
+
+
+
+
 
 .caption {
   font-family: "font1";
@@ -124,17 +140,7 @@
 }
 
 
-.header-title {
-  display: inline-block;
-  position: absolute;
-  top: 35%;
-  left: 10%;
-  transform: translate(-50%, -50%);
-}
 
-.header-title .title {
-  font-size: 75px;
-}
 
 
 

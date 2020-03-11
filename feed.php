@@ -87,7 +87,7 @@ if (isset($_POST["Go!"])){
       <div id="header">
 
         <!-- DROPDOWN START -->
-        <div class="dropdown">
+        <div id="dropdown">
 
           <div class="hamburger">
             <span class="bar"></span>
