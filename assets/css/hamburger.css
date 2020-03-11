@@ -18,6 +18,14 @@
   height: 50%;
 }
 
+.dropdown .body .inner-body .section a {
+  height: 50%;
+}
+
+.dropdown .body .inner-body .section input {
+  height: 50%;
+}
+
 .pushed .body {
   height: 100%;
 }
