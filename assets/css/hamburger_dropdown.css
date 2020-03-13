@@ -2,10 +2,11 @@
   background-color: var(--primary-color);
   border-radius: 10px;
   position: absolute;
-  height: 0%;
+  height: 150px;
   width: 100%;
-  transition: height 1s;
-  z-index: 5;
+  transform: translate(0%, -100%);
+  transition: transform 1s;
+  z-index: 1;
 }
 
 .dropdown .body .inner-body {
@@ -15,23 +16,33 @@
 }
 
 .dropdown .body .inner-body .section {
-  height: 50%;
-}
-
-.dropdown .body .inner-body .section a {
-  height: 50%;
-}
-
-.dropdown .body .inner-body .section input {
-  height: 50%;
-}
-
-.pushed .body {
   height: 100%;
 }
 
+.dropdown .body .inner-body .section .profile-button {
+  background-color: var(--secondary-color);
+  height: 100%;
+  width: 50%;
+}
+
+.pushed .body {
+  transform: translate(0%, -25px);
+}
+
+
+
+/* HAMBURGER ANIMATION CSS */
+
+.dropdown .hamburger-container {
+  position: relative;
+  height: 100%;
+  padding-top: 30px;
+  background-color: var(--header-color);
+  box-sizing: border-box;
+  z-index: 2;
+}
+
 .dropdown .hamburger {
-  display: inline-block;
   position: relative;
   height: 40px;
   width: 100px;

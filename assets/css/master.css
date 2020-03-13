@@ -2,7 +2,7 @@
 @import "./colour_schemes.css";
 
 @import "./title_animation.css";
-@import "./hamburger.css";
+@import "./hamburger_dropdown.css";
 @import "./style_search.css";
 
 @import "./login.css";
@@ -50,9 +50,8 @@ button {
 
 #header .dropdown {
   position: relative;
-  height: 300px;
+  height: 100%;
   width: 300px;
-  padding-top: 30px;
 }
 
 /* HEADER CSS END */

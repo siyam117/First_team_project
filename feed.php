@@ -83,16 +83,19 @@ if (isset($_POST["Go!"])){
     <title>Feed</title>
   </head>
     <body>
+
       <!-- HEADER START -->
       <div id="header">
 
         <!-- DROPDOWN START -->
         <div class="dropdown">
 
-          <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+          <div class="hamburger-container">
+            <div class="hamburger">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </div>
           </div>
 
           <div class="body">
@@ -101,13 +104,13 @@ if (isset($_POST["Go!"])){
               <div class="section">
                 <?php
                 $user_id = $_COOKIE["user_id"];
-                echo "<a href='profile.php?id=$user_id'>My profile</a>";
+                echo "<a class='profile-button' href='profile.php?id=$user_id'>My profile</a>";
                 ?>
               </div>
 
-              <div class="section">
+              <!-- <div class="section">
                 <input type="checkbox" id="title-toggle-button" />
-              </div>
+              </div> -->
 
             </div>
           </div>
@@ -127,6 +130,8 @@ if (isset($_POST["Go!"])){
 
       </div>
       <!-- HEADER END -->
+
+
 
       <div id="feed-box">
         <a class="feed-button" id="feed-button-addstory" href="private_options.php"><div class="feed-button-text">Create private game</div></a>

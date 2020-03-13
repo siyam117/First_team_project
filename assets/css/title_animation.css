@@ -49,19 +49,6 @@
 
 
 
-.header-title {
-  display: inline-block;
-  position: absolute;
-  top: 35%;
-  left: 10%;
-  transform: translate(-50%, -50%);
-}
-
-.header-title .title {
-  font-size: 75px;
-}
-
-
 
 
 
