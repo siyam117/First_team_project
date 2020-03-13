@@ -51,10 +51,13 @@ if (isset($_POST["Go!"])){
 <!DOCTYPE html>
 <html>
   <head>
-  <link rel="stylesheet" href="assets/css/master.css">
+  <link rel="stylesheet" href="assets/css/style_search.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/feed.css">
+  <link rel="stylesheet" href="assets/css/hamburger.css">
   <link id="animation-stylesheet" rel="stylesheet" href="assets/css/title_animation.css">
   <script type="text/javascript" src="assets/js/lib/jquery-3.4.1.min.js"></script>
-	<meta charset="UTF-8">
+  <meta charset="UTF-8">
 
         <script type = "text/javascript">
             function active(){
@@ -81,7 +84,7 @@ if (isset($_POST["Go!"])){
     </form> -->
 
     <title>Feed</title>
-	</head>
+  </head>
     <body>
       <!-- HEADER START -->
       <div id="header">
@@ -116,12 +119,12 @@ if (isset($_POST["Go!"])){
         <!-- DROPDOWN END -->
 
         <!-- TITLE START -->
-        <div id="header-title">
-          <div class="glitch-container">
-            <div class="glitch-text" id="glitch-main">INKKER.IO</div>
-            <div class="glitch-text" id="glitch-shadow-one">INKKER.IO</div>
-            <div class="glitch-text" id="glitch-shadow-two">INKKER.IO</div>
-          </div>
+        <div class="header-title">
+          <div class="title" id="title-main">INKKER.IO</div>
+          <div class="title" id="title-shadow-one">INKKER.IO</div>
+          <div class="title" id="title-shadow-two">INKKER.IO</div>
+
+
         </div>
         <!-- TITLE END -->
 
@@ -135,9 +138,9 @@ if (isset($_POST["Go!"])){
           foreach ($row as $storydata)
           {
             $currentTitle = $storydata["title"];
-          	$currentID = $storydata["story_id"];
+            $currentID = $storydata["story_id"];
 
-          	echo "<a class='feed-button' href='editor.php?id=$currentID'><div class='feed-button-text'>$currentTitle</div></a>";
+            echo "<a class='feed-button' href='editor.php?id=$currentID'><div class='feed-button-text'>$currentTitle</div></a>";
           }
         ?>
       </div>
