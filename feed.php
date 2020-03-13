@@ -53,6 +53,7 @@ if (isset($_POST["Go!"])){
   <head>
   <link rel="stylesheet" href="assets/css/master.css">
   <link id="animation-stylesheet" rel="stylesheet" href="assets/css/title_animation.css">
+  <script src="https://kit.fontawesome.com/e82695925e.js" crossorigin="anonymous"></script>
   <script type="text/javascript" src="assets/js/lib/jquery-3.4.1.min.js"></script>
   <meta charset="UTF-8">
 
@@ -104,7 +105,7 @@ if (isset($_POST["Go!"])){
               <div class="section">
                 <?php
                 $user_id = $_COOKIE["user_id"];
-                echo "<a class='profile-button' href='profile.php?id=$user_id'>My profile</a>";
+                echo "<a class='profile-button' href='profile.php?id=$user_id'>MY PROFILE <i class='fas fa-user'></i></a>";
                 ?>
               </div>
 
