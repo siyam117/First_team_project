@@ -99,8 +99,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" href="assets/css/styles.css">
-	  <link rel="stylesheet" href="assets/css/editor.css">
+		<link rel="stylesheet" href="assets/css/master.css">
 		<script type="text/javascript" src="assets/js/lib/jquery-3.4.1.min.js">
 		</script>
 		<title>Editor</title>
@@ -126,8 +125,8 @@
 					    overflow: hidden;
 					    outline:none;'>$img</button>";
 				$sql = "SELECT COUNT(*) FROM `$story_id`";
-				$result = $conn->prepare($sql); 
-				$result->execute(); 
+				$result = $conn->prepare($sql);
+				$result->execute();
 				//getting total number of likes
 				$number_of_likes = $result->fetchColumn();
 				$number_of_likes += 0;

@@ -55,8 +55,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-			<link rel="stylesheet" href="assets/css/styles.css">
-			<link rel="stylesheet" href="assets/css/hamburger.css">
+			<link rel="stylesheet" href="assets/css/master.css">
 			<link id="animation-stylesheet" rel="stylesheet" href="assets/css/title_animation.css">
         <meta charset="UTF-8">
         <title></title>
