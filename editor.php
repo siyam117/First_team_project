@@ -105,110 +105,165 @@
 		<title>Editor</title>
 	</head>
 		<body oncopy="return false" oncut="return false" onpaste="return false">
-		<div id="story-display-box">
-			<div id="story-display-box-header">
-				<a href="feed.php">Go Back</a><br>
 
-				<?php
-				//LIKE BUTTON
-				if ($like === "Like"){
-					$img = "<img src='assets/images/like.png' width=35 height=35>";
-				}
-				else{
-					$img = "<img src='assets/images/unlike.png' width=35 height=35>";
-				}
-				echo "<form action='editor.php?id=$story_id' method='post'>";
-				echo "<button name='likeButton' type='submit' style='background-color: Transparent;
-					    background-repeat:no-repeat;
-					    border: none;
-					    cursor:pointer;
-					    overflow: hidden;
-					    outline:none;'>$img</button>";
-				$sql = "SELECT COUNT(*) FROM `$story_id`";
-				$result = $conn->prepare($sql);
-				$result->execute();
-				//getting total number of likes
-				$number_of_likes = $result->fetchColumn();
-				$number_of_likes += 0;
-				if ($number_of_likes>999999){
-					$number_of_likes = substr($number_of_likes, 0, -6);
-					$number_of_likes = $number_of_likes.'M';
-				}
-				else if ($number_of_likes>999){
-					$number_of_likes = substr($number_of_likes, 0, -3);
-					$number_of_likes = $number_of_likes.'K';
-				}
-				if ($NewViews>999999){
-					$NewViews = substr($NewViews, 0, -6);
-					$NewViews = $NewViews.'M';
-				}
-				else if ($NewViews>999){
-					$NewViews = substr($NewViews, 0, -3);
-					$NewViews = $NewViews.'K';
-				}
 
-				echo "<font color='white'>".$number_of_likes." LIKES || ".$NewViews." VIEWS</font>";
-				echo "</form>";
 
-				?>
+			<!-- HEADER START -->
+      <div id="header">
 
-				<div id="story-title"><?php echo $story_title; ?></div>
-				<?php
-				//REPORT/DELETE
-				$admin = false;
+        <!-- DROPDOWN START -->
+        <div class="dropdown">
 
-				if ($userID == 1){
-					$admin = true;
-				}
-				if($admin){
-					$report = "<img src = 'assets/images/delete.png' width=35 height=35>";
+          <div class="hamburger-container">
+            <div class="hamburger">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </div>
+          </div>
+
+          <div class="body">
+            <div class="inner-body">
+
+              <div class="section">
+                <?php
+                $user_id = $_COOKIE["user_id"];
+                echo "<a class='profile-button' href='profile.php?id=$user_id'>MY PROFILE <i class='fas fa-user'></i></a>";
+                ?>
+              </div>
+
+              <!-- <div class="section">
+                <input type="checkbox" id="title-toggle-button" />
+              </div> -->
+
+            </div>
+          </div>
+
+        </div>
+        <!-- DROPDOWN END -->
+
+        <!-- TITLE START -->
+        <div id="header-title">
+          <div class="glitch-container">
+            <div class="glitch-text" id="glitch-main">INKKER.IO</div>
+            <div class="glitch-text" id="glitch-shadow-one">INKKER.IO</div>
+            <div class="glitch-text" id="glitch-shadow-two">INKKER.IO</div>
+          </div>
+        </div>
+        <!-- TITLE END -->
+
+      </div>
+      <!-- HEADER END -->
+
+
+
+
+
+			<div id="story-display-box">
+				<div id="story-display-box-header">
+					<a href="feed.php">Go Back</a><br>
+
+					<?php
+					//LIKE BUTTON
+					if ($like === "Like"){
+						$img = "<img src='assets/images/like.png' width=35 height=35>";
+					}
+					else{
+						$img = "<img src='assets/images/unlike.png' width=35 height=35>";
+					}
 					echo "<form action='editor.php?id=$story_id' method='post'>";
-					echo "<button name='deleteButton' type='submit' style='background-color: Transparent;
-					    background-repeat:no-repeat;
-					    border: none;
-					    cursor:pointer;
-					    overflow: hidden;
-					    outline:none;'>$report</button>";
+					echo "<button name='likeButton' type='submit' style='background-color: Transparent;
+						    background-repeat:no-repeat;
+						    border: none;
+						    cursor:pointer;
+						    overflow: hidden;
+						    outline:none;'>$img</button>";
+					$sql = "SELECT COUNT(*) FROM `$story_id`";
+					$result = $conn->prepare($sql);
+					$result->execute();
+					//getting total number of likes
+					$number_of_likes = $result->fetchColumn();
+					$number_of_likes += 0;
+					if ($number_of_likes>999999){
+						$number_of_likes = substr($number_of_likes, 0, -6);
+						$number_of_likes = $number_of_likes.'M';
+					}
+					else if ($number_of_likes>999){
+						$number_of_likes = substr($number_of_likes, 0, -3);
+						$number_of_likes = $number_of_likes.'K';
+					}
+					if ($NewViews>999999){
+						$NewViews = substr($NewViews, 0, -6);
+						$NewViews = $NewViews.'M';
+					}
+					else if ($NewViews>999){
+						$NewViews = substr($NewViews, 0, -3);
+						$NewViews = $NewViews.'K';
+					}
+
+					echo "<font color='white'>".$number_of_likes." LIKES || ".$NewViews." VIEWS</font>";
 					echo "</form>";
-				}
-				else{
-					$report = "<img src = 'assets/images/report.png' width=35 height=35>";
-					echo "<form action='editor.php?id=$story_id' method='post'>";
-					echo "<button name='reportButton' type='submit' style='background-color: Transparent;
-					    background-repeat:no-repeat;
-					    border: none;
-					    cursor:pointer;
-					    overflow: hidden;
-					    outline:none;'>$report</button>";
-					echo "</form>";
-				}
-				?>
+
+					?>
+
+					<div id="story-title"><?php echo $story_title; ?></div>
+					<?php
+					//REPORT/DELETE
+					$admin = false;
+
+					if ($userID == 1){
+						$admin = true;
+					}
+					if($admin){
+						$report = "<img src = 'assets/images/delete.png' width=35 height=35>";
+						echo "<form action='editor.php?id=$story_id' method='post'>";
+						echo "<button name='deleteButton' type='submit' style='background-color: Transparent;
+						    background-repeat:no-repeat;
+						    border: none;
+						    cursor:pointer;
+						    overflow: hidden;
+						    outline:none;'>$report</button>";
+						echo "</form>";
+					}
+					else{
+						$report = "<img src = 'assets/images/report.png' width=35 height=35>";
+						echo "<form action='editor.php?id=$story_id' method='post'>";
+						echo "<button name='reportButton' type='submit' style='background-color: Transparent;
+						    background-repeat:no-repeat;
+						    border: none;
+						    cursor:pointer;
+						    overflow: hidden;
+						    outline:none;'>$report</button>";
+						echo "</form>";
+					}
+					?>
+				</div>
+				<br>
+				<hr id="title-body-line">
+				<div id="story-display-box-body">
+					<?php
+						foreach ($sections as $sectiondata)
+						{
+							$section_text = $sectiondata["section_text"];
+							echo "<div class='story-section'><div class='story-section-text'>$section_text</div></div><hr class='section-line'>";
+						}
+						if ($empty_sections > 0)
+						{
+							$section_order = count($sections) + 1;
+							echo "<div class='story-section story-section-input-button'><div class='story-section-input-clickhere'>Click Here To Add</div></div>";
+							echo "<textarea class='story-section-input-field' name='sectionText' form='story-section-input-form'></textarea>";
+							echo "<form class='story-section-input-form' id='story-section-input-form' action='editor.php?id=$story_id' method='post'><input type='hidden' name='sectionOrder' value='$section_order'><button class='story-section-input-form-button' type='submit'>Submit</button><div class='story-section-input-form-wordcount'>0/$section_length Words</div></form>";
+							echo "<hr class='section-line'>";
+						}
+						for ($i=0; $i < $empty_sections - 1; $i++)
+						{
+							echo "<div class='story-section story-section-empty'></div><hr class='section-line'>";
+						}
+					?>
+				</div>
 			</div>
-			<br>
-			<hr id="title-body-line">
-			<div id="story-display-box-body">
-				<?php
-					foreach ($sections as $sectiondata)
-					{
-						$section_text = $sectiondata["section_text"];
-						echo "<div class='story-section'><div class='story-section-text'>$section_text</div></div><hr class='section-line'>";
-					}
-					if ($empty_sections > 0)
-					{
-						$section_order = count($sections) + 1;
-						echo "<div class='story-section story-section-input-button'><div class='story-section-input-clickhere'>Click Here To Add</div></div>";
-						echo "<textarea class='story-section-input-field' name='sectionText' form='story-section-input-form'></textarea>";
-						echo "<form class='story-section-input-form' id='story-section-input-form' action='editor.php?id=$story_id' method='post'><input type='hidden' name='sectionOrder' value='$section_order'><button class='story-section-input-form-button' type='submit'>Submit</button><div class='story-section-input-form-wordcount'>0/$section_length Words</div></form>";
-						echo "<hr class='section-line'>";
-					}
-					for ($i=0; $i < $empty_sections - 1; $i++)
-					{
-						echo "<div class='story-section story-section-empty'></div><hr class='section-line'>";
-					}
-				?>
-			</div>
-		</div>
 
 		<script type="text/javascript" src="assets/js/editor.js"></script>
+		<script type="text/javascript" src="assets/js/main.js"></script>
 	</body>
 </html>
