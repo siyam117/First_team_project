@@ -34,6 +34,10 @@
 
 					$storyID = $row["story_id"];
 
+					//CREATING A LIKES TABLE FOR EACH STORY
+					$sql ="CREATE TABLE `".$storyID."` (like_id INT( 50 ) AUTO_INCREMENT PRIMARY KEY, user_id VARCHAR( 255 ))";
+    				$conn->exec($sql);
+
 					header("Location: editor.php?id=$storyID");
 				}
 			}

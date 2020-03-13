@@ -101,7 +101,7 @@ if (isset($_POST["Go!"])){
               <div class="section">
                 <?php
                 $user_id = $_COOKIE["user_id"];
-                echo "<button href='profile.php?id=$user_id'>My profile</button>";
+                echo "<a href='profile.php?id=$user_id'>My profile</a>";
                 ?>
               </div>
 
