@@ -63,31 +63,57 @@
 		  <script type="text/javascript" src="assets/js/lib/jquery-3.4.1.min.js"></script>
 	</head>
     <body>
-			<div id="header">
 
+			
+			<!-- HEADER START -->
+      <div id="header">
 
-
+        <!-- DROPDOWN START -->
         <div class="dropdown">
-          <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+
+          <div class="hamburger-container">
+            <div class="hamburger">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </div>
           </div>
+
           <div class="body">
-            <input type="checkbox" id="title-toggle-button" />
+            <div class="inner-body">
+
+              <div class="section">
+                <?php
+                $user_id = $_COOKIE["user_id"];
+                echo "<a class='profile-button' href='profile.php?id=$user_id'>MY PROFILE <i class='fas fa-user'></i></a>";
+                ?>
+              </div>
+
+              <!-- <div class="section">
+                <input type="checkbox" id="title-toggle-button" />
+              </div> -->
+
+            </div>
+          </div>
+
+        </div>
+        <!-- DROPDOWN END -->
+
+        <!-- TITLE START -->
+        <div id="header-title">
+          <div class="glitch-container">
+            <div class="glitch-text" id="glitch-main">INKKER.IO</div>
+            <div class="glitch-text" id="glitch-shadow-one">INKKER.IO</div>
+            <div class="glitch-text" id="glitch-shadow-two">INKKER.IO</div>
           </div>
         </div>
-        <div class="header-title">
-          <div class="title" id="title-main">INKKER.IO</div>
-          <div class="title" id="title-shadow-one">INKKER.IO</div>
-          <div class="title" id="title-shadow-two">INKKER.IO</div>
+        <!-- TITLE END -->
 
-
-        </div>
-				<div class="create" id="create-main">CREATE A NEW STORY</div>
-				<div class="create" id="create-shadow-one">CREATE A NEW STORY</div>
-				<div class="create" id="create-shadow-two">CREATE A NEW STORY</div>
       </div>
+      <!-- HEADER END -->
+
+
+
 
 
         <!-- <form action="settings.php" id="homepage-loginbox" method="POST">
