@@ -33,18 +33,18 @@
 	</head>
 
   <body>
+    <div id="header">
     <div class="header-title">
       <div class="title" id="title-main">INKKER.IO</div>
       <div class="title" id="title-shadow-one">INKKER.IO</div>
       <div class="title" id="title-shadow-two">INKKER.IO</div>
-
-
     </div>
+
     <div class="create" id="create-main">REPORT A STORY</div>
     <div class="create" id="create-shadow-one">REPORT A STORY</div>
     <div class="create" id="create-shadow-two">REPORT A STORY</div>
   </div>
-  
+
     <p>Report a story:</p>
     <hr>
     Provide some additional details:<br>
