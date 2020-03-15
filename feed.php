@@ -51,11 +51,11 @@ if (isset($_POST["Go!"])){
 <!DOCTYPE html>
 <html>
   <head>
-  <link rel="stylesheet" href="assets/css/master.css">
-  <link id="animation-stylesheet" rel="stylesheet" href="assets/css/title_animation.css">
-  <script src="https://kit.fontawesome.com/e82695925e.js" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="assets/js/lib/jquery-3.4.1.min.js"></script>
-  <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/master.css">
+    <link id="animation-stylesheet" rel="stylesheet" href="assets/css/title_animation.css">
+    <script src="https://kit.fontawesome.com/e82695925e.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/js/lib/jquery-3.4.1.min.js"></script>
+    <meta charset="UTF-8">
 
         <script type = "text/javascript">
             function active(){
@@ -147,7 +147,7 @@ if (isset($_POST["Go!"])){
           }
         ?>
       </div>
-      
+
       <script type="text/javascript" src="assets/js/theme_change.js"></script>
       <script type="text/javascript" src="assets/js/main.js"></script>
   </body>

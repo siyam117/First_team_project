@@ -57,14 +57,14 @@
     <head>
 			<link rel="stylesheet" href="assets/css/master.css">
 			<link id="animation-stylesheet" rel="stylesheet" href="assets/css/title_animation.css">
-        <meta charset="UTF-8">
-        <title></title>
+      <meta charset="UTF-8">
+      <title></title>
 			<script src="https://kit.fontawesome.com/e82695925e.js" crossorigin="anonymous"></script>
 		  <script type="text/javascript" src="assets/js/lib/jquery-3.4.1.min.js"></script>
 	</head>
     <body>
 
-			
+
 			<!-- HEADER START -->
       <div id="header">
 
@@ -121,7 +121,7 @@
 
         <h>Create a new story</h><br> -->
 
-				<form action="settings.php" method="POST" id="settingspage-box">
+			<form action="settings.php" method="POST" id="settingspage-box">
 				<input class="input-field" id="username-field" type="text" autocomplete="off" placeholder="Title" name="title">
 				<label class ="settings_text">Number Of Sections</label>
 				<input class="slider" id="username-field" type="range" autocomplete="off" min="5" max = "20" value="10" placeholder="Number of Sections " name="section_amount">
@@ -134,6 +134,9 @@
 
         <a href="feed.php">Cancel</a><br>
         <a href="logout.php">Log out</a><br>
-</form>
+			</form>
+
+
+			<script type="text/javascript" src="assets/js/main.js"></script>
 </body>
 </html>
