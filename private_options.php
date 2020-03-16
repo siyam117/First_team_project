@@ -106,5 +106,7 @@
       <input type="text" autocomplete="off" placeholder="Username" name="username">
       <button type="submit">Create a new game</button>
     </form>
+
+    <script type="text/javascript" src="assets/js/main.js"></script>
   </body>
 </html>
