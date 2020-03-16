@@ -59,6 +59,8 @@
         </div>
       </div>
 
+
+
       <form id="homepage-loginbox" action="login.php" method="post">
         <div id="login-error">
           <?php
@@ -73,9 +75,12 @@
         </div>
         <input class="input-field" id="username-field" type="text" autocomplete="off" placeholder="Username" name="username">
         <input class="input-field" id="password-field" type="password" autocomplete="off" placeholder="Password" name="password">
-        <button class="submit-button" id="login-button" type="submit" name="button" disabled>Login <i class="fas fa-sign-in-alt"></i></button>
+        <button class="button-standard" id="login-button" type="submit" name="button" disabled>Login <i class="fas fa-sign-in-alt"></i></button>
       </form>
-      <button class="submit-button" onclick="window.location.href = 'register.php';" name="button">Register</button>
+
+
+
+      <button class="button-standard" onclick="window.location.href = 'register.php';" name="button">Register</button>
     </div>
 
     <script type="text/javascript" src="assets/js/login.js"></script>
