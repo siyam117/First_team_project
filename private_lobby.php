@@ -19,6 +19,7 @@
       header("Location: private_username.php?id=$lobby_id");
     }
 
+    $creator_user_id = $row["creator_user_id"];
     $private_user_id = $_COOKIE["Puser_id"];
 
     $row = func::sqlSELECT($conn, "SELECT * FROM private_users WHERE user_id='$private_user_id';");
@@ -42,8 +43,12 @@
     <script type="text/javascript" src="assets/js/lib/jquery-3.4.1.min.js"></script>
   </head>
   <body>
-    <button type="button" name="button" onclick="window.location.href='private_editor.php'">Start Game</button>
     <?php
+
+    if ($creator_user_id == $private_user_id)
+    {
+      echo "<button type='button' name='button' onclick='window.location.href='private_editor.php''>Start Game</button>";
+    }
 
     echo "Your username is " . $self_username;
 
