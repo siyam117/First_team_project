@@ -46,6 +46,7 @@ button {
   width: 350px;
   margin-left: 0px;
   font-size: 80px;
+  text-decoration: none;
 }
 
 #header .dropdown {

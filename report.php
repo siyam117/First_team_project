@@ -35,17 +35,60 @@
 	</head>
 
   <body>
-    <div id="header">
-    <div class="header-title">
-      <div class="title" id="title-main">INKKER.IO</div>
-      <div class="title" id="title-shadow-one">INKKER.IO</div>
-      <div class="title" id="title-shadow-two">INKKER.IO</div>
-    </div>
 
-    <div class="create" id="create-main">REPORT A STORY</div>
-    <div class="create" id="create-shadow-one">REPORT A STORY</div>
-    <div class="create" id="create-shadow-two">REPORT A STORY</div>
-  </div>
+
+
+    <!-- HEADER START -->
+    <div id="header">
+
+      <!-- DROPDOWN START -->
+      <div class="dropdown">
+
+        <div class="hamburger-container">
+          <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+        </div>
+
+        <div class="body">
+          <div class="inner-body">
+
+            <div class="section">
+              <?php
+              $user_id = $_COOKIE["user_id"];
+              echo "<a class='dropdown-button' href='profile.php?id=$user_id'>MY PROFILE <i class='fas fa-user'></i></a>";
+              ?>
+            </div>
+
+            <div class="section">
+              <a class="dropdown-button" href="logout.php">LOG OUT</a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+      <!-- DROPDOWN END -->
+
+      <!-- TITLE START -->
+      <a id="header-title" href="index.php">
+        <div class="glitch-container">
+          <div class="glitch-text" id="glitch-main">INKKER.IO</div>
+          <div class="glitch-text" id="glitch-shadow-one">INKKER.IO</div>
+          <div class="glitch-text" id="glitch-shadow-two">INKKER.IO</div>
+        </div>
+      </a>
+      <!-- TITLE END -->
+
+    </div>
+    <!-- HEADER END -->
+    
+
+
+
+
 
     <p>Report a story:</p>
     <hr>

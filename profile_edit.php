@@ -16,7 +16,7 @@
       $salt = $results["password_salt"];
     }
     if ($userID == $id){
-      
+
       if(isset($_POST['submitUser'])){
         $username2 = $_POST['username'];
 
@@ -100,6 +100,59 @@
   </head>
 
   <body>
+
+
+    <!-- HEADER START -->
+    <div id="header">
+
+      <!-- DROPDOWN START -->
+      <div class="dropdown">
+
+        <div class="hamburger-container">
+          <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+        </div>
+
+        <div class="body">
+          <div class="inner-body">
+
+            <div class="section">
+              <?php
+              $user_id = $_COOKIE["user_id"];
+              echo "<a class='dropdown-button' href='profile.php?id=$user_id'>MY PROFILE <i class='fas fa-user'></i></a>";
+              ?>
+            </div>
+
+            <div class="section">
+              <a class="dropdown-button" href="logout.php">LOG OUT</a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+      <!-- DROPDOWN END -->
+
+      <!-- TITLE START -->
+      <a id="header-title" href="index.php">
+        <div class="glitch-container">
+          <div class="glitch-text" id="glitch-main">INKKER.IO</div>
+          <div class="glitch-text" id="glitch-shadow-one">INKKER.IO</div>
+          <div class="glitch-text" id="glitch-shadow-two">INKKER.IO</div>
+        </div>
+      </a>
+      <!-- TITLE END -->
+
+    </div>
+    <!-- HEADER END -->
+
+    
+
+
+
      <?php
     if ($userID == $_COOKIE["user_id"]){
       echo "<br>";
@@ -116,11 +169,11 @@
       $url = "Location: profile.php?id=".$id;
       header($url);
     }
-  
+
      ?>
 
     <form action="" method="POST"><br>
-        <p2>New Username:</p2><br> 
+        <p2>New Username:</p2><br>
         <input type="text" name="username"> <br>
         <button type='submit' name='submitUser'>Change username</button>
         <hr>

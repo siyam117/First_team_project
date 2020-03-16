@@ -105,13 +105,13 @@ if (isset($_POST["Go!"])){
               <div class="section">
                 <?php
                 $user_id = $_COOKIE["user_id"];
-                echo "<a class='profile-button' href='profile.php?id=$user_id'>MY PROFILE <i class='fas fa-user'></i></a>";
+                echo "<a class='dropdown-button' href='profile.php?id=$user_id'>MY PROFILE <i class='fas fa-user'></i></a>";
                 ?>
               </div>
 
-              <!-- <div class="section">
-                <input type="checkbox" id="title-toggle-button" />
-              </div> -->
+              <div class="section">
+                <a class="dropdown-button" href="logout.php">LOG OUT</a>
+              </div>
 
             </div>
           </div>
@@ -120,13 +120,13 @@ if (isset($_POST["Go!"])){
         <!-- DROPDOWN END -->
 
         <!-- TITLE START -->
-        <div id="header-title">
+        <a id="header-title" href="index.php">
           <div class="glitch-container">
             <div class="glitch-text" id="glitch-main">INKKER.IO</div>
             <div class="glitch-text" id="glitch-shadow-one">INKKER.IO</div>
             <div class="glitch-text" id="glitch-shadow-two">INKKER.IO</div>
           </div>
-        </div>
+        </a>
         <!-- TITLE END -->
 
       </div>

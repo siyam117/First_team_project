@@ -31,6 +31,60 @@
     <title>Profile Pictures</title>
 	</head>
 
+
+
+  <!-- HEADER START -->
+  <div id="header">
+
+    <!-- DROPDOWN START -->
+    <div class="dropdown">
+
+      <div class="hamburger-container">
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+
+      <div class="body">
+        <div class="inner-body">
+
+          <div class="section">
+            <?php
+            $user_id = $_COOKIE["user_id"];
+            echo "<a class='dropdown-button' href='profile.php?id=$user_id'>MY PROFILE <i class='fas fa-user'></i></a>";
+            ?>
+          </div>
+
+          <div class="section">
+            <a class="dropdown-button" href="logout.php">LOG OUT</a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+    <!-- DROPDOWN END -->
+
+    <!-- TITLE START -->
+    <a id="header-title" href="index.php">
+      <div class="glitch-container">
+        <div class="glitch-text" id="glitch-main">INKKER.IO</div>
+        <div class="glitch-text" id="glitch-shadow-one">INKKER.IO</div>
+        <div class="glitch-text" id="glitch-shadow-two">INKKER.IO</div>
+      </div>
+    </a>
+    <!-- TITLE END -->
+
+  </div>
+  <!-- HEADER END -->
+  
+
+
+
+
+
   <body>
     <h>Choose your profile picture:</h>
     <form action = 'profile_picture.php' method = "POST">

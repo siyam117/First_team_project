@@ -41,6 +41,62 @@
   </head>
 
   <body>
+
+
+
+
+    <!-- HEADER START -->
+    <div id="header">
+
+      <!-- DROPDOWN START -->
+      <div class="dropdown">
+
+        <div class="hamburger-container">
+          <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+        </div>
+
+        <div class="body">
+          <div class="inner-body">
+
+            <div class="section">
+              <?php
+              $user_id = $_COOKIE["user_id"];
+              echo "<a class='dropdown-button' href='profile.php?id=$user_id'>MY PROFILE <i class='fas fa-user'></i></a>";
+              ?>
+            </div>
+
+            <div class="section">
+              <a class="dropdown-button" href="logout.php">LOG OUT</a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+      <!-- DROPDOWN END -->
+
+      <!-- TITLE START -->
+      <a id="header-title" href="index.php">
+        <div class="glitch-container">
+          <div class="glitch-text" id="glitch-main">INKKER.IO</div>
+          <div class="glitch-text" id="glitch-shadow-one">INKKER.IO</div>
+          <div class="glitch-text" id="glitch-shadow-two">INKKER.IO</div>
+        </div>
+      </a>
+      <!-- TITLE END -->
+
+    </div>
+    <!-- HEADER END -->
+    
+
+
+
+
+
     <p>Search for a profile:</p>
     <form action="profile.php" method="post">
 
@@ -65,8 +121,8 @@
         $story_view = $results["views"];
         $totalViews += $story_view;
         $sql2 = "SELECT COUNT(*) FROM `$story_id`";
-        $result = $conn->prepare($sql2); 
-        $result->execute(); 
+        $result = $conn->prepare($sql2);
+        $result->execute();
         //getting total number of likes
         $number_of_likes = $result->fetchColumn();
         $totalLikes += $number_of_likes;
