@@ -64,12 +64,10 @@ button {
 
 .btn-standard {
   display: block;
-  width: 270px;
-  height: 40px;
-  margin: 30px auto;
   border: 0 solid white;
   border-radius: 3px;
   background-color: var(--secondary-color);
+  color: white;
   font-size: 20px;
   font-family: inherit;
   outline: none;
@@ -80,9 +78,30 @@ button {
   transform: translate(0%, -10%);
 }
 
+button.btn-standard:enabled:hover {
+  transform: translate(0%, -10%);
+}
+
 .btn-standard:active {
   transform: translate(0%, 0%);
   transition: transform 0s;
+}
+
+.btn-standard.btn-login {
+  width: 270px;
+  height: 40px;
+  margin: 30px auto;
+}
+
+.btn-standard.btn-feed {
+  background-color: #FFFFFF;
+  position: relative;
+  text-decoration: none;
+  color: #000000;
+  border-radius: 10px;
+  height: 80px;
+  width: 100%;
+  margin: 20px 0;
 }
 
 

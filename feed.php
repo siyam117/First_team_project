@@ -142,7 +142,7 @@ if (isset($_POST["Go!"])){
             $currentTitle = $storydata["title"];
             $currentID = $storydata["story_id"];
 
-            echo "<a class='feed-button' href='editor.php?id=$currentID'><div class='feed-button-text'>$currentTitle</div></a>";
+            echo "<a class='btn-standard btn-feed' href='editor.php?id=$currentID'><div class='feed-button-text'>$currentTitle</div></a>";
           }
         ?>
       </div>

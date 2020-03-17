@@ -252,7 +252,7 @@
 							$section_order = count($sections) + 1;
 							echo "<div class='story-section story-section-input-button'><div class='story-section-input-clickhere'>Click Here To Add</div></div>";
 							echo "<textarea class='story-section-input-field' name='sectionText' form='story-section-input-form'></textarea>";
-							echo "<form class='story-section-input-form' id='story-section-input-form' action='editor.php?id=$story_id' method='post'><input type='hidden' name='sectionOrder' value='$section_order'><button class='btn-standard' type='submit'>Submit</button><div class='story-section-input-form-wordcount'>0/$section_length Words</div></form>";
+							echo "<form class='story-section-input-form' id='story-section-input-form' action='editor.php?id=$story_id' method='post'><input type='hidden' name='sectionOrder' value='$section_order'><button class='btn-standard btn-editor' type='submit'>Submit</button><div class='story-section-input-form-wordcount'>0/$section_length Words</div></form>";
 							echo "<hr class='section-line'>";
 						}
 						for ($i=0; $i < $empty_sections - 1; $i++)
