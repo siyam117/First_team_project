@@ -134,8 +134,8 @@ if (isset($_POST["Go!"])){
 
 
       <div id="feed-box">
-        <a class="feed-button" id="feed-button-addstory" href="private_options.php"><div class="feed-button-text">Create private game</div></a>
-        <a class="feed-button" id="feed-button-addstory" href="settings.php"><div class="feed-button-text">Create new story</div></a>
+        <a class="btn-standard btn-feed btn-feed-top" href="private_options.php"><div class="feed-button-text">Create private game</div></a>
+        <a class="btn-standard btn-feed btn-feed-top" href="settings.php"><div class="feed-button-text">Create new story</div></a>
         <?php
           foreach ($row as $storydata)
           {
