@@ -62,7 +62,7 @@ button {
 
 
 
-.button-standard {
+.btn-standard {
   display: block;
   width: 270px;
   height: 40px;
@@ -76,11 +76,11 @@ button {
   transition: transform 0.3s;
 }
 
-.button-standard:hover {
+.btn-standard:hover {
   transform: translate(0%, -10%);
 }
 
-.button-standard:active {
+.btn-standard:active {
   transform: translate(0%, 0%);
   transition: transform 0s;
 }
