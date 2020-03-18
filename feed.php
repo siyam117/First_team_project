@@ -5,7 +5,13 @@
 
   if (func::checkLoginState($conn))
   {
-    $query = "SELECT * FROM stories;";
+    if (isset($_POST["search"]) && $_POST["search"] != 'Search...'){
+      $search = $_POST["search"];
+      $query = "SELECT * FROM stories WHERE title LIKE '%$search%';";
+    }
+    else{
+      $query = "SELECT * FROM stories;";
+    }
     $row = func::sqlSELECT($conn, $query, $fetch_all = true);
   }
   else
@@ -13,40 +19,8 @@
     header("Location: index.php");
   }
 
-if (isset($_POST["Go!"])){
-    $query = $_POST["search"];
-    $sth = $conn->prepare("SELECT title FROM stories WHERE title = '$query'");
-
-    $sth->setFetchMode(PDO:: FETCH_OBJ);
-    $sth->execute();
-
-    if($row = $sth->fetch())
-    {
-        ?>
-        <br><br><br>
-        <table>
-            <tr>
-                <th>title found!</th>
-            </tr>
-            <tr>
-                <td><?php echo $row->title; ?></td>
-            </tr>
-
-        </table>
-<?php
-
-    }
-        else{
-            echo "Name does not exist";
-
-        }
-
-}
-
 
 ?>
-
-
 
 <!DOCTYPE html>
 <html>
@@ -76,9 +50,9 @@ if (isset($_POST["Go!"])){
 
         </script>
 
-    <!-- <form method="post">
+    <form method="post">
     <input type ="text" name="search" id="SearchBar" placeholder="Search" value="Search..." maxlength="35" autocomplete="off" onmousedown="active();" onblur="inactive();" /><input type="submit" id="SearchBtn" name="Go!"/>
-    </form> -->
+    </form>
 
     <title>Feed</title>
   </head>
