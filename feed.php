@@ -17,6 +17,7 @@
         $query = "SELECT * FROM stories WHERE title LIKE '%$search%';";
       }
       else{
+        //searches both tables for the query entered
         $query = "SELECT * FROM stories WHERE title LIKE '%$search%' OR creator_user_id = $creator_id;";
       }
     }
