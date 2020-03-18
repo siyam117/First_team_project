@@ -35,7 +35,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <link rel="stylesheet" href="assets/css/master.css">
   <script type="text/javascript" src="assets/js/lib/jquery-3.4.1.min.js"></script>
+  <script src="https://kit.fontawesome.com/e82695925e.js" crossorigin="anonymous"></script>
   <meta charset="UTF-8">
     <title>Profile</title>
   </head>
@@ -46,71 +48,75 @@
 
 
     <!-- HEADER START -->
-    <div id="header">
+      <div id="header">
 
-      <!-- DROPDOWN START -->
-      <div class="dropdown">
+        <!-- DROPDOWN START -->
+        <div class="dropdown">
 
-        <div class="hamburger-container">
-          <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-          </div>
-        </div>
-
-        <div class="body">
-          <div class="inner-body">
-
-            <div class="section">
-              <?php
-              $user_id = $_COOKIE["user_id"];
-              echo "<a class='dropdown-button' href='profile.php?id=$user_id'>MY PROFILE <i class='fas fa-user'></i></a>";
-              ?>
+          <div class="hamburger-container">
+            <div class="hamburger">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
             </div>
-
-            <div class="section">
-              <a class="dropdown-button" href="logout.php">LOG OUT</a>
-            </div>
-
           </div>
+
+          <div class="body">
+            <div class="inner-body">
+
+              <div class="section">
+                <?php
+                if ($userID ==  $_COOKIE["user_id"]){
+                  echo "<a class=\"dropdown-button\" href=\"feed.php\">FEED <i class='fas fa-home'></i></a>";
+                }
+                else{
+                  $user_id = $_COOKIE["user_id"];
+                  echo "<a class='dropdown-button' href='profile.php?id=$user_id'>MY PROFILE <i class='fas fa-user'></i></a>";
+                }
+                ?>
+              </div>
+
+              <div class="section">
+                <a class="dropdown-button" href="logout.php">LOG OUT</a>
+              </div>
+
+            </div>
+          </div>
+
         </div>
+        <!-- DROPDOWN END -->
+
+        <!-- TITLE START -->
+        <a id="header-title" href="index.php">
+          <div class="glitch-container">
+            <div class="glitch-text" id="glitch-main">INKKER.IO</div>
+            <div class="glitch-text" id="glitch-shadow-one">INKKER.IO</div>
+            <div class="glitch-text" id="glitch-shadow-two">INKKER.IO</div>
+          </div>
+        </a>
+        <!-- TITLE END -->
 
       </div>
-      <!-- DROPDOWN END -->
-
-      <!-- TITLE START -->
-      <a id="header-title" href="index.php">
-        <div class="glitch-container">
-          <div class="glitch-text" id="glitch-main">INKKER.IO</div>
-          <div class="glitch-text" id="glitch-shadow-one">INKKER.IO</div>
-          <div class="glitch-text" id="glitch-shadow-two">INKKER.IO</div>
-        </div>
-      </a>
-      <!-- TITLE END -->
-
-    </div>
-    <!-- HEADER END -->
+      <!-- HEADER END -->
     
 
 
 
 
-
-    <p>Search for a profile:</p>
-    <form action="profile.php" method="post">
-
+    <div id="profile-box"><div class = "profile-text">
+    
+    <form action="profile.php" method="post"> 
+    <label>Search for a profile:</label>
     <input class="input-field" id="search-field" type="text" autocomplete="off" placeholder="Username" name="username">
     <button class="submit-button" id="search-button" type="submit" name="button">Search</button>
     <hr>
 
       </form>
      <?php
-      echo "<br>";
-      echo "<p>".$username."'s profile</p><br>";
-      echo "<hr>";
-      echo "<img src='$picture' width='100' height='100'>";
-      echo "<hr>";
+      echo "<div class ='profile-container'><img src='$picture' width='250' height='250' class = 'profile_picture'>";
+      echo "<div class ='user-text'>".$username."'s profile</div></div>";
+      //echo "<hr>";
+      echo "<div class = 'clear'>";
       //calculating total likes of this user's created story
       $totalLikes = 0;
       $totalViews = 0;
@@ -143,17 +149,20 @@
           $totalViews = substr($totalViews, 0, -3);
           $totalViews = $totalViews.'K';
         }
-      echo "<p>Total Likes: ".$totalLikes;
+      echo "<hr>Total Likes: ".$totalLikes;
       echo "<br>Total Views: ".$totalViews;
-      echo "</p><hr>";
       //calculating total views
       //allowing edit button if this is the users profile page
       if ($userID == $_COOKIE["user_id"]){
-        echo "<a href='profile_edit.php?id=$userID'>Edit profile</a><hr>";
-        echo "<a href='logout.php'>Log out</a><hr>";
+        echo "<hr><a class='edit-button' href='profile_edit.php?id=$userID'><div class='editor-button-text'>Edit profile</div></a>";
       }
-      echo "<a href='feed.php'>Return to feed</a>";
+
      ?>
+   </div>
+   </div>
+   </div>
+      <script type="text/javascript" src="assets/js/theme_change.js"></script>
+      <script type="text/javascript" src="assets/js/main.js"></script>
   </body>
 
 </html>

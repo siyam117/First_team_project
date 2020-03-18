@@ -1,13 +1,33 @@
-#feed-box {
+#profile-box {
   background-color: var(--primary-color);
   border-radius: 15px;
-  width: 75%;
+  width: 45%;
   margin: 0 auto;
-  padding: 20px 70px;
+  padding: 30px 70px;
 }
 
 
-.feed-button {
+.profile-text {
+  font-size: 35px;
+  color: #FFFFFF;
+}
+
+.profile_picture {
+  float: left;
+  padding: 0 80px 20px 0;
+}
+
+.clear {
+  clear:left;
+}
+
+
+.user-text {
+  display: inline-block;
+  padding: 100px 0;
+
+}
+.edit-button {
   background-color: #FFFFFF;
   position: relative;
   text-decoration: none;
@@ -19,19 +39,7 @@
   transition: box-shadow 0.2s;
 }
 
-.feed-button:hover {
-  box-shadow: 0px 0px 0px 5px #FFFFFF;
-}
-
-#feed-button-addstory {
-  background-color: #329da8;
-}
-
-#feed-button-addstory:hover {
-  box-shadow: 0px 0px 0px 5px #329da8;
-}
-
-.feed-button-text {
+.editor-button-text {
   font-size: 40px;
   display: inline;
   position: absolute;
