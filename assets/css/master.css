@@ -18,7 +18,7 @@
 body {
   margin: 0px;
   background: var(--bg-color);
-  font-family: drogowskaz;
+  font-family: gidole;
 }
 
 button {
@@ -61,12 +61,13 @@ button {
 
 
 
+/* STANDARD BUTTON START */
 
 .btn-standard {
   display: block;
   border: 0 solid white;
   border-radius: 3px;
-  background-color: var(--secondary-color);
+  background-color: var(--tertiary-color);
   color: white;
   font-size: 20px;
   font-family: inherit;
@@ -94,19 +95,84 @@ button.btn-standard:enabled:hover {
 }
 
 .btn-standard.btn-feed {
-  background-color: #FFFFFF;
   position: relative;
-  text-decoration: none;
-  color: #000000;
-  border-radius: 10px;
   height: 80px;
   width: 100%;
   margin: 20px 0;
+  background-color: #FFFFFF;
+  color: #000000;
+  text-decoration: none;
+  border-radius: 10px;
 }
 
 .btn-standard.btn-feed.btn-feed-top {
   background-color: #AEFF00;
 }
+
+/* STANDARD BUTTON END */
+
+
+
+
+
+
+/* STANDARD INPUT FIELD END */
+
+.input-field {
+  display: block;
+  border: 0 solid white;
+  box-shadow: 0px 5px 1px -1px var(--secondary-color);
+  border-radius: 5px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 20px;
+  font-family: inherit;
+  outline: none;
+  transition: box-shadow 0.3s, opacity 0.3s;
+}
+
+.input-field:focus {
+  box-shadow: 0px 0px 1px 5px var(--tertiary-color);
+  opacity: 1;
+}
+
+.input-field.input-login {
+  width: 250px;
+  height: 30px;
+  margin: 30px auto;
+  padding: 0 10px;
+}
+
+/* STANDARD INPUT FIELD END */
+
+
+
+
+
+
+
+/* STANDARD CONTAINER START */
+
+.container-standard {
+  display: block;
+  background-color: var(--primary-color);
+  border-radius: 20px;
+}
+
+.container-standard.container-login {
+  width: 400px;
+  height: 275px;
+  margin: 0 auto;
+  margin-top: 100px;
+  padding: 5px;
+  background-color: var(--primary-color);
+  border-radius: 20px;
+}
+
+
+/* STANDARD CONTAINER END */
+
+
 
 
 
@@ -128,34 +194,7 @@ button.btn-standard:enabled:hover {
   margin-right: 25%;
 }
 
-#homepage-registerbox {
-  background-color: var(--primary-color);
-  border-radius: 20px;
-  position: relative;
-  top: 60px;
-  height: 50%;
-  display: block;
-  margin: auto;
-  padding-top: 1px;
-  margin-left: 25%;
-  margin-right: 25%;
-}
 
-.input-field {
-  font-family: inherit;
-  opacity: 0.8;
-  display: block;
-  margin: 20px auto;
-  padding: 0 10px;
-  outline: none;
-  width: 250px;
-  height: 30px;
-  font-size: 20px;
-  border: 0 solid white;
-  border-bottom: 1px solid grey;
-  border-radius: 3px;
-  transition: box-shadow 0.3s, opacity 0.3s;
-}
 
 .input-field_story {
   font-family: inherit;
@@ -173,31 +212,7 @@ button.btn-standard:enabled:hover {
   transition: box-shadow 0.3s, opacity 0.3s;
 }
 
-.input-field:focus {
-  box-shadow: 0px 0px 1px 3px #1FF5FF;
-  opacity: 1;
-}
-
 .input-field_story:focus {
   box-shadow: 0px 0px 1px 3px #1FF5FF;
   opacity: 1;
-}
-
-.submit-button {
-  font-family: inherit;
-  display: block;
-  margin: 30px auto;
-  outline: none;
-  width: 270px;
-  height: 40px;
-  font-size: 20px;
-  border: 0 solid white;
-  border-radius: 3px;
-  transition: box-shadow 0.3s, background-color 0.3s;
-}
-
-.submit-button:hover:enabled {
-  box-shadow: 0px 0px 1px 3px #1FF5FF;
-  background-color: #1FF5FF;
-  cursor: pointer;
 }

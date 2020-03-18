@@ -61,23 +61,25 @@
 
 
 
-      <form id="homepage-loginbox" action="login.php" method="post">
-        <div id="login-error">
-          <?php
-            if (isset($loginSuccess))
-            {
-              if (!$loginSuccess)
+      <div class="container-standard container-login">
+        <form action="login.php" method="post">
+          <div id="login-error">
+            <?php
+              if (isset($loginSuccess))
               {
-                echo "<div>Incorrect username/password!</div>";
+                if (!$loginSuccess)
+                {
+                  echo "<div>Incorrect username/password!</div>";
+                }
               }
-            }
-          ?>
-        </div>
-        <input class="input-field" id="username-field" type="text" autocomplete="off" placeholder="Username" name="username">
-        <input class="input-field" id="password-field" type="password" autocomplete="off" placeholder="Password" name="password">
-        <button class="btn-standard btn-login" id="login-button" type="submit" name="button" disabled>Login <i class="fas fa-sign-in-alt"></i></button>
-      </form>
+            ?>
+          </div>
 
+          <input class="input-field input-login" type="text" autocomplete="off" placeholder="Username" name="username">
+          <input class="input-field input-login" type="password" autocomplete="off" placeholder="Password" name="password">
+          <button class="btn-standard btn-login" type="submit" name="button" disabled>Login <i class="fas fa-sign-in-alt"></i></button>
+        </form>
+      </div>
 
 
       <button class="btn-standard btn-login" onclick="window.location.href = 'register.php';" name="button">Register</button>

@@ -64,10 +64,10 @@
 
 
     <form id="homepage-registerbox" action="register.php" method="post">
-      <input class="input-field" id="username-field" type="text" autocomplete="off" placeholder="Username" name="username">
-      <input class="input-field" id="email-field" type="email" autocomplete="off" placeholder="Email" name="email">
-      <input class="input-field" id="password-field-one" type="password" autocomplete="off" placeholder="Password" name="passwordOne">
-      <input class="input-field" id="password-field-two" type="password" autocomplete="off" placeholder="Re-type Password" name="passwordTwo">
+      <input class="input-field input-login" type="text" autocomplete="off" placeholder="Username" name="username">
+      <input class="input-field input-login" type="email" autocomplete="off" placeholder="Email" name="email">
+      <input class="input-field input-login" type="password" autocomplete="off" placeholder="Password" name="passwordOne">
+      <input class="input-field input-login" type="password" autocomplete="off" placeholder="Re-type Password" name="passwordTwo">
       <button class="btn-standard btn-login" id="register-button"  type="submit" name="button" disabled>Register</button>
       <div id="register-error">
         <?php

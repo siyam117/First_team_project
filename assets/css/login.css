@@ -20,24 +20,6 @@
   transition: background-color 0.3s;
 }
 
-#homepage-title {
-  position: relative;
-  height: 50%;
-  display: block;
-  margin: auto;
-}
-
-#homepage-loginbox {
-  background-color: var(--primary-color);
-  border-radius: 20px;
-  height: 40%;
-  display: block;
-  margin: auto;
-  padding-top: 1px;
-  margin-left: 25%;
-  margin-right: 25%;
-}
-
 #login-error {
   color: red;
   margin: 20px auto;

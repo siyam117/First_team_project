@@ -20,9 +20,16 @@
     font-style: normal;
 }
 @font-face {
-    font-family: "drogowskaz";
-    src: url("../fonts/drogowskaz.woff2") format("woff2"),
-         url("../fonts/drogowskaz.woff") format("woff");
+    font-family: "gidole";
+    src: url("../fonts/gidole.woff2") format("woff2"),
+         url("../fonts/gidole.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "blackthorns";
+    src: url("../fonts/blackthorns.woff2") format("woff2"),
+         url("../fonts/blackthorns.woff") format("woff");
     font-weight: normal;
     font-style: normal;
 }
