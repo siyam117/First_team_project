@@ -62,10 +62,6 @@
 
         </script>
 
-    <form method="post">
-    <input type ="text" name="search" id="SearchBar" placeholder="Search" value="Search..." maxlength="35" autocomplete="off" onmousedown="active();" onblur="inactive();" /><input type="submit" id="SearchBtn" name="Go!"/>
-    </form>
-
     <title>Feed</title>
   </head>
     <body>
@@ -117,6 +113,14 @@
       </div>
       <!-- HEADER END -->
 
+
+
+
+
+
+      <form method="post" style="display: block;">
+        <input type ="text" name="search" id="SearchBar" placeholder="Search" value="Search..." maxlength="35" autocomplete="off" onmousedown="active();" onblur="inactive();" /><input type="submit" id="SearchBtn" name="Go!"/>
+      </form>
 
 
       <div id="feed-box">
