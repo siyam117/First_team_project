@@ -4,23 +4,21 @@
     font-size: 16px;
     padding: 10px;
     outline: none;
-    width: 250px;
-     -webkit-border-top-left-radius: 10px;
-     -webkit-border-bottom-left-radius: 10px;
-     -moz-border-radius-topleft: 10px;
-     -moz-border-radius-bottomleft:10px;
+    width: 400px;
+     -webkit-border-top-left-radius: -10px;
+     -webkit-border-bottom-left-radius: -10px;
+     -moz-border-radius-topleft: -10px;
+     -moz-border-radius-bottomleft:-10px;
      border-top-left-radius: 10px;
      border-bottom-left-radius: 10px;
-
-
-
+     transform: translate(108%, 358%);
 
 }
 #SearchBtn {
     border: 1px solid #000000;
     font-size: 16px;
     padding: 10px;
-    background: #f1d829;
+    background: #329da8;
     font-weight: bold;
     cursor: pointer;
     outline: none;
@@ -30,10 +28,11 @@
      -moz-border-radius-bottomright:10px;
      border-top-right-radius: 10px;
      border-bottom-right-radius: 10px;
+     transform: translate(350%, 358%);
 
 }
 #SearchBtn:hover {
-    background: #f6e049;
+    background: #329da8;
 
 
 }
