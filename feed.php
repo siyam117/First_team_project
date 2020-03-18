@@ -7,7 +7,13 @@
   {
     if (isset($_POST["search"]) && $_POST["search"] != 'Search...'){
       $search = $_POST["search"];
-      $query = "SELECT * FROM stories WHERE title LIKE '%$search%';";
+      //getting creator name
+      $sql = "SELECT * FROM users WHERE username = '$search';";
+      $row = func::sqlSELECT($conn, $sql, $fetch_all = true);
+      foreach ($row as $results){
+        $creator_id = $results["user_id"];
+      }
+      $query = "SELECT * FROM stories WHERE title LIKE '%$search%' OR creator_user_id = $creator_id;";
     }
     else{
       $query = "SELECT * FROM stories;";
