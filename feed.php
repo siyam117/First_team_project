@@ -132,7 +132,7 @@
             $currentTitle = $storydata["title"];
             $currentID = $storydata["story_id"];
 
-            echo "<a class='btn-standard btn-feed' href='editor.php?id=$currentID'><div class='feed-button-text'>$currentTitle</div></a>";
+            echo "<a class='btn-standard btn-feed' href='viewadder.php?id=$currentID'><div class='feed-button-text'>$currentTitle</div></a>";
           }
         ?>
       </div>

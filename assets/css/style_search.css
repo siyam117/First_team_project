@@ -11,7 +11,7 @@
      -moz-border-radius-bottomleft:-10px;
      border-top-left-radius: 10px;
      border-bottom-left-radius: 10px;
-     transform: translate(108%, 358%);
+
 
 }
 #SearchBtn {
@@ -28,7 +28,7 @@
      -moz-border-radius-bottomright:10px;
      border-top-right-radius: 10px;
      border-bottom-right-radius: 10px;
-     transform: translate(350%, 358%);
+     transform: translate(-25%);
 
 }
 #SearchBtn:hover {

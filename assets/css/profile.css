@@ -21,6 +21,9 @@
   clear:left;
 }
 
+.search-form {
+    display: inline;
+}
 
 .user-text {
   display: inline-block;

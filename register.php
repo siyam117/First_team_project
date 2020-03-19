@@ -92,9 +92,12 @@
           }
         ?>
       </div>
-      </div>
     </form>
-
-    <script type="text/javascript" src="assets/js/register.js"></script>
+    <form action="login.php" method="get">
+    <button type="submit" class = "btn-standard btn-login" value="login">Cancel</button>
+    </form>
+    </div>
+    <script type="text/javascript" src="assets/js/register.js">
+    </script>
   </body>
 </html>

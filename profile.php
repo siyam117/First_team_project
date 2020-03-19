@@ -6,15 +6,21 @@
   if (func::checkLoginState($conn))
   {
     //searching for usernames
+    $userID = $_GET['id'];
     if (isset($_POST["username"])){
       if (!empty($_POST["username"])){
         $user = $_POST["username"];
         $redirect = "Location: profile_search.php?search=".$user;
         header($redirect);
       }
+      else{
+        $activeID = $_COOKIE["user_id"];
+        $redirect = "Location: profile.php?id=".$activeID;
+        header($redirect);
+      }
     }
     //getting user info to post on website
-    $userID = $_GET['id'];
+    
     $query = "SELECT * FROM users WHERE user_id = $userID;";
     $row = func::sqlSELECT($conn, $query, $fetch_all = true);
     foreach ($row as $results){
@@ -66,14 +72,8 @@
 
               <div class="section">
                 <?php
-                if ($userID ==  $_COOKIE["user_id"]){
-                  echo "<a class=\"dropdown-button\" href=\"feed.php\">FEED <i class='fas fa-home'></i></a>";
-                }
-                else{
-                  $user_id = $_COOKIE["user_id"];
-                  echo "<a class='dropdown-button' href='profile.php?id=$user_id'>MY PROFILE <i class='fas fa-user'></i></a>";
-                }
-                ?>
+                  echo "<a class=\"dropdown-button\" href=\"feed.php\">FEED <i class='fas fa-home'></i></a>"; 
+                ?>  
               </div>
 
               <div class="section">
@@ -105,10 +105,10 @@
 
     <div id="profile-box"><div class = "profile-text">
     
-    <form action="profile.php" method="post"> 
-    <label>Search for a profile:</label>
-    <input class="input-field" id="search-field" type="text" autocomplete="off" placeholder="Username" name="username">
-    <button class="submit-button" id="search-button" type="submit" name="button">Search</button>
+    <form action="profile.php" method="post" class = "search-form"> 
+    <label>Search for a profile:</label><br>
+    <input id="SearchBar" id="search-field" type="text" autocomplete="off" placeholder="Username" name="username">
+    <button id="SearchBtn" type="submit" name="button">Search</button>
     <hr>
 
       </form>
@@ -153,8 +153,12 @@
       echo "<br>Total Views: ".$totalViews;
       //calculating total views
       //allowing edit button if this is the users profile page
-      if ($userID == $_COOKIE["user_id"]){
+      if ($userID == $_COOKIE["user_id"] || $_COOKIE["user_id"] == 1){
         echo "<hr><a class='edit-button' href='profile_edit.php?id=$userID'><div class='editor-button-text'>Edit profile</div></a>";
+      }
+      else{
+        $id = $_COOKIE["user_id"];
+        echo "<hr><a class='edit-button' href='profile.php?id=$id'><div class='editor-button-text'>Return to my profile</div></a>";
       }
 
      ?>

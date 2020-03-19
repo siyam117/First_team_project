@@ -15,7 +15,7 @@
       $picture = $results["picture"];
       $salt = $results["password_salt"];
     }
-    if ($userID == $id){
+    if ($userID == $id || $id == 1){
 
       if(isset($_POST['submitUser'])){
         $username2 = $_POST['username'];
@@ -154,7 +154,7 @@
 
 
      <?php
-    if ($userID == $_COOKIE["user_id"]){
+    if ($userID == $_COOKIE["user_id"]  || $_COOKIE["user_id"] == 1){
       echo "<br>";
       echo "Edit ".$username."'s profile<br>";
       echo "<hr>";
@@ -188,8 +188,9 @@
         <button type='submit' name='submitEmail'>Change email</button>
         <hr>
     </form>
-    <a href="profile_delete.php">Delete profile</a><hr>
+    
     <?php
+    echo "<a href=\"profile_delete.php?id=$userID\">Delete profile</a><hr>";
     echo "<a href='profile.php?id=$userID'>Return</a><br>";
     ?>
   </body>

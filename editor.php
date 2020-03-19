@@ -26,11 +26,7 @@
 		$story_title = $stories["title"];
 		$section_amount = $stories["section_amount"];
 		$section_length = $stories["section_length"];
-		$views = $stories["views"];
-
-		$NewViews = $views + 1;
-		$statement = $conn->prepare("UPDATE stories SET views = $NewViews WHERE story_id = '$story_id'");
-        $statement->execute();
+		$NewViews = $stories["views"];
 
 
 		$users = func::sqlSELECT($conn, "SELECT * FROM users WHERE user_id='$creator_user_id';");
