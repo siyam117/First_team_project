@@ -61,8 +61,8 @@
   background: #00bcd4;
 }
 .range{
-  width: 260px;
-  height: 4px;
+  width: 240px;
+  height: 2px;
   background: #111;
   -webkit-appearance: none;
   outline: none;
