@@ -120,7 +120,7 @@
         <input class="input-field" id="username-field" type="text" autocomplete="off" placeholder="Title" name="title">
 
         <h>Create a new story</h><br> -->
-
+			<div class="slider-container">
 			<form action="settings.php" method="POST" id="settingspage-box">
 				<input class="input-field" id="username-field" type="text" autocomplete="off" placeholder="Title" name="title">
 				<label class ="settings_text">Number Of Sections</label>
@@ -131,7 +131,7 @@
 
 				<br>
 				<br>
-
+			</div>
         <a href="feed.php">Cancel</a><br>
         <a href="logout.php">Log out</a><br>
 			</form>
