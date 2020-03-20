@@ -136,9 +136,9 @@
 				<label class = "settings_text">Section Length</label> <br>
 				<span id="rangeValues">0</span>
 				<script type="text/javascript" src="assets/js/rangeSlider2.js"></script>
-				<input class="range" id="username-field" type="range" autocomplete="off" min="10" step="5" max = "300" value="10" placeholder="Section Length (1000 Max)" name="section_length">
+				<input class="range" id="username-field" onchange="rangeSlider2(this.value)" onmousemove="rangeSlider2(this.value)" type="range" autocomplete="off" min="10" step="5" max = "300" value="10" placeholder="Section Length (1000 Max)" name="section_length">
 				<br>
-				<button class="submit-button" id="login-button" onchange="rangeSlider2(this.value)" onmousemove="rangeSlider2(this.value)" type="submit" name="button">Create Story <i class="fas fa-sign-in-alt"></i></button>
+				<button class="submit-button" id="login-button"  type="submit" name="button">Create Story <i class="fas fa-sign-in-alt"></i></button>
 
 				<br>
 				<br>
