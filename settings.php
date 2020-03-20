@@ -121,24 +121,23 @@
 
         <h>Create a new story</h><br> -->
 			
-			<div class="slider-wrapper">
+			<div>
 			<form action="settings.php" method="POST" id="settingspage-box">
 				<input class="input-field" id="username-field" type="text" autocomplete="off" placeholder="Title" name="title">
+				
 				<label class ="settings_text">Number Of Sections</label>
-				<input class="fluid-slider" id="username-field" type="range" autocomplete="off" min="5" max = "20" value="10" placeholder="Number of Sections " name="section_amount">
-				<span id="range-label" class="range-label"></span>
+				<span id="rangeValue">0</span>
 				<script type="text/javascript" src="assets/js/main.js"></script>
+				<input class="range" id="username-field" type="range" autocomplete="off" min="5" max = "20" value="5" placeholder="Number of Sections " name="section_amount">
+				
 				<label class = "settings_text">Section Length</label>
-				<input class="slider" id="username-field" type="range" autocomplete="off" min="5" max = "20" value="10" placeholder="Section Length (1000 Max)" name="section_length">
+				<input class="range" id="username-field" type="range" autocomplete="off" min="10" step="5" max = "300" value="10" placeholder="Section Length (1000 Max)" name="section_length">
 				<button class="submit-button" id="login-button" type="submit" name="button">Create Story <i class="fas fa-sign-in-alt"></i></button>
 
 				<br>
 				<br>
 			</div>
-			<div class="slider-wrapper">
-  				<input id="range-slider" class="fluid-slider" type="range" value="80" min="0" max="100">
- 			 	<span id="range-label" class="range-label"></span>
-			</div>
+	
         <a href="feed.php">Cancel</a><br>
         <a href="logout.php">Log out</a><br>
 			</form>
