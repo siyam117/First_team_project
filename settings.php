@@ -121,7 +121,7 @@
 
         <h>Create a new story</h><br> -->
 			
-			<div class="slider-container">
+			<div class="slider-wrapper">
 			<form action="settings.php" method="POST" id="settingspage-box">
 				<input class="input-field" id="username-field" type="text" autocomplete="off" placeholder="Title" name="title">
 				<label class ="settings_text">Number Of Sections</label>
