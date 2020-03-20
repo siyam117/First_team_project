@@ -68,7 +68,7 @@
       <input class="input-field input-login" type="email" autocomplete="off" placeholder="Email" name="email">
       <input class="input-field input-login" type="password" autocomplete="off" placeholder="Password" name="passwordOne">
       <input class="input-field input-login" type="password" autocomplete="off" placeholder="Re-type Password" name="passwordTwo">
-      <button class="btn-standard btn-login" id="register-button"  type="submit" name="button" disabled>Register</button>
+      <button class="btn-standard btn-login" id="register-button"  type="submit" name="button" >Register</button>
       <div id="register-error">
         <?php
           if (isset($allFieldsFilled) && isset($passwordsMatch) && isset($usernameUnique) && isset($emailUnique))
