@@ -135,6 +135,10 @@
 				<br>
 				<br>
 			</div>
+			<div class="slider-wrapper">
+  				<input id="range-slider" class="fluid-slider" type="range" value="80" min="0" max="100">
+ 			 	<span id="range-label" class="range-label"></span>
+			</div>
         <a href="feed.php">Cancel</a><br>
         <a href="logout.php">Log out</a><br>
 			</form>
