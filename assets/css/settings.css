@@ -30,6 +30,29 @@
 
 }
 
+#rangeValues{
+  position: absolute;
+  top: 2px;
+  right: -60px;
+  padding: 2px;
+  width: 50px;
+  box-sizing: border-box;
+  background: #fff;
+  text-align: center;
+}
+
+#rangeValues:before{
+  content: '';
+  top: 50%;
+  position: absolute;
+  transform: translateY(-50%) rotate(45deg);
+  left: -5px;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+
+}
+
 .range::-webkit-slider-thumb{
   -webkit-appearance: none;
   width: 20px;

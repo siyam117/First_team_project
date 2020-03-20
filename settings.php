@@ -128,11 +128,13 @@
 				<label class ="settings_text">Number Of Sections</label>
 				<span id="rangeValue">0</span>
 				<script type="text/javascript" src="assets/js/slider.js"></script>
-				<input class="range" id="username-field" type="range" min="5" max = "20" value="5" name="section_amount">
+				<input class="range" id="username-field" onmousemove="rangeSlider(this.value)" onchange="rangeSlider(this.value)" type="range" min="5" max = "20" value="5" name="section_amount">
 				
 				<label class = "settings_text">Section Length</label>
+				<span id="rangeValues">0</span>
 				<input class="range" id="username-field" type="range" autocomplete="off" min="10" step="5" max = "300" value="10" placeholder="Section Length (1000 Max)" name="section_length">
-				<button class="submit-button" id="login-button" type="submit" name="button">Create Story <i class="fas fa-sign-in-alt"></i></button>
+				
+				<button class="submit-button" id="login-button" onchange="rangeSlider2(this.value)" onmousemove="rangeSlider2(this.value)" type="submit" name="button">Create Story <i class="fas fa-sign-in-alt"></i></button>
 
 				<br>
 				<br>
