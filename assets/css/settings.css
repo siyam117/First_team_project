@@ -1,3 +1,6 @@
+.slider-hold{
+  position: relative;
+}
 
 .settings_text{
   color: white;
@@ -12,10 +15,6 @@ body{
   align-items: center;
   min-height: 100vh;
   background: #222;
-}
-
-div{
-  position: relative;
 }
 
 #rangeValue{
