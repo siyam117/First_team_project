@@ -120,15 +120,14 @@
         <input class="input-field" id="username-field" type="text" autocomplete="off" placeholder="Title" name="title">
 
         <h>Create a new story</h><br> -->
-			<div class="slider-container">
-			<label class = "settings_text">Section Length</label>
-				<input class="slider" id="username-field" type="range" autocomplete="off" min="5" max = "20" value="10" placeholder="Section Length (1000 Max)" name="section_length">
-			</div>
+			
 			<div class="slider-container">
 			<form action="settings.php" method="POST" id="settingspage-box">
 				<input class="input-field" id="username-field" type="text" autocomplete="off" placeholder="Title" name="title">
 				<label class ="settings_text">Number Of Sections</label>
 				<input class="slider" id="username-field" type="range" autocomplete="off" min="5" max = "20" value="10" placeholder="Number of Sections " name="section_amount">
+				<span class="range-slider__value">0</span>
+				<script type="text/javascript" src="assets/js/main.js"></script>
 				<label class = "settings_text">Section Length</label>
 				<input class="slider" id="username-field" type="range" autocomplete="off" min="5" max = "20" value="10" placeholder="Section Length (1000 Max)" name="section_length">
 				<button class="submit-button" id="login-button" type="submit" name="button">Create Story <i class="fas fa-sign-in-alt"></i></button>
