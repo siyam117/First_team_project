@@ -1,19 +1,18 @@
-var rangeSlider = function(){
-  var slider = $('.slider-container'),
-      range = $('.slider'),
-      value = $('.range-slider__value');
-    
-  slider.each(function(){
+var rangeSlider = document.getElementById("range-slider");
 
-    value.each(function(){
-      var value = $(this).prev().attr('value');
-      $(this).html(value);
-    });
+var rangeLabel = document.getElementById("range-label");
 
-    range.on('input', function(){
-      $(this).next(value).html(this.value);
-    });
-  });
-};
+rangeSlider.addEventListener("input", showSliderValue, false);
 
-rangeSlider();
+function showSliderValue() {
+  rangeLabel.innerHTML = rangeSlider.value;
+  var labelPosition = (rangeSlider.value /rangeSlider.max);
+  
+  if(rangeSlider.value === rangeSlider.min) {
+ rangeLabel.style.left = ((labelPosition * 100) + 2) + "%";
+  } else if (rangeSlider.value === rangeSlider.max) {
+ rangeLabel.style.left = ((labelPosition * 100) - 2) + "%";
+  } else {
+  rangeLabel.style.left = (labelPosition * 100) + "%";
+  }
+}
