@@ -124,7 +124,7 @@
 
 			<form action="settings.php" method="POST" id="settings-box">
 			<div class="slider-hold">
-				<input class="input-field" id="username-field" type="text" autocomplete="off" placeholder="Title" name="title"><br>
+				<input class="input-field-settings" id="username-field" type="text" autocomplete="off" placeholder="Title" name="title"><br>
 				
 				<label class ="settings_text">Number Of Sections</label><br>
 				<span id="rangeValue">0</span>
@@ -134,7 +134,7 @@
 				<br>
 			<div class="slider-hold">
 				<label class = "settings_text">Section Length</label> <br>
-				<span id="rangeValues">0</span>
+				<span id="rangeValues">0</span><br>
 				<script type="text/javascript" src="assets/js/rangeSlider2.js"></script>
 				<input class="range" id="username-field" onchange="rangeSlider2(this.value)" onmousemove="rangeSlider2(this.value)" type="range" autocomplete="off" min="10" step="5" max = "300" value="10" placeholder="Section Length (1000 Max)" name="section_length">
 				<br>
