@@ -6,7 +6,13 @@
   padding: 30px 70px;
 }
 
-
+.credentials-box{
+  background-color: var(--bg-color);
+  border-radius: 15px;
+  width: 85%;
+  margin: 0 auto;
+  padding: 30px 70px;
+}
 .profile-text {
   font-size: 35px;
   color: #FFFFFF;
@@ -42,6 +48,18 @@
   transition: box-shadow 0.2s;
 }
 
+.delete-button {
+  background-color: #FF9179;
+  position: relative;
+  text-decoration: none;
+  color: #000000;
+  display: block;
+  border-radius: 10px;
+  height: 80px;
+  margin: 20px 0;
+  transition: box-shadow 0.2s;
+}
+
 .editor-button-text {
   font-size: 40px;
   display: inline;
@@ -49,4 +67,37 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.editprofile {
+  text-align: center;
+}
+
+/* HIDE RADIO */
+[type=radio] { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* IMAGE STYLES */
+[type=radio] + .profilepic {
+  cursor: pointer;
+}
+
+/* CHECKED STYLES */
+[type=radio]:checked + .profilepic {
+  outline: 2px solid #AEF769;
+}
+
+.profilepic {
+  width = 300px;
+  height = 300px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

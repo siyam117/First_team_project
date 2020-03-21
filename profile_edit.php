@@ -23,7 +23,7 @@
         if(!empty($username2)){
           if(func::checkUniqueUsername($conn, $username2)){
             $username2 = filter_var($username2, FILTER_SANITIZE_STRING);
-            $statement = $conn->prepare("UPDATE users SET username = '$username' WHERE user_id ='$id'");
+            $statement = $conn->prepare("UPDATE users SET username = '$username2' WHERE user_id ='$id'");
             $statement->execute();
             echo '<script language="javascript">';
             echo 'alert("Username changed")';
@@ -94,7 +94,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <link rel="stylesheet" href="assets/css/master.css">
   <script type="text/javascript" src="assets/js/lib/jquery-3.4.1.min.js"></script>
+  <script src="https://kit.fontawesome.com/e82695925e.js" crossorigin="anonymous"></script>
   <meta charset="UTF-8">
     <title>Profile Edit</title>
   </head>
@@ -152,17 +154,16 @@
     
 
 
-
+    <div id="profile-box"><div class = "profile-text">
+      <form action="" method="POST">
      <?php
     if ($userID == $_COOKIE["user_id"]  || $_COOKIE["user_id"] == 1){
       echo "<br>";
-      echo "Edit ".$username."'s profile<br>";
+      echo "<div class='editprofile'>Edit ".$username."'s profile</div><br>";
       echo "<hr>";
-      echo "<img src ='$picture'><br>";
-      echo "<a href='profile_picture.php'>Change your profile picture</a>";
-      echo "<hr>";
-      echo "Enter new login credentials:";
-
+      echo "<img src ='$picture' width = 400 height = 400 class='center'>";
+      echo "<a class='edit-button' href='profile_picture.php'><div class='editor-button-text'>Change your profile picture</div></a>";
+      
     }
     else{
       $id = $_GET['id'];
@@ -172,27 +173,30 @@
 
      ?>
 
-    <form action="" method="POST"><br>
+      <div class="credentials-box">
         <p2>New Username:</p2><br>
-        <input type="text" name="username"> <br>
-        <button type='submit' name='submitUser'>Change username</button>
+        <input class="input-field input-profile" type="text" name="username"> 
+        <button class="btn-standard btn-edit" type='submit' name='submitUser'>Change username</button>
         <hr>
         <p2>New Password:</p2> <br>
-        <input type="password" name="password"><br>
+        <input class="input-field input-profile" type="password" name="password">
         <p2>Old Password:</p2> <br>
-        <input type="password" name="passwordOld"><br>
-        <button type='submit' name='submitPass'>Change password</button>
+        <input class="input-field input-profile" type="password" name="passwordOld">
+        <button class="btn-standard btn-edit" type='submit' name='submitPass'>Change password</button>
         <hr>
         <p2>New Email:</p2> <br>
-        <input type="email" name="email"><br>
-        <button type='submit' name='submitEmail'>Change email</button>
-        <hr>
+        <input class="input-field input-profile" type="email" name="email">
+        <button class="btn-standard btn-edit" type='submit' name='submitEmail'>Change email</button>
+      </div>
     </form>
     
     <?php
-    echo "<a href=\"profile_delete.php?id=$userID\">Delete profile</a><hr>";
-    echo "<a href='profile.php?id=$userID'>Return</a><br>";
+    echo "<a class='edit-button' href='profile.php?id=$userID'><div class='editor-button-text'>Return</div></a>";
+    echo "<a class='delete-button' href='profile_delete.php?id=$userID'><div class='editor-button-text'>Delete profile</div></a>";
     ?>
+    </div>
+     <script type="text/javascript" src="assets/js/theme_change.js"></script>
+     <script type="text/javascript" src="assets/js/main.js"></script>
   </body>
 
 </html>

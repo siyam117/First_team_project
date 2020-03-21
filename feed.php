@@ -99,7 +99,30 @@
 
         </div>
         <!-- DROPDOWN END -->
-
+        <!-- INBOX START -->
+        <div class = "inbox">
+          <?php
+            $query = "SELECT * FROM messages WHERE to_id = $user_id;";
+            $unreadstories = func::sqlSELECT($conn, $query, $fetch_all = true);
+            $img = "<img src='assets/images/mail.png' width=75 height=75>";
+            foreach ($unreadstories as $rows)
+            {
+              $unread = $rows['unread'];
+              if ($unread){
+                 $img = "<img src='assets/images/unread.png' width=75 height=75>";
+              }
+            }
+            echo "<form action='inbox.php' method='post'>";
+            echo "<button name='inboxbutton' type='submit' style='background-color: Transparent;
+                  background-repeat:no-repeat;
+                  border: none;
+                  cursor:pointer;
+                  overflow: hidden;
+                  outline:none;'>$img</button>";
+            echo "</form>"
+          ?>
+        </div>
+        <!-- INBOX END -->
         <!-- TITLE START -->
         <a id="header-title" href="index.php">
           <div class="glitch-container">

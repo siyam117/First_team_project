@@ -106,7 +106,7 @@
     <div id="profile-box"><div class = "profile-text">
     
     <form action="profile.php" method="post" class = "search-form"> 
-    <label>Search for a profile:</label><br>
+    <div class='editprofile'>Search for a profile:</div><br>
     <input id="SearchBar" id="search-field" type="text" autocomplete="off" placeholder="Username" name="username">
     <button id="SearchBtn" type="submit" name="button">Search</button>
     <hr>
@@ -158,7 +158,8 @@
       }
       else{
         $id = $_COOKIE["user_id"];
-        echo "<hr><a class='edit-button' href='profile.php?id=$id'><div class='editor-button-text'>Return to my profile</div></a>";
+        echo "<hr><a class='edit-button' href='compose.php?id=$id'><div class='editor-button-text'>Message</div></a>";
+        echo "<a class='edit-button' href='profile.php?id=$id'><div class='editor-button-text'>Return to my profile</div></a>";
       }
 
      ?>
