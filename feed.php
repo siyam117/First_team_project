@@ -113,7 +113,7 @@
               }
             }
             echo "<form action='inbox.php' method='post'>";
-            echo "<button name='inboxbutton' type='submit' style='background-color: Transparent;
+            echo "<button name='inboxbutton' type='Search' style='background-color: Transparent;
                   background-repeat:no-repeat;
                   border: none;
                   cursor:pointer;
@@ -142,7 +142,7 @@
 
 
       <form method="post" style="display: block;">
-        <input type ="text" name="search" id="SearchBar" placeholder="Search" value="Search..." maxlength="35" autocomplete="off" onmousedown="active();" onblur="inactive();" /><input type="submit" id="SearchBtn" name="Go!"/>
+      <input type ="text" name="search" id="SearchBar" placeholder="Search" value="Search..." maxlength="35" autocomplete="off" onmousedown="active();" onblur="inactive();" /><input type="submit" id="SearchBtn" name="Search"/>
       </form>
 
 
