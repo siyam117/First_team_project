@@ -33,9 +33,9 @@
 
 #rangeValues{
   position: absolute;
-  top: 2px;
-  right: 40px;
-  padding: -5px;
+  top: 40px;
+  right: -5px;
+  padding: 2px;
   width: 50px;
   box-sizing: border-box;
   background: #fff;
