@@ -122,9 +122,9 @@
         <h>Create a new story</h><br> -->
 			
 
-			<form action="settings.php" method="POST" id="settingspage-box">
+			<form action="settings.php" method="POST" id="settings-box">
 			<div class="slider-hold">
-				<input class="input-field" id="username-field" type="text" autocomplete="off" placeholder="Title" name="title">
+				<input class="input-field" id="username-field" type="text" autocomplete="off" placeholder="Title" name="title"><br>
 				
 				<label class ="settings_text">Number Of Sections</label><br>
 				<span id="rangeValue">0</span>
