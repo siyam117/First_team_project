@@ -127,11 +127,11 @@
 				<input class="input-field-settings" id="username-field" type="text" autocomplete="off" placeholder="Title" name="title"><br>
 				<br><br><br>
 				<label class ="settings_text">Number Of Sections</label><br>
-				<div>
+				
 				<span id="rangeValue">0</span>
 				<script type="text/javascript" src="assets/js/slider.js"></script>
 				<input class="range" id="username-field" onmousemove="rangeSlider(this.value)" onchange="rangeSlider(this.value)" type="range" min="5" max = "20" value="5" name="section_amount">
-				</div>
+				
 			</div>
 				<br>
 			<div class="slider-hold">
