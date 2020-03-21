@@ -125,7 +125,7 @@
 			<form action="settings.php" method="POST" id="settings-box">
 			<div class="slider-hold">
 				<input class="input-field-settings" id="username-field" type="text" autocomplete="off" placeholder="Title" name="title"><br>
-				<br>
+				<br><br><br>
 				<label class ="settings_text">Number Of Sections</label><br>
 				<div>
 				<span id="rangeValue">0</span>
@@ -147,8 +147,7 @@
 			</div>
 			<button class="btn-standard btn-login"  onclick="window.location.href = 'feed.php';" type="button" name="button" >Cancel </button>
 			<button class="btn-standard btn-login"  onclick="window.location.href = 'logout.php';" type="button" name="button" >Log Out <i class="fas fa-sign-in-alt"></i></button>
-        <a href="feed.php">Cancel</a><br>
-        <a href="logout.php">Log out</a><br>
+       
 			</form>
 
 
