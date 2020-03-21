@@ -96,16 +96,26 @@
 
 
 
+    <div class="outer-container">
 
-    <form action="private_username.php" method="get">
-      <input type="text" autocomplete="off" placeholder="Enter PIN" name="id">
-      <button type="submit">Enter</button>
-    </form>
-    <form action="private_options.php" method="post">
-      <input type="hidden" name="create">
-      <input type="text" autocomplete="off" placeholder="Username" name="username">
-      <button type="submit">Create a new game</button>
-    </form>
+      <div class="split-container">
+        <form action="private_username.php" method="get">
+          <input class="input-field" type="text" autocomplete="off" placeholder="Enter PIN" name="id">
+          <button class="btn-standard" type="submit">Join Game</button>
+        </form>
+      </div>
+
+      <div class="split-container">
+        <form action="private_options.php" method="post">
+          <input type="hidden" name="create">
+          <input class="input-field" type="text" autocomplete="off" placeholder="Username" name="username">
+          <button class="btn-standard" type="submit">Create New Game</button>
+        </form>
+      </div>
+
+    </div>
+
+
 
     <script type="text/javascript" src="assets/js/main.js"></script>
   </body>

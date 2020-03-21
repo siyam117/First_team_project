@@ -1,0 +1,36 @@
+.split-container {
+  display: inline;
+  width: 50%;
+}
+
+.split-container:nth-child(1) {
+  float: left;
+}
+
+.split-container:nth-child(2) {
+  float: right;
+}
+
+.split-container form {
+  margin: 50px;
+}
+
+
+
+
+
+
+button.btn-standard {
+  height: 50px;
+  width: 250px;
+  margin: auto;
+  font-size: 30px;
+}
+
+input.input-field {
+  height: 40px;
+  width: 200px;
+  margin: auto;
+  margin-bottom: 25px;
+  font-size: 30px;
+}

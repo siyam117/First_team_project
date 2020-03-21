@@ -12,6 +12,8 @@
 @import "./settings.css";
 @import "./editor.css";
 
+@import "./private_options.css";
+
 
 
 
@@ -110,6 +112,11 @@ button.btn-standard:enabled:hover {
   background-color: #AEFF00;
 }
 
+.btn-standard.btn-feed.btn-compose {
+  background-color: #3D9AF9;
+}
+
+
 /* STANDARD BUTTON END */
 
 
@@ -124,6 +131,7 @@ button.btn-standard:enabled:hover {
   border: 0 solid white;
   box-shadow: 0px 5px 1px -1px var(--secondary-color);
   border-radius: 5px;
+  padding: 10px;
   color: white;
   background-color: rgba(0, 0, 0, 0);
   font-size: 20px;
@@ -141,6 +149,13 @@ button.btn-standard:enabled:hover {
   width: 250px;
   height: 30px;
   margin: 30px auto;
+  padding: 0 10px;
+}
+
+.input-field.input-profile {
+  width: 250px;
+  height: 30px;
+  margin: 20px;
   padding: 0 10px;
 }
 

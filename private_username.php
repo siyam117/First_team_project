@@ -123,8 +123,8 @@
       <?php
       echo "<input type='hidden' name='lobby_id' value='$lobby_id'>"
       ?>
-      <input type="text" autocomplete="off" placeholder="Username" name="username">
-      <button type="submit">Enter</button>
+      <input class="input-field" type="text" autocomplete="off" placeholder="Username" name="username">
+      <button class="btn-standard" type="submit">Enter</button>
     </form>
 
     <script type="text/javascript" src="assets/js/main.js"></script>
