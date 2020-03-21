@@ -125,11 +125,13 @@
 			<form action="settings.php" method="POST" id="settings-box">
 			<div class="slider-hold">
 				<input class="input-field-settings" id="username-field" type="text" autocomplete="off" placeholder="Title" name="title"><br>
-				
+				<br>
 				<label class ="settings_text">Number Of Sections</label><br>
+				<div>
 				<span id="rangeValue">0</span>
 				<script type="text/javascript" src="assets/js/slider.js"></script>
 				<input class="range" id="username-field" onmousemove="rangeSlider(this.value)" onchange="rangeSlider(this.value)" type="range" min="5" max = "20" value="5" name="section_amount">
+				</div>
 			</div>
 				<br>
 			<div class="slider-hold">
@@ -143,7 +145,7 @@
 				<br>
 				<br>
 			</div>
-			<button class="btn-standard btn-login"  onclick="window.location.href = 'feed.php';" type="button" name="button" >Cancel <i class="fas fa-sign-in-alt"></i></button>
+			<button class="btn-standard btn-login"  onclick="window.location.href = 'feed.php';" type="button" name="button" >Cancel </button>
 			<button class="btn-standard btn-login"  onclick="window.location.href = 'logout.php';" type="button" name="button" >Log Out <i class="fas fa-sign-in-alt"></i></button>
         <a href="feed.php">Cancel</a><br>
         <a href="logout.php">Log out</a><br>
