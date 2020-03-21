@@ -3,18 +3,39 @@
   include_once("../connection.php");
   include_once("functions.php");
 
-  if (func::checkLoginState($conn))
+  if (isset($_GET["id"]))
   {
-    if (isset($_POST["text"]))
+    $lobby_id = $_GET["id"];
+
+    $row = func::sqlSELECT($conn, "SELECT * FROM private_stories WHERE lobby_id='$lobby_id';");
+
+    if (empty($row))
     {
-      $text = $_POST["text"];
-      $writer_user_id = $_COOKIE["user_id"];
-      $conn->exec("INSERT INTO private_sections (lobby_id, section_text, writer_user_id) VALUES ('aiud', '$text', $writer_user_id);");
+      header("Location: private_options.php");
     }
+
+
+    if ($row["game_state"] == "waiting")
+    {
+      if (!func::checkPrivateSession($conn, $lobby_id))
+      {
+        header("Location: private_username.php?id=$lobby_id");
+      }
+
+      $creator_user_id = $row["creator_user_id"];
+      $private_user_id = $_COOKIE["Puser_id"];
+
+      $row = func::sqlSELECT($conn, "SELECT * FROM private_users WHERE user_id='$private_user_id';");
+
+      $self_username = $row["username"];
+
+    }
+
+
   }
   else
   {
-    header("Location: index.php");
+    header("Location: private_options.php");
   }
 
 ?>
@@ -91,26 +112,6 @@
 
 
 
-
-    <input type="text" name="" value="">
-    <button type="button" name="button">Click</button>
-    <div class="box">
-
-    </div>
-
-    <script type="text/javascript">
-      $("button").click(function(){
-        $.ajax({
-          type: "POST",
-          url: "private.php",
-          data: "text=" + $("input").val(),
-        });
-        console.log($(".box").html());
-        $.get("private_fetch.php?id=aiud", function(data, status) {
-          $(".box").html(data);
-        });
-      });
-    </script>
 
     <script type="text/javascript" src="assets/js/main.js"></script>
   </body>

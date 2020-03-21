@@ -111,12 +111,14 @@
 
     if ($creator_user_id == $private_user_id)
     {
-      echo "<button type='button' name='button' onclick='window.location.href='private_editor.php''>Start Game</button>";
+      echo "<button type='button' name='button' onclick='window.location.href='private_editor.php?id=''>Start Game</button>";
     }
 
     echo "Your username is " . $self_username;
 
     ?>
+
+
 
     <div class="usernames-box">
 
