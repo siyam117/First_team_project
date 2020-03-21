@@ -10,8 +10,8 @@
 
 #rangeValue{
   position: absolute;
-  top: 52px;
-  right: -5px;
+  top: 115px;
+  right: 120px;
   padding: 2px;
   width: 50px;
   box-sizing: border-box;
@@ -34,7 +34,7 @@
 #rangeValues{
   position: absolute;
   top: 40px;
-  right: -5px;
+  right: 120px;
   padding: 2px;
   width: 50px;
   box-sizing: border-box;
