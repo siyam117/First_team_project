@@ -3,7 +3,7 @@ include_once("../connection.php");
 
 $userID = $_GET['id'];
 
-if ($userID == $_COOKIE["user_id"] || $_COOKIE["user_id"] = 13){
+if ($userID == $_COOKIE["user_id"] || $_COOKIE["user_id"] = 1){
 	setcookie("user_id", "", time() - 3600, "/");
 	setcookie("token", "", time() - 3600, "/");
 	setcookie("serial", "", time() - 3600, "/");

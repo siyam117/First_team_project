@@ -26,7 +26,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <link rel="stylesheet" href="assets/css/master.css">
   <script type="text/javascript" src="assets/js/lib/jquery-3.4.1.min.js"></script>
+  <script src="https://kit.fontawesome.com/e82695925e.js" crossorigin="anonymous"></script>
 	<meta charset="UTF-8">
     <title>Profile Pictures</title>
 	</head>
@@ -86,23 +88,63 @@
 
 
   <body>
-    <h>Choose your profile picture:</h>
-    <form action = 'profile_picture.php' method = "POST">
-      <img src='assets/images/default.jpg'><br>
-      <input type="radio" name="pp" value="assets/images/default.jpg"><br><br>
-      <img src='assets/images/1.jpg'><br>
-      <input type="radio" name="pp" value="assets/images/1.jpg"><br><br>
-      <img src='assets/images/2.jpg'><br>
-      <input type="radio" name="pp" value="assets/images/2.jpg"><br><br>
-      <img src='assets/images/3.jpg'><br>
-      <input type="radio" name="pp" value="assets/images/3.jpg"><br><br>
-      <button type='submit' name='submit'>Confirm</button>
-    </form>
-    <br>
-    <?php
-    $id = $_COOKIE["user_id"];
-    echo "<a href='profile_edit.php?id=$id'>Cancel</a>";
-    ?>
+    <div id="profile-box"><div class = "profile-text">
+      <div class = 'editprofile'>Select your new profile picture</div>
+      <hr>
+      <form action = 'profile_picture.php' method = "POST">
+        <div class="pp-select">
+          <label>
+            <input type="radio" name="pp" value="assets/images/default.jpg">
+            <img src='assets/images/default.jpg' alt='pp' class='profilepic' width = 150 height = 150>
+          </label>
+          <label>
+            <input type="radio" name="pp" value="assets/images/1.jpg">
+            <img src='assets/images/1.jpg' alt='pp' class='profilepic' width = 150 height = 150>
+          </label>
+          <label>
+            <input type="radio" name="pp" value="assets/images/2.jpg">
+            <img src='assets/images/2.jpg' alt='pp' class='profilepic' width = 150 height = 150>
+          </label>
+          <label>
+            <input type="radio" name="pp" value="assets/images/3.jpg">
+            <img src='assets/images/3.jpg' alt='pp' class='profilepic' width = 150 height = 150>
+          </label>
+          <label>
+            <input type="radio" name="pp" value="assets/images/4.jpg">
+            <img src='assets/images/4.jpg' alt='pp' class='profilepic' width = 150 height = 150>
+          </label>
+          <label>
+            <input type="radio" name="pp" value="assets/images/5.jpg">
+            <img src='assets/images/5.jpg' alt='pp' class='profilepic' width = 150 height = 150>
+          </label>
+          <?php
+            $totalViews = 0;
+            $id = $_COOKIE["user_id"];
+            $sql = "SELECT * FROM stories WHERE creator_user_id = '$id'";
+            $row = func::sqlSELECT($conn, $sql, $fetch_all = true);
+            foreach ($row as $results){
+              $story_view = $results["views"];
+              $totalViews += $story_view;
+            }
+            if ($totalViews > 999){
+              echo "<label>
+                      <input type=\"radio\" name=\"pp\" value=\"assets/images/exclusive.jpg\">
+                      <img src='assets/images/exclusive.jpg' alt='pp' class='profilepic' width = 150 height = 150>
+                    </label>";
+            }
+          ?>
+          <br><br>
+          <button type='submit' name='submit' class="btn-standard btn-login">Confirm</button>
+        </div>
+      </form>
+      <br>
+      <?php
+      $id = $_COOKIE["user_id"];
+      echo "<a class='edit-button' href='profile_edit.php?id=$id'><div class='editor-button-text'>Cancel</div></a>";
+      ?>
+  </div></div>
+    <script type="text/javascript" src="assets/js/theme_change.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
   </body>
 
 </html>

@@ -112,6 +112,11 @@ button.btn-standard:enabled:hover {
   background-color: #AEFF00;
 }
 
+.btn-standard.btn-feed.btn-compose {
+  background-color: #3D9AF9;
+}
+
+
 /* STANDARD BUTTON END */
 
 
@@ -144,6 +149,13 @@ button.btn-standard:enabled:hover {
   width: 250px;
   height: 30px;
   margin: 30px auto;
+  padding: 0 10px;
+}
+
+.input-field.input-profile {
+  width: 250px;
+  height: 30px;
+  margin: 20px;
   padding: 0 10px;
 }
 

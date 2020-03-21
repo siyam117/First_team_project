@@ -125,27 +125,29 @@
 			<form action="settings.php" method="POST" id="settings-box">
 			<div class="slider-hold">
 				<input class="input-field-settings" id="username-field" type="text" autocomplete="off" placeholder="Title" name="title"><br>
-				
+				<br><br><br>
 				<label class ="settings_text">Number Of Sections</label><br>
+				
 				<span id="rangeValue">0</span>
 				<script type="text/javascript" src="assets/js/slider.js"></script>
 				<input class="range" id="username-field" onmousemove="rangeSlider(this.value)" onchange="rangeSlider(this.value)" type="range" min="5" max = "20" value="5" name="section_amount">
+				
 			</div>
 				<br>
 			<div class="slider-hold">
 				<label class = "settings_text">Section Length</label> <br>
-				<span id="rangeValues">0</span><br>
+				<span id="rangeValues">0</span>
 				<script type="text/javascript" src="assets/js/rangeSlider2.js"></script>
 				<input class="range" id="username-field" onchange="rangeSlider2(this.value)" onmousemove="rangeSlider2(this.value)" type="range" autocomplete="off" min="10" step="5" max = "300" value="10" placeholder="Section Length (1000 Max)" name="section_length">
-				<br>
+				<br><br>
 				<button class="submit-button" id="login-button"  type="submit" name="button">Create Story <i class="fas fa-sign-in-alt"></i></button>
 
 				<br>
 				<br>
 			</div>
-	
-        <a href="feed.php">Cancel</a><br>
-        <a href="logout.php">Log out</a><br>
+			<button class="btn-standard btn-login"  onclick="window.location.href = 'feed.php';" type="button" name="button" >Cancel </button>
+			<button class="btn-standard btn-login"  onclick="window.location.href = 'logout.php';" type="button" name="button" >Log Out <i class="fas fa-sign-in-alt"></i></button>
+       
 			</form>
 
 

@@ -113,6 +113,16 @@
 
       $conn->exec("INSERT INTO users (username, email, password, password_salt, created_timestamp, picture)
       VALUES ('$username', '$email', '$password', '$salt', '$created_timestamp', '$pp');");
+
+      
+      $sql = "SELECT * FROM users ORDER BY user_id DESC LIMIT 1;";
+      $results = func::sqlSELECT($conn, $sql, $fetch_all = true);
+      foreach ($results as $row){
+         $new_user_id = $row["user_id"];
+      }
+      $date = date("Y/m/d");
+      $conn->exec("INSERT INTO messages (to_id, from_id, message, subject, date, unread)
+          VALUES ('$new_user_id', 1, 'Welcome to INKKER.IO, we hope you enjoy your time inkking!', 'Welcome!', '$date', 1);");
     }
 
     public static function addNewUserPRIVATE($conn, $username, $lobby_id)
