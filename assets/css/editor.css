@@ -100,3 +100,16 @@
 .story-section-empty {
   height: 100px;
 }
+
+.report {
+  float: right;
+}
+
+.like {
+  float: left;
+}
+
+.like-text {
+  font-size: 25px;
+  color: #FFFFFF;
+}

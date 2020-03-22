@@ -157,8 +157,11 @@
 
 			<div id="story-display-box">
 				<div id="story-display-box-header">
-					<a href="feed.php">Go Back</a><br>
+					<br>
 
+					<div id="story-title"><?php echo $story_title; ?></div>
+					<div class = 'like'>
+						<div class = "like-text">
 					<?php
 					//LIKE BUTTON
 					if ($like === "Like"){
@@ -197,12 +200,11 @@
 						$NewViews = $NewViews.'K';
 					}
 
-					echo "<font color='white'>".$number_of_likes." LIKES || ".$NewViews." VIEWS</font>";
+					echo $number_of_likes."</div>";
 					echo "</form>";
 
 					?>
-
-					<div id="story-title"><?php echo $story_title; ?></div>
+				</div>
 					<?php
 					//REPORT/DELETE
 					$admin = false;
@@ -210,6 +212,7 @@
 					if ($userID == 1){
 						$admin = true;
 					}
+					echo "<div class = 'report'>";
 					if($admin){
 						$report = "<img src = 'assets/images/delete.png' width=35 height=35>";
 						echo "<form action='editor.php?id=$story_id' method='post'>";
@@ -232,9 +235,10 @@
 						    outline:none;'>$report</button>";
 						echo "</form>";
 					}
+					echo "</div>";
 					?>
 				</div>
-				<br>
+	
 				<hr id="title-body-line">
 				<div id="story-display-box-body">
 					<?php
