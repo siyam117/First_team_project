@@ -143,7 +143,7 @@
 				<button class="btn-standard btn-login" id="create-button"  type="submit" name="button">Create Story &#10003;</button>
 
 				<br>
-				<br>
+				
 			</div>
 			<button class="btn-standard btn-login"  onclick="window.location.href = 'feed.php';" type="button" name="button" >Cancel </button>
 			<button class="btn-standard btn-login"  onclick="window.location.href = 'logout.php';" type="button" name="button" >Log Out <i class="fas fa-sign-in-alt"></i></button>
