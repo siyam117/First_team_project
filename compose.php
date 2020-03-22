@@ -112,6 +112,15 @@
 
 
     <div id="profile-box"><div class = "profile-text">
+       <form action='inbox.php' method='post'>
+      <button name='returnButton' type='submit' style='background-color: Transparent;
+                background-repeat:no-repeat;
+                border: none;
+                cursor:pointer;
+                overflow: hidden;
+                outline:none;
+                float:right;'><img src = 'assets/images/return.png' width = 45 height = 45></button>
+     </form>
       <form action="compose.php" method="POST" id='messageForm'>
         <button class="btn-standard btn-edit" type='submit' name='sendMessage'>Send</button>
         <label>To:</label>
@@ -124,7 +133,6 @@
       Message:<br>
       <textarea cols="100" rows="15" name="message" form="messageForm">
       </textarea>
-      <hr><a class='edit-button' href='inbox.php'><div class='editor-button-text'>Cancel</div></a>
     </div></div>
   <script type="text/javascript" src="assets/js/theme_change.js"></script>
   <script type="text/javascript" src="assets/js/main.js"></script>

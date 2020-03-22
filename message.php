@@ -113,14 +113,23 @@
 
 
 
-    <div id="profile-box"><div class = "profile-text">
+    <div id="profile-box">
+       <form action='inbox.php' method='post'>
+      <button name='returnButton' type='submit' style='background-color: Transparent;
+                background-repeat:no-repeat;
+                border: none;
+                cursor:pointer;
+                overflow: hidden;
+                outline:none;
+                float:right;'><img src = 'assets/images/return.png' width = 45 height = 45></button>
+     </form>
+      <div class = "profile-text">
     <?php
       echo "<div class='editprofile'>'$subject' from $username ($date)</div><hr>";
       echo $message;
       echo "<hr><a class='edit-button' href='compose.php?id=$from_id'><div class='editor-button-text'>Reply</div></a>";
     ?>
     
-    <a class='edit-button' href='inbox.php'><div class='editor-button-text'>Return</div></a>
    </div>
    </div>
       <script type="text/javascript" src="assets/js/theme_change.js"></script>

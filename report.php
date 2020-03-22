@@ -89,7 +89,16 @@
 
 
 
-
+    <div id="profile-box"><div class = "profile-text">
+      <form action='feed.php' method='post'>
+      <button name='returnButton' type='submit' style='background-color: Transparent;
+                background-repeat:no-repeat;
+                border: none;
+                cursor:pointer;
+                overflow: hidden;
+                outline:none;
+                float:right;'><img src = 'assets/images/return.png' width = 45 height = 45></button>
+     </form>
     <p>Report a story:</p>
     <hr>
     Provide some additional details:<br>
@@ -98,10 +107,10 @@
     <?php
     echo "<form action ='report.php?id=$id' method = 'POST' id='reportform'>";
     ?>
-      <button type="submit" name="reported">Report</button>
+      <button class="btn-standard btn-edit" type="submit" name="reported">Report</button>
     </form>
     <br>
-    <a href = 'feed.php'>Cancel</a>
+  </div></div>
   </body>
 
 </html>

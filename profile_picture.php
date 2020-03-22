@@ -89,6 +89,18 @@
 
   <body>
     <div id="profile-box"><div class = "profile-text">
+      <?php
+      $id = $_COOKIE["user_id"];
+      echo "<form action='profile_edit.php?id=$id' method='post'>
+      <button name='returnButton' type='submit' style='background-color: Transparent;
+                background-repeat:no-repeat;
+                border: none;
+                cursor:pointer;
+                overflow: hidden;
+                outline:none;
+                float:right;'><img src = 'assets/images/return.png' width = 45 height = 45></button>
+     </form>";
+     ?>
       <div class = 'editprofile'>Select your new profile picture</div>
       <hr>
       <form action = 'profile_picture.php' method = "POST">
@@ -137,11 +149,7 @@
           <button type='submit' name='submit' class="btn-standard btn-login">Confirm</button>
         </div>
       </form>
-      <br>
-      <?php
-      $id = $_COOKIE["user_id"];
-      echo "<a class='edit-button' href='profile_edit.php?id=$id'><div class='editor-button-text'>Cancel</div></a>";
-      ?>
+    
   </div></div>
     <script type="text/javascript" src="assets/js/theme_change.js"></script>
     <script type="text/javascript" src="assets/js/main.js"></script>

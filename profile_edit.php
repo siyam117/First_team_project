@@ -155,6 +155,19 @@
 
 
     <div id="profile-box"><div class = "profile-text">
+      <?php
+      $id = $_COOKIE["user_id"];
+      echo "<form action='profile.php?id=$id' method='post'>
+      <button name='returnButton' type='submit' style='background-color: Transparent;
+                background-repeat:no-repeat;
+                border: none;
+                cursor:pointer;
+                overflow: hidden;
+                outline:none;
+                float:right;'><img src = 'assets/images/return.png' width = 45 height = 45></button>
+     </form>";
+     ?>
+     <br>
       <form action="" method="POST">
      <?php
     if ($userID == $_COOKIE["user_id"]  || $_COOKIE["user_id"] == 1){
@@ -191,7 +204,6 @@
     </form>
     
     <?php
-    echo "<a class='edit-button' href='profile.php?id=$userID'><div class='editor-button-text'>Return</div></a>";
     echo "<a class='delete-button' href='profile_delete.php?id=$userID'><div class='editor-button-text'>Delete profile</div></a>";
     ?>
     </div>

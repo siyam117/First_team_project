@@ -165,10 +165,10 @@
 					<?php
 					//LIKE BUTTON
 					if ($like === "Like"){
-						$img = "<img src='assets/images/like.png' width=35 height=35>";
+						$img = "<img src='assets/images/like.png' width=45 height=45>";
 					}
 					else{
-						$img = "<img src='assets/images/unlike.png' width=35 height=35>";
+						$img = "<img src='assets/images/unlike.png' width=45 height=45>";
 					}
 					echo "<form action='editor.php?id=$story_id' method='post'>";
 					echo "<button name='likeButton' type='submit' style='background-color: Transparent;
@@ -213,8 +213,9 @@
 						$admin = true;
 					}
 					echo "<div class = 'report'>";
+					echo "<div class = 'columneditor'>";
 					if($admin){
-						$report = "<img src = 'assets/images/delete.png' width=35 height=35>";
+						$report = "<img src = 'assets/images/delete.png' width=45 height=45>";
 						echo "<form action='editor.php?id=$story_id' method='post'>";
 						echo "<button name='deleteButton' type='submit' style='background-color: Transparent;
 						    background-repeat:no-repeat;
@@ -225,7 +226,7 @@
 						echo "</form>";
 					}
 					else{
-						$report = "<img src = 'assets/images/report.png' width=35 height=35>";
+						$report = "<img src = 'assets/images/report.png' width=45 height=45>";
 						echo "<form action='editor.php?id=$story_id' method='post'>";
 						echo "<button name='reportButton' type='submit' style='background-color: Transparent;
 						    background-repeat:no-repeat;
@@ -235,7 +236,16 @@
 						    outline:none;'>$report</button>";
 						echo "</form>";
 					}
-					echo "</div>";
+					echo "</div><div class = 'columneditor'>";
+					echo "<form action='feed.php' method='post'>";
+						echo "<button name='returnButton' type='submit' style='background-color: Transparent;
+						    background-repeat:no-repeat;
+						    border: none;
+						    cursor:pointer;
+						    overflow: hidden;
+						    outline:none;'><img src = 'assets/images/return.png' width = 45 height = 45></button>";
+						echo "</form>";
+					echo "</div></div>";
 					?>
 				</div>
 	

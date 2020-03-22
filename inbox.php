@@ -83,6 +83,16 @@
    
 
   <div id="profile-box">
+      <form action='feed.php' method='post'>
+      <button name='returnButton' type='submit' style='background-color: Transparent;
+                background-repeat:no-repeat;
+                border: none;
+                cursor:pointer;
+                overflow: hidden;
+                outline:none;
+                float:right;'><img src = 'assets/images/return.png' width = 45 height = 45></button>
+     </form>
+     <br><br><br>
      <a class='btn-standard btn-feed btn-compose' href='compose.php'><div class='feed-button-text'>+</div></a>
   <br>
     <?php
