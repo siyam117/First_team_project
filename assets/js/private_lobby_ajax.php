@@ -19,7 +19,14 @@
     $rows = func::sqlSELECT($conn, "SELECT * FROM private_users WHERE lobby_id='$lobby_id' ORDER BY created_timestamp DESC;", $fetch_all = true);
     foreach ($rows as $row)
     {
-      if ($row["user_id"] != $_COOKIE["Puser_id"] && time() - $row["last_refreshed"] < 5)
+      if (time() - $row["last_refreshed"] < 5)
+      {
+        $private_user_id = $row["user_id"];
+        $conn->exec("DELETE FROM private_users WHERE lobby_id='$lobby_id' AND user_id=$private_user_id;");
+        $conn->exec("DELETE FROM private_sessions WHERE session_user_id=$private_user_id;");
+      }
+
+      if ($row["user_id"] != $_COOKIE["Puser_id"] && )
       {
         echo "<div>" . $row["username"] . "</div>";
       }
