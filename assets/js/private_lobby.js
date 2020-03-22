@@ -15,11 +15,11 @@ var lobby_id = getUrlVars()["id"];
 
 
 function infiniteRefresh(){
-  $.post("assets/js/private_lobby_fetch.php", {id: lobby_id}, function(data, status){
+  $.post("assets/js/private_lobby_ajax.php", {id: lobby_id}, function(data, status){
     usernames_box.html(data);
   });
 
-  setTimeout(infiniteRefresh, 2000);
+  setTimeout(infiniteRefresh, 1000);
 }
 
 infiniteRefresh();
