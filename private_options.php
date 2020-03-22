@@ -16,7 +16,7 @@
       if ($private_user_id != null)
       {
         func::startNewSessionPRIVATE($conn, $private_user_id);
-        $conn->exec("INSERT INTO private_stories (lobby_id, creator_user_id, title) VALUES ('$lobby_id', '$private_user_id', 'Untitled');");
+        $conn->exec("INSERT INTO private_stories (lobby_id, creator_user_id, title, game_state) VALUES ('$lobby_id', '$private_user_id', 'Untitled', 'waiting');");
 
         header("Location: private_lobby.php?id=$lobby_id");
       }
