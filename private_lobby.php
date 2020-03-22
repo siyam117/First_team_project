@@ -135,36 +135,7 @@
       <div class="bottom-container">
         <div class="livechat-container">
           <div class="messages-container">
-            <div>
-              Hey
-            </div>
-            <div>
-              Hey
-            </div>
-            <div>
-              whatup
-            </div>
-            <div>
-              <span>Yeet:</span> whatupasdasdasdasdasdasd  whatupasdasdasdasdasdasd  whatupasdasdasdasdasdasd  whatupasdasdasdasdasdasd
-            </div>
-            <div>
-              whatup
-            </div>
-            <div>
-              whatup
-            </div>
-            <div>
-              whatup
-            </div>
-            <div>
-              whatup
-            </div>
-            <div>
-              whatup
-            </div>
-            <div>
-              whatup
-            </div>
+    
           </div>
 
           <div class="message-sender">

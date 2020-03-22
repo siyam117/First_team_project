@@ -1,5 +1,4 @@
 .private_lobby .container-standard {
-  /* height: 1000px; */
   width: 900px;
   margin: auto;
   color: white;
@@ -28,6 +27,7 @@
 .private_lobby .bottom-container {
   height: 100%;
   width: 100%;
+  padding-top: 50px;
 }
 
 .private_lobby .livechat-container {
@@ -85,6 +85,8 @@
 
 .private_lobby .usernames-container {
   display: inline-block;
+  min-height: 400px;
   height: 100%;
   width: 40%;
+  background-color: black;
 }
