@@ -28,7 +28,6 @@
       $row = func::sqlSELECT($conn, "SELECT * FROM private_users WHERE user_id='$private_user_id';");
 
       $self_username = $row["username"];
-
     }
 
 

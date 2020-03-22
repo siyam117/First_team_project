@@ -1,0 +1,90 @@
+.private_lobby .container-standard {
+  /* height: 1000px; */
+  width: 900px;
+  margin: auto;
+  color: white;
+  font-size: 50px;
+}
+
+.private_lobby .top-container {
+  padding-top: 30px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.private_lobby .button-container {
+
+}
+
+.private_lobby .button-container button {
+
+}
+
+.private_lobby hr {
+  margin: 50px 50px;
+  background-color: white;
+}
+
+.private_lobby .bottom-container {
+  height: 100%;
+  width: 100%;
+}
+
+.private_lobby .livechat-container {
+  display: inline-block;
+  border-radius: 30px;
+  min-height: 400px;
+  height: 100%;
+  width: 50%;
+  margin: 20px 30px;
+  background-color: var(--bg-color);
+  box-sizing: border-box;
+}
+
+.private_lobby .livechat-container .messages-container {
+  height: 300px;
+  width: 100%;
+  padding: 30px;
+  font-size: 25px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.private_lobby .livechat-container .messages-container span {
+  color: green;
+}
+
+.private_lobby .livechat-container .message-sender {
+  height: 100px;
+  width: 100%;
+  padding-top: 10px;
+  padding-left: 30px;
+  background-color: var(--secondary-color);
+  border-radius: 0 0 30px 30px;
+  box-sizing: border-box;
+}
+
+.private_lobby .livechat-container .message-sender .input-field {
+  display: inline-block;
+  height: 50px;
+  width: 250px;
+  margin: 0;
+  background-color: var(--tertiary-color);
+}
+
+.private_lobby .livechat-container .message-sender .input-field:focus {
+  box-shadow: 0px 0px 0px 0px var(--tertiary-color);
+  opacity: 1;
+}
+
+.private_lobby .livechat-container .message-sender .btn-standard {
+  display: inline-block;
+  height: 50px;
+  width: 100px;
+}
+
+.private_lobby .usernames-container {
+  display: inline-block;
+  height: 100%;
+  width: 40%;
+}

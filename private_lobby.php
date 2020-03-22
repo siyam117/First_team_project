@@ -43,7 +43,7 @@
 
     <title>Lobby</title>
   </head>
-  <body>
+  <body class="private_lobby">
 
 
     <!-- HEADER START -->
@@ -107,7 +107,7 @@
 
 
 
-    <?php
+    <!-- <?php
 
     if ($creator_user_id == $private_user_id)
     {
@@ -116,13 +116,71 @@
 
     echo "Your username is " . $self_username;
 
-    ?>
+    ?> -->
 
 
 
-    <div class="usernames-box">
+    <div class="container-standard">
+
+      <div class="top-container">
+        Your username is Yeet
+      </div>
+
+      <div class="button-container">
+        <button class="btn-standard" type="button" name="button">Start Game</button>
+      </div>
+
+      <hr>
+
+      <div class="bottom-container">
+        <div class="livechat-container">
+          <div class="messages-container">
+            <div>
+              Hey
+            </div>
+            <div>
+              Hey
+            </div>
+            <div>
+              whatup
+            </div>
+            <div>
+              <span>Yeet:</span> whatupasdasdasdasdasdasd  whatupasdasdasdasdasdasd  whatupasdasdasdasdasdasd  whatupasdasdasdasdasdasd
+            </div>
+            <div>
+              whatup
+            </div>
+            <div>
+              whatup
+            </div>
+            <div>
+              whatup
+            </div>
+            <div>
+              whatup
+            </div>
+            <div>
+              whatup
+            </div>
+            <div>
+              whatup
+            </div>
+          </div>
+
+          <div class="message-sender">
+              <input class="input-field" type="text" name="" value="">
+              <button class="btn-standard" type="button" name="button">Send</button>
+          </div>
+        </div>
+
+        <div class="usernames-container">
+
+        </div>
+      </div>
 
     </div>
+
+
 
     <script type="text/javascript" src="assets/js/private_lobby.js"></script>
     <script type="text/javascript" src="assets/js/main.js"></script>
