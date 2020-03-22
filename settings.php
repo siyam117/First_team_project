@@ -140,7 +140,7 @@
 				<script type="text/javascript" src="assets/js/rangeSlider2.js"></script>
 				<input class="range" id="username-field" onchange="rangeSlider2(this.value)" onmousemove="rangeSlider2(this.value)" type="range" autocomplete="off" min="10" step="5" max = "300" value="10" placeholder="Section Length (1000 Max)" name="section_length">
 				<br><br>
-				<button class="btn-standard btn-login" id="create-button"  type="submit" name="button">Create Story &#10003; <i class="fas fa-sign-in-alt"></i></button>
+				<button class="btn-standard btn-login" id="create-button"  type="submit" name="button">Create Story &#10003;</button>
 
 				<br>
 				<br>
