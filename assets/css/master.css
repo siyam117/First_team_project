@@ -101,13 +101,30 @@ button.btn-standard:enabled:hover {
 .btn-standard.btn-feed {
   position: relative;
   height: 80px;
-  width: 100%;
+
   margin: 20px 0;
   background-color: #FFFFFF;
   color: #000000;
   text-decoration: none;
   border-radius: 10px;
 }
+
+.btn-standard.btn-feed.stories{
+  height:500px;
+  background-color: #2E4C67;
+  color: #FFFFFF;
+
+
+ 
+  padding: 5px;
+}
+
+.stories-list{
+  display:grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmaX(400px, 1fr));
+}
+
 
 .btn-standard.btn-feed.btn-feed-top {
   background-color: #AEFF00;

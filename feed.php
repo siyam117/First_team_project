@@ -149,15 +149,43 @@
       <div id="feed-box">
         <a class="btn-standard btn-feed btn-feed-top" href="private_options.php"><div class="feed-button-text">Create private game</div></a>
         <a class="btn-standard btn-feed btn-feed-top" href="settings.php"><div class="feed-button-text">Create new story</div></a>
+        <section class = "stories-list">
         <?php
           foreach ($row as $storydata)
           {
             $currentTitle = $storydata["title"];
             $currentID = $storydata["story_id"];
+            $creatorID = $storydata["creator_user_id"];
+            $stmt = "SELECT * FROM users WHERE user_id = $creatorID;";
+            $userrow = func::sqlSELECT($conn, $stmt, $fetch_all = true);
+            if (empty($userrow)){
+              $creator = "deleted";
+            }
+            else{
+              foreach ($userrow as $result){
+                $creator = $result["username"];
+              }
+            }
+            
+            $sql = "SELECT COUNT(*) FROM `$currentID`";
+            $result = $conn->prepare($sql);
+            $result->execute();
+            //getting total number of likes
+            $number_of_likes = $result->fetchColumn();
+            $number_of_likes += 0;
+            if ($number_of_likes>999999){
+              $number_of_likes = substr($number_of_likes, 0, -6);
+              $number_of_likes = $number_of_likes.'M';
+            }
+            else if ($number_of_likes>999){
+              $number_of_likes = substr($number_of_likes, 0, -3);
+              $number_of_likes = $number_of_likes.'K';
+            }
 
-            echo "<a class='btn-standard btn-feed' href='viewadder.php?id=$currentID'><div class='feed-button-text'>$currentTitle</div></a>";
+            echo "<a class='btn-standard btn-feed stories' href='viewadder.php?id=$currentID'><hr class ='divider'><div class='feed-button-image'><img src = 'assets/images/default.jpg' width = 100% height = 360></div><div class='feed-button-text stories'>$currentTitle</div><div class='creator'>by $creator</div><div class='likeimage'><div class='nolikes'>$number_of_likes</div><img src = 'assets/images/like.png' alt = 'likes' width=50 height=50></div></a>";
           }
         ?>
+        </section>
       </div>
 
       <script type="text/javascript" src="assets/js/theme_change.js"></script>
