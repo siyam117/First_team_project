@@ -123,7 +123,9 @@
     <div class="container-standard">
 
       <div class="top-container">
-        Your username is Yeet
+        <?php
+          echo "Your username is $self_username";
+        ?>
       </div>
 
       <div class="button-container">
@@ -135,7 +137,7 @@
       <div class="bottom-container">
         <div class="livechat-container">
           <div class="messages-container">
-    
+
           </div>
 
           <div class="message-sender">
@@ -145,7 +147,7 @@
         </div>
 
         <div class="usernames-container">
-
+          Players:
         </div>
       </div>
 
