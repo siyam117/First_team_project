@@ -14,6 +14,11 @@
       header("Location: private_options.php");
     }
 
+    if ($row["game_state"] == "ongoing")
+    {
+      header("Location: private_editor.php?id=$lobby_id");
+    }
+
     if (!func::checkPrivateSession($conn, $lobby_id))
     {
       header("Location: private_username.php?id=$lobby_id");
@@ -129,7 +134,9 @@
       </div>
 
       <div class="button-container">
-        <button class="btn-standard" type="button" name="button">Start Game</button>
+        <?php
+          echo "<button class='btn-standard' onclick='window.location.href='private_editor.php?id=$lobby_id'' type='button' name='button'>Start Game</button>";
+        ?>
       </div>
 
       <hr>

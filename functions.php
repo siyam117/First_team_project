@@ -137,7 +137,7 @@
       else
       {
         $res = $conn->exec("INSERT INTO private_users (user_id, username, lobby_id, created_timestamp, last_refreshed) VALUES ($private_user_id, '$username', '$lobby_id', $created_timestamp, $created_timestamp);");
-        echo $res;
+
         return $private_user_id;
       }
     }

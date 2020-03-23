@@ -25,10 +25,18 @@
       $creator_user_id = $row["creator_user_id"];
       $private_user_id = $_COOKIE["Puser_id"];
 
-      $row = func::sqlSELECT($conn, "SELECT * FROM private_users WHERE user_id='$private_user_id';");
+      if ($private_user_id != $creator_user_id)
+      {
+        header("Location: private_lobby.php?id=$lobby_id");
+      }
 
-      $self_username = $row["username"];
+      $conn->exec("UPDATE private_stories SET game_state='ongoing' WHERE lobby_id='$lobby_id';");
+      // $row = func::sqlSELECT($conn, "SELECT * FROM private_users WHERE user_id='$private_user_id';");
+      //
+      // $self_username = $row["username"];
     }
+
+    elseif ($row["game_state"] == "ongoing")
 
 
   }
