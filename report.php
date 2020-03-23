@@ -9,7 +9,13 @@
     if(isset($_POST["reported"])){
       $comment = htmlspecialchars($_POST["comment"]);
       $message = "User reported story with ID ".$id.". <br>Additional details: <br>".$comment;
-      mail('email','REPORT', $message);
+      $subjectPM = "Report Story ".$id;
+      $fromPM = $_COOKIE["user_id"];
+      $date = date("Y/m/d");
+      $unread = 1;
+      $conn->exec("INSERT INTO messages (to_id, from_id, message, subject, date, unread)
+      VALUES (1, '$fromPM', '$message', '$subjectPM', '$date', '$unread');");
+
       header("Location: feed.php");
     }
 
