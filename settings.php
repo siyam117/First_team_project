@@ -6,12 +6,18 @@
 	if(func::checkLoginState($conn))
 	{
 		$user_id = $_COOKIE["user_id"];
-
+		if(!empty($_POST["storypic"])){
+			$thumbnail = $_POST["storypic"];
+		}else{
+			$thumbnail = "default";
+		}
+		
 		if(isset($_POST["title"]) && isset($_POST["section_amount"]) && isset($_POST["section_length"]))
 		{
 			$title = $_POST["title"];
 			$section_amount = $_POST["section_amount"];
 			$section_length = $_POST["section_length"];
+			$thumbnailfinal = $_POST["thumbnail"];
 
 			$amount_acceptable = $section_amount <= 20;
 			$length_acceptable = $section_length <= 1000;
@@ -26,7 +32,7 @@
 					$title = func::cleanEditorInput($title);
 
 					//INSERTING STORY
-					$statement = $conn->prepare("INSERT INTO stories (creator_user_id, title, section_amount, section_length) VALUES ($user_id, '$title', $section_amount, $section_length);");
+					$statement = $conn->prepare("INSERT INTO stories (creator_user_id, title, section_amount, section_length, story_image, views) VALUES ($user_id, '$title', $section_amount, $section_length, '$thumbnailfinal', 0);");
 					$statement->execute();
 
 					//RETRIEVING STORY ID
@@ -120,10 +126,23 @@
         <input class="input-field" id="username-field" type="text" autocomplete="off" placeholder="Title" name="title">
 
         <h>Create a new story</h><br> -->
-			
+			<div id="settings-box">
+        	<?php
+					echo "<form action=\"thumbnail.php\" method=\"POST\">
+							<button class=\"btn-standard btn-login\" id=\"create-button\"  type=\"submit\" name=\"thumb\">Choose Thumbnail</button></form>";
 
-			<form action="settings.php" method="POST" id="settings-box">
+					$image = "<img src='assets/images/story".$thumbnail.".jpg' alt='thumbnail' width = 300 height = 250>";
+					echo $image;
+
+			?>
+			<form action="settings.php" method="POST">
+				<?php
+				echo "<input type=\"hidden\" name=\"thumbnail\" value='$thumbnail'>"
+				?>
+				
+				<br><label class ="settings_text">Title</label><br><br>
 			<div class="slider-hold">
+				
 				<input class="input-field-settings" id="username-field" type="text" autocomplete="off" placeholder="Title" name="title"><br>
 				<br><br><br>
 				<label class ="settings_text">Number Of Sections</label><br>
@@ -139,6 +158,8 @@
 				<span id="rangeValues">0</span>
 				<script type="text/javascript" src="assets/js/rangeSlider2.js"></script>
 				<input class="range" id="username-field" onchange="rangeSlider2(this.value)" onmousemove="rangeSlider2(this.value)" type="range" autocomplete="off" min="10" step="5" max = "300" value="10" placeholder="Section Length (1000 Max)" name="section_length">
+				<br>
+
 				<br><br>
 				<button class="btn-standard btn-login" id="create-button"  type="submit" name="button">Create Story &#10003;</button>
 
@@ -148,6 +169,7 @@
 	
        
 			</form>
+		</div>
 			<button class="btn-standard btn-login"  onclick="window.location.href = 'feed.php';" type="button" name="button" >Cancel </button>
 			<button class="btn-standard btn-login"  onclick="window.location.href = 'logout.php';" type="button" name="button" >Log Out <i class="fas fa-sign-in-alt"></i></button>
 

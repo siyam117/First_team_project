@@ -82,7 +82,7 @@
 
    
 
-  <div id="profile-box">
+  <div id="inbox-box">
       <form action='feed.php' method='post'>
       <button name='returnButton' type='submit' style='background-color: Transparent;
                 background-repeat:no-repeat;
@@ -113,9 +113,9 @@
         }
         
         if ($unread){
-           echo "<a class='btn-standard btn-feed btn-feed-top' href='message.php?id=$message_id'><div class='feed-button-text'>'$subject' from $username ($date)</div></a>";
+           echo "<a class='btn-standard btn-feed unread' href='message.php?id=$message_id'><div class='feed-button-text inbox'>'$subject' from $username ($date)</div></a>";
         }else{
-          echo "<a class='btn-standard btn-feed' href='message.php?id=$message_id'><div class='feed-button-text'>'$subject' from $username ($date)</div></a>";
+          echo "<a class='btn-standard btn-feed' href='message.php?id=$message_id'><div class='feed-button-text inbox'>'$subject' from $username ($date)</div></a>";
         }
        
       }

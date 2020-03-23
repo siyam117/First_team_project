@@ -19,8 +19,10 @@
 
       if ($allFieldsFilled && $passwordsMatch && $usernameUnique && $emailUnique)
       {
-        func::addNewUser($conn, $username, $email, $passwordOne);
-        header("location:login.php");
+        if (strlen($username)<20){
+          func::addNewUser($conn, $username, $email, $passwordOne);
+          header("location:login.php");
+        }
       }
     }
   }

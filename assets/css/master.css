@@ -125,9 +125,17 @@ button.btn-standard:enabled:hover {
   grid-template-columns: repeat(auto-fit, minmaX(400px, 1fr));
 }
 
+.addimg {
+  padding: 11px;
+  border-radius: 30px;
+}
 
 .btn-standard.btn-feed.btn-feed-top {
-  background-color: #AEFF00;
+  background-color: #FFFFFF;
+}
+
+.btn-standard.btn-feed.unread {
+  background-color: #00cc99;
 }
 
 .btn-standard.btn-feed.btn-compose {

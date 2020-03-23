@@ -5,14 +5,7 @@
 
   if (func::checkLoginState($conn))
   {
-    //changing profile picture
-    if (isset($_POST["pp"])){
-      $picture = ($_POST["pp"]);
-      $id = $_COOKIE["user_id"];
-      $conn->exec("UPDATE users SET picture = '$picture' WHERE user_id = $id;");
-      $url = 'Location: profile_edit.php?id='.$id;
-      header($url);
-    }
+
   }
   else
   {
@@ -30,7 +23,7 @@
   <script type="text/javascript" src="assets/js/lib/jquery-3.4.1.min.js"></script>
   <script src="https://kit.fontawesome.com/e82695925e.js" crossorigin="anonymous"></script>
 	<meta charset="UTF-8">
-    <title>Profile Pictures</title>
+    <title>Thumbnail</title>
 	</head>
 
 
@@ -90,8 +83,8 @@
   <body>
     <div id="profile-box"><div class = "profile-text">
       <?php
-      $idUSER = $_COOKIE["user_id"];
-      echo "<form action='profile.php?id=$idUSER' method='post'>
+      $id = $_COOKIE["user_id"];
+      echo "<form action='settings.php' method='post'>
       <button name='returnButton' type='submit' style='background-color: Transparent;
                 background-repeat:no-repeat;
                 border: none;
@@ -101,52 +94,36 @@
                 float:right;'><img src = 'assets/images/return.png' width = 45 height = 45></button>
      </form>";
      ?>
-      <div class = 'editprofile'>Select your new profile picture</div>
+      <div class = 'editprofile'>Select thumbnail</div>
       <hr>
-      <form action = 'profile_picture.php' method = "POST">
+      <form action = 'settings.php' method = "POST">
         <div class="pp-select">
           <label>
-            <input type="radio" name="pp" value="assets/images/default.jpg">
-            <img src='assets/images/default.jpg' alt='pp' class='profilepic' width = 150 height = 150>
+            <input type="radio" name="storypic" value="default">
+            <img src='assets/images/storydefault.jpg' alt='pp' class='profilepic' width = 300 height = 250>
           </label>
           <label>
-            <input type="radio" name="pp" value="assets/images/1.jpg">
-            <img src='assets/images/1.jpg' alt='pp' class='profilepic' width = 150 height = 150>
+            <input type="radio" name="storypic" value="1">
+            <img src='assets/images/story1.jpg' alt='pp' class='profilepic' width = 300 height = 250>
           </label>
           <label>
-            <input type="radio" name="pp" value="assets/images/2.jpg">
-            <img src='assets/images/2.jpg' alt='pp' class='profilepic' width = 150 height = 150>
+            <input type="radio" name="storypic" value="2">
+            <img src='assets/images/story2.jpg' alt='pp' class='profilepic' width = 300 height = 250>
           </label>
           <label>
-            <input type="radio" name="pp" value="assets/images/3.jpg">
-            <img src='assets/images/3.jpg' alt='pp' class='profilepic' width = 150 height = 150>
+            <input type="radio" name="storypic" value="3">
+            <img src='assets/images/story3.jpg' alt='pp' class='profilepic' width = 300 height = 250>
           </label>
           <label>
-            <input type="radio" name="pp" value="assets/images/4.jpg">
-            <img src='assets/images/4.jpg' alt='pp' class='profilepic' width = 150 height = 150>
+            <input type="radio" name="storypic" value="4">
+            <img src='assets/images/story4.jpg' alt='pp' class='profilepic' width = 300 height = 250>
           </label>
           <label>
-            <input type="radio" name="pp" value="assets/images/5.jpg">
-            <img src='assets/images/5.jpg' alt='pp' class='profilepic' width = 150 height = 150>
+            <input type="radio" name="storypic" value="5">
+            <img src='assets/images/story5.jpg' alt='pp' class='profilepic' width = 300 height = 250>
           </label>
-          <?php
-            $totalViews = 0;
-            $id = $_COOKIE["user_id"];
-            $sql = "SELECT * FROM stories WHERE creator_user_id = '$id'";
-            $row = func::sqlSELECT($conn, $sql, $fetch_all = true);
-            foreach ($row as $results){
-              $story_view = $results["views"];
-              $totalViews += $story_view;
-            }
-            if ($totalViews > 999){
-              echo "<label>
-                      <input type=\"radio\" name=\"pp\" value=\"assets/images/exclusive.jpg\">
-                      <img src='assets/images/exclusive.jpg' alt='pp' class='profilepic' width = 150 height = 150>
-                    </label>";
-            }
-          ?>
           <br><br>
-          <button type='submit' name='submit' class="btn-standard btn-login">Confirm</button>
+          <button type='submit' name='submitpic' class="btn-standard btn-login">Confirm</button>
         </div>
       </form>
     

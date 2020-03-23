@@ -14,11 +14,11 @@
         $creator_id = $results["user_id"];
       }
       if (empty($creator_id)){
-        $query = "SELECT * FROM stories WHERE title LIKE '%$search%';";
+        $query = "SELECT * FROM stories WHERE title LIKE '%$search%' ORDER BY story_id DESC;";
       }
       else{
         //searches both tables for the query entered
-        $query = "SELECT * FROM stories WHERE title LIKE '%$search%' OR creator_user_id = $creator_id;";
+        $query = "SELECT * FROM stories WHERE title LIKE '%$search%' OR creator_user_id = $creator_id ORDER BY story_id DESC;";
       }
     }
     else{
@@ -147,15 +147,34 @@
 
 
       <div id="feed-box">
+        <div id="login-title">
+          <div class="glitch-container">
+            <div class="glitch-text" id="glitch-main">STORIES</div>
+            <div class="glitch-text" id="glitch-shadow-one">STORIES</div>
+            <div class="glitch-text" id="glitch-shadow-two">STORIES</div>
+          </div>
+        </div>
+       
+        <br>
         <a class="btn-standard btn-feed btn-feed-top" href="private_options.php"><div class="feed-button-text">Create private game</div></a>
-        <a class="btn-standard btn-feed btn-feed-top" href="settings.php"><div class="feed-button-text">Create new story</div></a>
+       
         <section class = "stories-list">
+          <a class='btn-standard btn-feed stories' href='settings.php'><img src='assets/images/add.png' class = 'addimg' alt='add' width=95% height=95%></a>
         <?php
           foreach ($row as $storydata)
           {
             $currentTitle = $storydata["title"];
+            if (strlen($currentTitle)>15){
+              $currentTitle = substr($currentTitle, 0, 15)."...";
+            }
             $currentID = $storydata["story_id"];
             $creatorID = $storydata["creator_user_id"];
+            if (!empty($storydata["story_image"])){
+              $thumbnail = $storydata["story_image"];
+            }
+            else{
+              $thumbnail = 'default';
+            }
             $stmt = "SELECT * FROM users WHERE user_id = $creatorID;";
             $userrow = func::sqlSELECT($conn, $stmt, $fetch_all = true);
             if (empty($userrow)){
@@ -166,7 +185,9 @@
                 $creator = $result["username"];
               }
             }
-            
+            if (strlen($creator)>10){
+              $creator = substr($creator, 0, 10)."...";
+            }
             $sql = "SELECT COUNT(*) FROM `$currentID`";
             $result = $conn->prepare($sql);
             $result->execute();
@@ -182,7 +203,7 @@
               $number_of_likes = $number_of_likes.'K';
             }
 
-            echo "<a class='btn-standard btn-feed stories' href='viewadder.php?id=$currentID'><hr class ='divider'><div class='feed-button-image'><img src = 'assets/images/default.jpg' width = 100% height = 360></div><div class='feed-button-text stories'>$currentTitle</div><div class='creator'>by $creator</div><div class='likeimage'><div class='nolikes'>$number_of_likes</div><img src = 'assets/images/like.png' alt = 'likes' width=50 height=50></div></a>";
+            echo "<a class='btn-standard btn-feed stories' href='viewadder.php?id=$currentID'><hr class ='divider'><div class='feed-button-image'><img src = 'assets/images/story".$thumbnail.".jpg' width = 100% height = 360></div><div class='feed-button-text stories'>$currentTitle</div><div class='creator'>by $creator</div><div class='likeimage'><div class='nolikes'>$number_of_likes</div><img src = 'assets/images/like2.png' alt = 'likes' width=50 height=50></div></a>";
           }
         ?>
         </section>
