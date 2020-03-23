@@ -88,6 +88,9 @@
 
 .feed-button-text.stories{
   transform: translate(-50%, 130px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .feed-button-image {
